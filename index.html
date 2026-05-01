@@ -1,0 +1,955 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Iratxe & Alberto · 25 de septiembre de 2025</title>
+  <meta name="description" content="Nos casamos. Convite el 25 de septiembre de 2025 en el Asador Arraiz, Bilbao." />
+
+  <!-- Tipografías: serif con carácter para titulares, sans humanista para texto -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,700;1,9..144,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --color-bg: #f3ede2;          /* lino crudo */
+      --color-bg-warm: #ebe1d0;     /* arena */
+      --color-ink: #2a2218;         /* tinta oscura */
+      --color-ink-soft: #5a4f3f;    /* tinta suave */
+      --color-accent: #7a1e1e;      /* granate vasco */
+      --color-accent-soft: #b8865a; /* madera */
+      --color-green: #4a5d3a;       /* verde monte */
+      --color-line: #c8b89c;        /* línea cálida */
+
+      --font-display: 'Fraunces', Georgia, serif;
+      --font-body: 'Inter', system-ui, sans-serif;
+
+      --radius: 2px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--font-body);
+      color: var(--color-ink);
+      background: var(--color-bg);
+      line-height: 1.6;
+      font-weight: 400;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Textura sutil de fondo (grano) */
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 0;
+      background-image:
+        radial-gradient(circle at 20% 10%, rgba(122,30,30,0.04) 0, transparent 40%),
+        radial-gradient(circle at 80% 80%, rgba(74,93,58,0.05) 0, transparent 45%);
+    }
+
+    main, header, section, footer { position: relative; z-index: 1; }
+
+    a { color: var(--color-accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    /* ---------- HERO ---------- */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 4rem 1.5rem;
+      background:
+        linear-gradient(180deg, rgba(243,237,226,0) 0%, rgba(235,225,208,0.4) 100%);
+      position: relative;
+    }
+
+    .hero-mark {
+      font-family: var(--font-display);
+      font-style: italic;
+      font-weight: 400;
+      font-size: 0.95rem;
+      letter-spacing: 0.18em;
+      color: var(--color-ink-soft);
+      text-transform: lowercase;
+      margin-bottom: 2rem;
+    }
+
+    .hero-mark::before, .hero-mark::after {
+      content: "·";
+      margin: 0 0.8em;
+      color: var(--color-accent);
+    }
+
+    .hero h1 {
+      font-family: var(--font-display);
+      font-weight: 300;
+      font-size: clamp(3rem, 11vw, 7.5rem);
+      line-height: 0.95;
+      letter-spacing: -0.02em;
+      color: var(--color-ink);
+      margin-bottom: 1rem;
+    }
+
+    .hero h1 .amp {
+      font-style: italic;
+      color: var(--color-accent);
+      font-weight: 400;
+      display: inline-block;
+      transform: translateY(-0.05em);
+    }
+
+    .hero-date {
+      font-family: var(--font-display);
+      font-style: italic;
+      font-weight: 400;
+      font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+      color: var(--color-ink-soft);
+      margin-top: 1.5rem;
+      letter-spacing: 0.02em;
+    }
+
+    .hero-place {
+      font-family: var(--font-body);
+      font-size: 0.85rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--color-ink-soft);
+      margin-top: 0.8rem;
+    }
+
+    .hero-divider {
+      width: 60px;
+      height: 1px;
+      background: var(--color-line);
+      margin: 2.5rem auto 1.5rem;
+    }
+
+    .hero-scroll {
+      position: absolute;
+      bottom: 2rem;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 0.7rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--color-ink-soft);
+      opacity: 0.6;
+      animation: bounce 2.5s ease-in-out infinite;
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translate(-50%, 0); }
+      50% { transform: translate(-50%, 6px); }
+    }
+
+    /* ---------- SECCIONES ---------- */
+    section {
+      padding: 5rem 1.5rem;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .section-tag {
+      font-family: var(--font-body);
+      font-size: 0.75rem;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: var(--color-accent);
+      margin-bottom: 1rem;
+      font-weight: 500;
+    }
+
+    h2 {
+      font-family: var(--font-display);
+      font-weight: 400;
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      line-height: 1.05;
+      letter-spacing: -0.015em;
+      margin-bottom: 2.5rem;
+      color: var(--color-ink);
+    }
+
+    h2 em {
+      font-style: italic;
+      color: var(--color-accent);
+      font-weight: 300;
+    }
+
+    h3 {
+      font-family: var(--font-display);
+      font-weight: 500;
+      font-size: 1.4rem;
+      letter-spacing: -0.01em;
+      margin-bottom: 0.5rem;
+      color: var(--color-ink);
+    }
+
+    p { margin-bottom: 1rem; color: var(--color-ink-soft); }
+    p.lead {
+      font-family: var(--font-display);
+      font-style: italic;
+      font-weight: 300;
+      font-size: 1.3rem;
+      line-height: 1.5;
+      color: var(--color-ink);
+      max-width: 720px;
+      margin-bottom: 2rem;
+    }
+
+    /* ---------- CONVITE / DETALLE ---------- */
+    .convite {
+      background: var(--color-bg-warm);
+      max-width: none;
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+    }
+    .convite-inner { max-width: 1100px; margin: 0 auto; }
+
+    .convite-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    @media (max-width: 760px) {
+      .convite-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+    }
+
+    .info-block + .info-block { margin-top: 1.8rem; }
+    .info-label {
+      font-size: 0.7rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--color-accent);
+      margin-bottom: 0.4rem;
+      font-weight: 500;
+    }
+    .info-value {
+      font-family: var(--font-display);
+      font-weight: 400;
+      font-size: 1.5rem;
+      line-height: 1.3;
+      color: var(--color-ink);
+    }
+    .info-sub {
+      font-size: 0.95rem;
+      color: var(--color-ink-soft);
+      margin-top: 0.2rem;
+    }
+
+    .arraiz-illustration {
+      width: 100%;
+      max-width: 500px;
+      margin: 0 auto;
+      display: block;
+    }
+
+    /* ---------- CONFIRMACIÓN ---------- */
+    .rsvp {
+      text-align: center;
+      background: var(--color-ink);
+      color: var(--color-bg);
+      max-width: none;
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+    }
+    .rsvp-inner { max-width: 720px; margin: 0 auto; }
+    .rsvp .section-tag { color: var(--color-accent-soft); }
+    .rsvp h2 { color: var(--color-bg); }
+    .rsvp h2 em { color: var(--color-accent-soft); }
+    .rsvp p { color: rgba(243,237,226,0.8); }
+
+    .rsvp-phone {
+      display: inline-block;
+      font-family: var(--font-display);
+      font-weight: 500;
+      font-size: clamp(2rem, 6vw, 3.5rem);
+      letter-spacing: 0.02em;
+      color: var(--color-bg);
+      margin: 1.5rem 0 0.5rem;
+      padding: 0.3rem 0;
+      border-bottom: 1px solid var(--color-accent-soft);
+      transition: color 0.2s ease;
+    }
+    .rsvp-phone:hover { color: var(--color-accent-soft); text-decoration: none; }
+
+    .rsvp-deadline {
+      font-family: var(--font-display);
+      font-style: italic;
+      font-size: 1rem;
+      color: var(--color-accent-soft);
+      margin-top: 2rem;
+      letter-spacing: 0.02em;
+    }
+
+    /* ---------- TIPS GRID ---------- */
+    .tips-section { padding-bottom: 3rem; }
+
+    .tips-intro {
+      max-width: 720px;
+      margin-bottom: 3rem;
+    }
+
+    .tips-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1px;
+      background: var(--color-line);
+      border: 1px solid var(--color-line);
+      border-radius: var(--radius);
+      overflow: hidden;
+    }
+
+    .tip-card {
+      background: var(--color-bg);
+      padding: 2rem 1.8rem;
+      transition: background 0.3s ease;
+    }
+    .tip-card:hover { background: var(--color-bg-warm); }
+
+    .tip-card h3 {
+      display: flex;
+      align-items: baseline;
+      gap: 0.6rem;
+      margin-bottom: 0.8rem;
+    }
+    .tip-card h3 .num {
+      font-family: var(--font-display);
+      font-style: italic;
+      font-weight: 300;
+      font-size: 0.9rem;
+      color: var(--color-accent);
+    }
+
+    .tip-card p {
+      font-size: 0.95rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .tip-card .place {
+      display: block;
+      font-family: var(--font-display);
+      font-weight: 500;
+      color: var(--color-ink);
+      margin-top: 0.8rem;
+    }
+    .tip-card .place-detail {
+      font-size: 0.85rem;
+      color: var(--color-ink-soft);
+      display: block;
+      margin-bottom: 0.6rem;
+    }
+
+    /* ---------- ZONAS / PINTXOS ---------- */
+    .zone-block + .zone-block { margin-top: 2.5rem; padding-top: 2.5rem; border-top: 1px solid var(--color-line); }
+
+    .zone-title {
+      font-family: var(--font-display);
+      font-weight: 500;
+      font-size: 1.6rem;
+      color: var(--color-ink);
+      margin-bottom: 0.3rem;
+    }
+    .zone-title em {
+      font-style: italic;
+      font-weight: 300;
+      color: var(--color-accent);
+    }
+    .zone-desc {
+      font-size: 0.95rem;
+      margin-bottom: 1.2rem;
+    }
+
+    .place-list {
+      list-style: none;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 0.8rem;
+    }
+    .place-list li {
+      padding: 0.8rem 1rem;
+      background: var(--color-bg-warm);
+      border-left: 2px solid var(--color-accent);
+      font-size: 0.92rem;
+      color: var(--color-ink);
+    }
+    .place-list li strong {
+      display: block;
+      font-family: var(--font-display);
+      font-weight: 500;
+      font-size: 1.05rem;
+      margin-bottom: 0.15rem;
+    }
+    .place-list li span {
+      font-size: 0.85rem;
+      color: var(--color-ink-soft);
+    }
+
+    /* ---------- VISITAS ---------- */
+    .visits-section { background: var(--color-bg-warm); max-width: none; padding-left: 1.5rem; padding-right: 1.5rem; }
+    .visits-inner { max-width: 1100px; margin: 0 auto; }
+
+    .visits-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+    .visit-card {
+      background: var(--color-bg);
+      padding: 1.8rem;
+      border-radius: var(--radius);
+      border: 1px solid var(--color-line);
+    }
+    .visit-card h4 {
+      font-family: var(--font-display);
+      font-weight: 500;
+      font-size: 1.2rem;
+      margin-bottom: 0.5rem;
+      color: var(--color-ink);
+    }
+    .visit-card .visit-tag {
+      font-size: 0.7rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--color-accent);
+      margin-bottom: 0.8rem;
+      display: block;
+      font-weight: 500;
+    }
+    .visit-card p {
+      font-size: 0.92rem;
+      margin: 0;
+    }
+
+    /* ---------- REGALO ---------- */
+    .gift {
+      text-align: center;
+      max-width: 760px;
+    }
+    .gift p.lead { margin-left: auto; margin-right: auto; }
+    .gift::before {
+      content: "❦";
+      display: block;
+      font-size: 1.5rem;
+      color: var(--color-accent);
+      margin-bottom: 1.5rem;
+    }
+
+    /* ---------- FOOTER ---------- */
+    footer {
+      text-align: center;
+      padding: 3rem 1.5rem 2rem;
+      border-top: 1px solid var(--color-line);
+      margin-top: 3rem;
+    }
+    footer p {
+      font-family: var(--font-display);
+      font-style: italic;
+      font-size: 1rem;
+      color: var(--color-ink-soft);
+      margin: 0;
+    }
+    footer .heart { color: var(--color-accent); }
+
+    /* ---------- DETALLES DECORATIVOS ---------- */
+    .ornament {
+      display: block;
+      width: 80px;
+      height: 16px;
+      margin: 1.5rem auto;
+    }
+
+    /* ---------- RESPONSIVE ---------- */
+    @media (max-width: 600px) {
+      section { padding: 3.5rem 1.25rem; }
+      .convite, .rsvp, .visits-section { padding: 3.5rem 1.25rem; }
+      .place-list { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ============= HERO ============= -->
+  <header class="hero">
+    <div class="hero-mark">nos casamos</div>
+
+    <h1>
+      Iratxe<br />
+      <span class="amp">&</span><br />
+      Alberto
+    </h1>
+
+    <svg class="ornament" viewBox="0 0 80 16" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <line x1="0" y1="8" x2="30" y2="8" stroke="#c8b89c" stroke-width="0.8"/>
+      <circle cx="40" cy="8" r="2.5" fill="none" stroke="#7a1e1e" stroke-width="0.8"/>
+      <line x1="50" y1="8" x2="80" y2="8" stroke="#c8b89c" stroke-width="0.8"/>
+    </svg>
+
+    <p class="hero-date">Jueves, 25 de septiembre de 2025</p>
+    <p class="hero-place">Asador Arraiz · Bilbao</p>
+
+    <div class="hero-scroll">desliza</div>
+  </header>
+
+  <!-- ============= CONVITE ============= -->
+  <section class="convite" id="convite">
+    <div class="convite-inner">
+      <div class="convite-grid">
+
+        <div>
+          <p class="section-tag">El plan</p>
+          <h2>Una comida <em>entre los nuestros</em></h2>
+          <p class="lead">
+            Queremos celebrarlo con vosotros sin ceremonias largas ni protocolos.
+            Comida buena, gente querida y todo el tiempo del mundo.
+          </p>
+
+          <div class="info-block">
+            <div class="info-label">Cuándo</div>
+            <div class="info-value">25 de septiembre de 2025</div>
+            <div class="info-sub">A las 12:00 del mediodía</div>
+          </div>
+
+          <div class="info-block">
+            <div class="info-label">Dónde</div>
+            <div class="info-value">Asador Arraiz</div>
+            <div class="info-sub">
+              Camino Monte Arraiz, 116 · 48002 Bilbao<br />
+              <a href="https://restaurantearraiz.com/" target="_blank" rel="noopener">restaurantearraiz.com</a> ·
+              <a href="https://www.google.com/maps/search/?api=1&query=Asador+Arraiz+Bilbao+Camino+Monte+Arraiz+116" target="_blank" rel="noopener">Cómo llegar</a>
+            </div>
+          </div>
+
+          <div class="info-block">
+            <div class="info-label">Vestimenta</div>
+            <div class="info-value">Como mejor te sientas</div>
+            <div class="info-sub">Sin código, sin complicaciones. Cómodo y a vuestro estilo.</div>
+          </div>
+
+          <div class="info-block">
+            <div class="info-label">Aparcamiento</div>
+            <div class="info-value">Parking propio del asador</div>
+            <div class="info-sub">Amplio y vigilado, justo en el restaurante.</div>
+          </div>
+        </div>
+
+        <!-- Ilustración del Asador Arraiz -->
+        <div>
+          <svg class="arraiz-illustration" viewBox="0 0 500 420" xmlns="http://www.w3.org/2000/svg" aria-label="Ilustración del Asador Arraiz">
+            <!-- Cielo con tono cálido -->
+            <defs>
+              <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#ebe1d0"/>
+                <stop offset="100%" stop-color="#f3ede2"/>
+              </linearGradient>
+              <linearGradient id="hill" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#4a5d3a"/>
+                <stop offset="100%" stop-color="#5d6f48"/>
+              </linearGradient>
+              <linearGradient id="hill2" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#6b7b52"/>
+                <stop offset="100%" stop-color="#7a8a60"/>
+              </linearGradient>
+            </defs>
+
+            <!-- Fondo cielo -->
+            <rect x="0" y="0" width="500" height="320" fill="url(#sky)"/>
+
+            <!-- Montañas lejanas -->
+            <path d="M 0 240 Q 80 180 160 220 T 320 200 T 500 230 L 500 320 L 0 320 Z" fill="url(#hill2)" opacity="0.55"/>
+
+            <!-- Montaña cercana (Monte Arraiz) -->
+            <path d="M 0 290 Q 100 230 200 270 T 380 250 T 500 280 L 500 320 L 0 320 Z" fill="url(#hill)" opacity="0.85"/>
+
+            <!-- Suelo / prado -->
+            <rect x="0" y="320" width="500" height="100" fill="#8a9b6a"/>
+
+            <!-- Camino -->
+            <path d="M 100 420 Q 200 380 250 360 Q 300 345 400 340" stroke="#c8b89c" stroke-width="14" fill="none" opacity="0.6"/>
+            <path d="M 100 420 Q 200 380 250 360 Q 300 345 400 340" stroke="#b8865a" stroke-width="2" fill="none" stroke-dasharray="4 6" opacity="0.5"/>
+
+            <!-- Caserío vasco -->
+            <!-- Sombra del edificio -->
+            <ellipse cx="250" cy="335" rx="130" ry="8" fill="#2a2218" opacity="0.15"/>
+
+            <!-- Cuerpo principal del caserío -->
+            <rect x="160" y="200" width="180" height="135" fill="#f3ede2" stroke="#2a2218" stroke-width="2"/>
+
+            <!-- Tejado a dos aguas -->
+            <polygon points="150,205 250,135 350,205" fill="#7a1e1e" stroke="#2a2218" stroke-width="2"/>
+            <polygon points="150,205 250,135 350,205" fill="#5a1414" opacity="0.3"/>
+
+            <!-- Líneas del tejado (tejas) -->
+            <line x1="170" y1="195" x2="180" y2="180" stroke="#2a2218" stroke-width="0.8" opacity="0.4"/>
+            <line x1="200" y1="170" x2="210" y2="155" stroke="#2a2218" stroke-width="0.8" opacity="0.4"/>
+            <line x1="230" y1="148" x2="240" y2="138" stroke="#2a2218" stroke-width="0.8" opacity="0.4"/>
+            <line x1="280" y1="148" x2="290" y2="158" stroke="#2a2218" stroke-width="0.8" opacity="0.4"/>
+            <line x1="310" y1="170" x2="320" y2="180" stroke="#2a2218" stroke-width="0.8" opacity="0.4"/>
+
+            <!-- Vigas de madera (típicas vascas) -->
+            <rect x="160" y="200" width="180" height="6" fill="#5a4f3f"/>
+            <rect x="160" y="265" width="180" height="5" fill="#5a4f3f"/>
+            <line x1="200" y1="206" x2="200" y2="265" stroke="#5a4f3f" stroke-width="3"/>
+            <line x1="250" y1="206" x2="250" y2="265" stroke="#5a4f3f" stroke-width="3"/>
+            <line x1="300" y1="206" x2="300" y2="265" stroke="#5a4f3f" stroke-width="3"/>
+
+            <!-- Puerta -->
+            <rect x="232" y="285" width="36" height="50" fill="#5a4f3f" stroke="#2a2218" stroke-width="1.5"/>
+            <rect x="234" y="287" width="32" height="46" fill="#7a1e1e" opacity="0.6"/>
+            <line x1="250" y1="287" x2="250" y2="333" stroke="#2a2218" stroke-width="0.8"/>
+            <circle cx="244" cy="312" r="1.2" fill="#b8865a"/>
+            <circle cx="256" cy="312" r="1.2" fill="#b8865a"/>
+
+            <!-- Ventanas planta superior -->
+            <rect x="180" y="220" width="22" height="28" fill="#2a2218"/>
+            <rect x="182" y="222" width="18" height="24" fill="#b8865a" opacity="0.5"/>
+            <line x1="191" y1="222" x2="191" y2="246" stroke="#2a2218" stroke-width="0.8"/>
+            <line x1="182" y1="234" x2="200" y2="234" stroke="#2a2218" stroke-width="0.8"/>
+
+            <rect x="237" y="220" width="26" height="28" fill="#2a2218"/>
+            <rect x="239" y="222" width="22" height="24" fill="#b8865a" opacity="0.5"/>
+            <line x1="250" y1="222" x2="250" y2="246" stroke="#2a2218" stroke-width="0.8"/>
+            <line x1="239" y1="234" x2="261" y2="234" stroke="#2a2218" stroke-width="0.8"/>
+
+            <rect x="298" y="220" width="22" height="28" fill="#2a2218"/>
+            <rect x="300" y="222" width="18" height="24" fill="#b8865a" opacity="0.5"/>
+            <line x1="309" y1="222" x2="309" y2="246" stroke="#2a2218" stroke-width="0.8"/>
+            <line x1="300" y1="234" x2="318" y2="234" stroke="#2a2218" stroke-width="0.8"/>
+
+            <!-- Ventanas planta inferior -->
+            <rect x="180" y="285" width="22" height="26" fill="#2a2218"/>
+            <rect x="182" y="287" width="18" height="22" fill="#b8865a" opacity="0.5"/>
+            <line x1="191" y1="287" x2="191" y2="309" stroke="#2a2218" stroke-width="0.8"/>
+
+            <rect x="298" y="285" width="22" height="26" fill="#2a2218"/>
+            <rect x="300" y="287" width="18" height="22" fill="#b8865a" opacity="0.5"/>
+            <line x1="309" y1="287" x2="309" y2="309" stroke="#2a2218" stroke-width="0.8"/>
+
+            <!-- Detalle floral en ventana (geranio) -->
+            <circle cx="186" cy="245" r="1.8" fill="#7a1e1e"/>
+            <circle cx="191" cy="244" r="1.8" fill="#7a1e1e"/>
+            <circle cx="196" cy="245" r="1.8" fill="#7a1e1e"/>
+            <circle cx="304" cy="245" r="1.8" fill="#7a1e1e"/>
+            <circle cx="309" cy="244" r="1.8" fill="#7a1e1e"/>
+            <circle cx="314" cy="245" r="1.8" fill="#7a1e1e"/>
+
+            <!-- Chimenea -->
+            <rect x="290" y="148" width="14" height="30" fill="#f3ede2" stroke="#2a2218" stroke-width="1.5"/>
+            <rect x="288" y="146" width="18" height="4" fill="#5a4f3f"/>
+
+            <!-- Humo -->
+            <path d="M 297 145 Q 295 130 300 120 Q 304 110 297 95 Q 290 85 295 75" stroke="#c8b89c" stroke-width="2.5" fill="none" opacity="0.6" stroke-linecap="round"/>
+
+            <!-- Árboles a los lados -->
+            <!-- Árbol izquierda -->
+            <rect x="80" y="290" width="6" height="25" fill="#5a4f3f"/>
+            <circle cx="83" cy="285" r="22" fill="#4a5d3a"/>
+            <circle cx="75" cy="280" r="14" fill="#4a5d3a"/>
+            <circle cx="91" cy="280" r="14" fill="#4a5d3a"/>
+            <circle cx="83" cy="270" r="16" fill="#5d6f48"/>
+
+            <!-- Árbol derecha -->
+            <rect x="410" y="295" width="6" height="22" fill="#5a4f3f"/>
+            <circle cx="413" cy="290" r="20" fill="#4a5d3a"/>
+            <circle cx="406" cy="285" r="13" fill="#5d6f48"/>
+            <circle cx="420" cy="285" r="13" fill="#4a5d3a"/>
+
+            <!-- Árbol pequeño -->
+            <rect x="125" y="305" width="4" height="15" fill="#5a4f3f"/>
+            <circle cx="127" cy="302" r="11" fill="#4a5d3a"/>
+
+            <!-- Pájaros lejanos -->
+            <path d="M 100 90 q 4 -3 8 0 q 4 -3 8 0" stroke="#5a4f3f" stroke-width="1.2" fill="none"/>
+            <path d="M 380 70 q 3 -2 6 0 q 3 -2 6 0" stroke="#5a4f3f" stroke-width="1" fill="none"/>
+
+            <!-- Sol suave -->
+            <circle cx="420" cy="80" r="22" fill="#b8865a" opacity="0.25"/>
+            <circle cx="420" cy="80" r="14" fill="#b8865a" opacity="0.35"/>
+
+            <!-- Hierbas en primer plano -->
+            <path d="M 50 410 q 2 -8 0 -14 M 55 410 q -2 -6 0 -12 M 60 410 q 2 -7 0 -13" stroke="#5d6f48" stroke-width="1" fill="none"/>
+            <path d="M 440 410 q 2 -8 0 -14 M 445 410 q -2 -6 0 -12 M 450 410 q 2 -7 0 -13" stroke="#5d6f48" stroke-width="1" fill="none"/>
+
+            <!-- Cartel con nombre -->
+            <rect x="200" y="345" width="100" height="22" fill="#5a4f3f" stroke="#2a2218" stroke-width="1.5"/>
+            <text x="250" y="361" font-family="Georgia, serif" font-size="13" font-style="italic" fill="#f3ede2" text-anchor="middle" letter-spacing="2">Arraiz</text>
+          </svg>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============= REGALO / NO REGALOS ============= -->
+  <section class="gift" id="regalo">
+    <p class="section-tag">Sobre los regalos</p>
+    <p class="lead">
+      Vuestra presencia es nuestro mejor regalo. Sabemos que venir hasta Bilbao
+      ya supone un esfuerzo y un gasto importante, así que no queremos que os
+      preocupéis por nada más. Nada de transferencias ni Bizums: solo queremos
+      veros, abrazaros y disfrutar del día con vosotros.
+    </p>
+  </section>
+
+  <!-- ============= RSVP ============= -->
+  <section class="rsvp" id="rsvp">
+    <div class="rsvp-inner">
+      <p class="section-tag">Confirmación de asistencia</p>
+      <h2>¿Os <em>venís</em>?</h2>
+      <p>Para organizarlo todo bien, necesitamos saber si podréis acompañarnos. Llamadnos o mandadnos un mensaje al teléfono:</p>
+
+      <a class="rsvp-phone" href="tel:+34619099711">619 099 711</a>
+
+      <p style="margin-top:1.5rem;">También podéis escribirnos por WhatsApp al mismo número.</p>
+
+      <p class="rsvp-deadline">Por favor, confirmad antes del 1 de enero de 2027.</p>
+    </div>
+  </section>
+
+  <!-- ============= TIPS - INTRO ============= -->
+  <section class="tips-section" id="tips">
+    <p class="section-tag">Consejos para el viaje</p>
+    <h2>Aprovechad y <em>conoced</em> Bilbao</h2>
+    <p class="lead tips-intro">
+      Si os vais a desplazar, qué menos que disfrutarlo. Os hemos preparado unas
+      cuantas ideas: dónde comer pintxos, dónde aparcar si venís en coche, dónde
+      dormir, y qué visitar en la ciudad y los alrededores.
+    </p>
+  </section>
+
+  <!-- ============= PINTXOS ============= -->
+  <section id="pintxos" style="padding-top: 0;">
+    <p class="section-tag">Pintxos</p>
+    <h2>De <em>poteo</em> por Bilbao</h2>
+    <p class="lead">
+      Bilbao es una ciudad para callejear y picotear. Aquí van algunas zonas y
+      bares clásicos para empezar la ruta. Lo bueno: están todos cerca, así que
+      podéis ir saltando de uno a otro.
+    </p>
+
+    <div class="zone-block">
+      <h3 class="zone-title">Casco Viejo · <em>Las Siete Calles</em></h3>
+      <p class="zone-desc">El corazón histórico. La Plaza Nueva concentra varios de los bares más conocidos. Pintxos entre 2 y 3,50 € y zuritos en torno a 1,50–2,50 €.</p>
+      <ul class="place-list">
+        <li><strong>Gure Toki</strong><span>Plaza Nueva. Pintxos creativos y de mucha calidad.</span></li>
+        <li><strong>Sorginzulo</strong><span>Plaza Nueva. Variedad y producto local.</span></li>
+        <li><strong>Café Bar Bilbao</strong><span>Plaza Nueva. Clásico, ambiente local.</span></li>
+        <li><strong>Víctor Montes</strong><span>Plaza Nueva. Histórico, desde 1849.</span></li>
+        <li><strong>Charly</strong><span>Plaza Nueva. Abierto desde 1973, ofertas de combinados de pintxos.</span></li>
+        <li><strong>Baste</strong><span>Calle Diputación. Famoso por sus mejillones rellenos.</span></li>
+        <li><strong>Bar Berton</strong><span>Calle Jardines. Pintxos de solomillo y foie.</span></li>
+        <li><strong>Bodega Joserra</strong><span>Cantón Alejandro de la Sota. Bocadillos pequeños "medios" tradicionales.</span></li>
+      </ul>
+    </div>
+
+    <div class="zone-block">
+      <h3 class="zone-title">Ensanche · <em>Indautxu y alrededores</em></h3>
+      <p class="zone-desc">La zona moderna del centro. Locales más cuidados, pintxos algo más elaborados (entre 3 y 4 €).</p>
+      <ul class="place-list">
+        <li><strong>La Viña del Ensanche</strong><span>Calle Diputación. Productos de calidad e ibéricos.</span></li>
+        <li><strong>El Globo</strong><span>Calle Diputación. Clásico imprescindible.</span></li>
+        <li><strong>Bascook</strong><span>Cocina vasca con toques internacionales.</span></li>
+      </ul>
+    </div>
+
+    <div class="zone-block">
+      <h3 class="zone-title">Pozas y San Mamés · <em>ambiente joven</em></h3>
+      <p class="zone-desc">Calle Pozas y alrededores del estadio. Mucho ambiente y precios algo más ajustados.</p>
+      <ul class="place-list">
+        <li><strong>El Txoko de Gros</strong><span>Calle Pozas. Variedad amplia.</span></li>
+        <li><strong>Asador Bideko (entorno Pozas)</strong><span>Carnes y pintxos de calidad.</span></li>
+      </ul>
+    </div>
+
+    <p style="margin-top:2rem; font-size:0.9rem; font-style:italic;">
+      Consejo local: en el Casco Viejo los domingos cierran pronto, así que si vais en domingo, mejor a mediodía.
+    </p>
+  </section>
+
+  <!-- ============= APARCAR ============= -->
+  <section id="aparcar">
+    <p class="section-tag">Aparcamiento</p>
+    <h2>Dónde <em>dejar el coche</em></h2>
+    <p class="lead">
+      Para el día del convite no os preocupéis: el Asador Arraiz tiene parking
+      propio amplio y vigilado. Si venís a pasar el día o el fin de semana en
+      Bilbao centro, aquí van las opciones.
+    </p>
+
+    <div class="zone-block">
+      <h3 class="zone-title">El día de la boda</h3>
+      <p class="zone-desc">El Asador Arraiz dispone de parking propio gratuito en el restaurante, con punto de recarga para coches eléctricos. No hay que preocuparse de buscar sitio ni pagar OTA.</p>
+    </div>
+
+    <div class="zone-block">
+      <h3 class="zone-title">Si os quedáis en Bilbao centro</h3>
+      <p class="zone-desc">El centro de Bilbao tiene OTA (zona regulada de pago) prácticamente en todas las calles, y muchas son peatonales. Lo más cómodo es dejar el coche en un parking público. Algunas opciones céntricas:</p>
+      <ul class="place-list">
+        <li><strong>Parking Indigo Instituto</strong><span>Desde aprox. 2,10 € / hora · 13 € / día</span></li>
+        <li><strong>Parking Zabalburu</strong><span>Desde aprox. 2,50 € / hora · 16 € / día</span></li>
+        <li><strong>Parking Madariaga</strong><span>Desde aprox. 10 € / día · cerca del Guggenheim</span></li>
+        <li><strong>Parking SABA Estación de Tren</strong><span>Calle Bailén, 22 bis · 24 h</span></li>
+        <li><strong>Parking Pío Baroja (Copark)</strong><span>Desde aprox. 16 € / día</span></li>
+      </ul>
+      <p style="margin-top:1rem; font-size:0.9rem;">
+        Reservar plaza con antelación a través de apps como Parclick, Parkimeter, ElParking o EasyPark suele salir más barato.
+        Tened también en cuenta la <strong>ZBE</strong> (Zona de Bajas Emisiones) en Abando e Indautxu: los vehículos sin etiqueta o con etiqueta B no pueden acceder de lunes a viernes entre 7:00 y 20:00.
+      </p>
+    </div>
+  </section>
+
+  <!-- ============= ALOJAMIENTO ============= -->
+  <section id="alojamiento">
+    <p class="section-tag">Alojamiento</p>
+    <h2>Dónde <em>dormir</em></h2>
+    <p class="lead">
+      Bilbao es una ciudad pequeña y bien comunicada: desde el centro a casi cualquier
+      sitio se llega andando o en metro. Os dejamos algunas opciones por zonas y
+      estilos para que elijáis la que más os encaje.
+    </p>
+
+    <div class="zone-block">
+      <h3 class="zone-title">Centro / Abando · <em>la opción más práctica</em></h3>
+      <p class="zone-desc">Bien comunicado, cerca de la estación de tren y a un paseo del Casco Viejo y del Guggenheim.</p>
+      <ul class="place-list">
+        <li><strong>Hotel Carlton</strong><span>Histórico y elegante, en plena Plaza Moyúa.</span></li>
+        <li><strong>Ercilla Hotel</strong><span>Clásico de Bilbao, muy céntrico.</span></li>
+        <li><strong>Hotel Indautxu</strong><span>Zona Indautxu, ambiente animado.</span></li>
+        <li><strong>NYX Hotel Bilbao</strong><span>Moderno, junto a Gran Vía.</span></li>
+        <li><strong>Sercotel Coliseo</strong><span>En el antiguo edificio de la ópera.</span></li>
+      </ul>
+    </div>
+
+    <div class="zone-block">
+      <h3 class="zone-title">Casco Viejo · <em>en pleno ambiente</em></h3>
+      <p class="zone-desc">Para salir andando a tomar pintxos. Algunas calles son peatonales, así que ojo con el coche.</p>
+      <ul class="place-list">
+        <li><strong>Petit Palace Arana</strong><span>Junto al Teatro Arriaga.</span></li>
+        <li><strong>Tayko Bilbao</strong><span>Hotel de lujo en edificio histórico, con restaurante de gran nivel.</span></li>
+        <li><strong>Casual Bilbao Gurea</strong><span>Sencillo, buena ubicación y precio.</span></li>
+      </ul>
+    </div>
+
+    <div class="zone-block">
+      <h3 class="zone-title">Zona Guggenheim / Abandoibarra · <em>vistas y diseño</em></h3>
+      <ul class="place-list">
+        <li><strong>Gran Hotel Domine Bilbao</strong><span>Frente al Guggenheim, con terraza panorámica.</span></li>
+        <li><strong>Hotel Miró</strong><span>Boutique, junto al Museo de Bellas Artes.</span></li>
+        <li><strong>Meliá Bilbao</strong><span>Junto al Palacio Euskalduna y la ría.</span></li>
+      </ul>
+    </div>
+
+    <div class="zone-block">
+      <h3 class="zone-title">Opciones más económicas</h3>
+      <ul class="place-list">
+        <li><strong>Ibis Bilbao Centro</strong><span>Buena relación calidad-precio.</span></li>
+        <li><strong>Ibis Budget Bilbao City</strong><span>Lo más económico de la cadena.</span></li>
+        <li><strong>LATROUPE La Granja</strong><span>Hostel-hotel moderno en el centro.</span></li>
+        <li><strong>All Iron Hostel</strong><span>Albergue bien valorado.</span></li>
+      </ul>
+    </div>
+
+    <p style="margin-top:2rem; font-size:0.9rem; font-style:italic;">
+      Como referencia, los precios suelen ir desde unos 50–80 € por noche en hoteles más sencillos hasta 200–300 € en los de 4–5 estrellas, dependiendo de la temporada. Septiembre suele estar bastante demandado, así que mejor reservar con tiempo.
+    </p>
+  </section>
+
+  <!-- ============= QUÉ VISITAR ============= -->
+  <section class="visits-section" id="visitas">
+    <div class="visits-inner">
+      <p class="section-tag">Qué visitar</p>
+      <h2>Bilbao y <em>alrededores</em></h2>
+      <p class="lead">
+        Si os animáis a alargar el viaje, estas son algunas paradas que merecen la pena.
+        Bilbao se ve bien en un día o dos, y luego la costa vasca está al lado.
+      </p>
+
+      <h3 style="margin-top:2rem; font-family:var(--font-display); font-weight:500; font-size:1.4rem;">En Bilbao</h3>
+      <div class="visits-grid">
+        <div class="visit-card">
+          <span class="visit-tag">Imprescindible</span>
+          <h4>Museo Guggenheim</h4>
+          <p>El edificio de Frank Gehry que cambió la cara de la ciudad. Aunque no entréis, el exterior y los alrededores ya merecen la visita.</p>
+        </div>
+        <div class="visit-card">
+          <span class="visit-tag">Histórico</span>
+          <h4>Casco Viejo · Las Siete Calles</h4>
+          <p>El corazón antiguo de Bilbao. Tiendas, bares, la Catedral de Santiago y la Plaza Nueva.</p>
+        </div>
+        <div class="visit-card">
+          <span class="visit-tag">Cultura</span>
+          <h4>Museo de Bellas Artes</h4>
+          <p>Una de las mejores colecciones del país. Mucho menos turístico que el Guggenheim.</p>
+        </div>
+        <div class="visit-card">
+          <span class="visit-tag">Vistas</span>
+          <h4>Funicular de Artxanda</h4>
+          <p>Sube en pocos minutos al monte Artxanda para ver Bilbao desde arriba. Imprescindible al atardecer.</p>
+        </div>
+        <div class="visit-card">
+          <span class="visit-tag">Paseo</span>
+          <h4>Ría y Puente Zubizuri</h4>
+          <p>Paseo por la ría, cruzando el famoso puente blanco de Calatrava. Conecta perfectamente con el Guggenheim.</p>
+        </div>
+        <div class="visit-card">
+          <span class="visit-tag">Mercado</span>
+          <h4>Mercado de la Ribera</h4>
+          <p>Uno de los mercados cubiertos más grandes de Europa, con zona de pintxos en la planta de arriba.</p>
+        </div>
+      </div>
+
+      <h3 style="margin-top:3rem; font-family:var(--font-display); font-weight:500; font-size:1.4rem;">Alrededores</h3>
+      <div class="visits-grid">
+        <div class="visit-card">
+          <span class="visit-tag">Mar</span>
+          <h4>Getxo y Puente Bizkaia</h4>
+          <p>A 20 minutos en metro. Paseo por la playa de Ereaga, el puerto viejo de Algorta y el puente colgante de Portugalete (Patrimonio de la Humanidad).</p>
+        </div>
+        <div class="visit-card">
+          <span class="visit-tag">Naturaleza</span>
+          <h4>San Juan de Gaztelugatxe</h4>
+          <p>La ermita sobre la roca, conectada por un puente de piedra y 241 escalones. A unos 35 minutos en coche. Hay que reservar entrada gratuita online.</p>
+        </div>
+        <div class="visit-card">
+          <span class="visit-tag">Costa</span>
+          <h4>Bermeo y Mundaka</h4>
+          <p>Pueblos pesqueros de la costa vizcaína. Mundaka es famoso por su ola surfera y la Reserva de la Biosfera de Urdaibai.</p>
+        </div>
+        <div class="visit-card">
+          <span class="visit-tag">Pueblo con encanto</span>
+          <h4>Lekeitio</h4>
+          <p>Uno de los pueblos más bonitos de la costa. Playa, puerto y la isla de San Nicolás (a la que se llega andando con marea baja).</p>
+        </div>
+        <div class="visit-card">
+          <span class="visit-tag">Imprescindible</span>
+          <h4>San Sebastián / Donostia</h4>
+          <p>A una hora en coche o autobús. La Concha, la Parte Vieja, el monte Igueldo... y por supuesto, más pintxos.</p>
+        </div>
+        <div class="visit-card">
+          <span class="visit-tag">Histórico</span>
+          <h4>Guernica</h4>
+          <p>A 30 minutos. La Casa de Juntas, el Árbol de Gernika y el museo de la paz.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============= CIERRE ============= -->
+  <footer>
+    <p>Con muchas ganas de veros, <span class="heart">❦</span> Iratxe &amp; Alberto</p>
+  </footer>
+
+</body>
+</html>

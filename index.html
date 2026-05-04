@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Iratxe y Alberto · 25 de septiembre de 2025</title>
-  <meta name="description" content="Nos casamos. Convite el 25 de septiembre de 2025 en el Asador Arraiz, Bilbao." />
+  <title>Iratxe y Alberto · 28 de agosto de 2027</title>
+  <meta name="description" content="Nos casamos. Convite el 28 de agosto de 2027 en el Asador Arraiz, Bilbao." />
 
-  <!-- Favicon: lauburu vasco en color granate sobre fondo crema -->
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='10' fill='%23f3ede2'/%3E%3Cg fill='%237a1e1e'%3E%3Cpath d='M32 32 C 32 18, 18 18, 18 32 C 18 25, 25 25, 32 32 Z'/%3E%3Cpath d='M32 32 C 46 32, 46 18, 32 18 C 39 18, 39 25, 32 32 Z'/%3E%3Cpath d='M32 32 C 32 46, 46 46, 46 32 C 46 39, 39 39, 32 32 Z'/%3E%3Cpath d='M32 32 C 18 32, 18 46, 32 46 C 25 46, 25 39, 32 32 Z'/%3E%3C/g%3E%3C/svg%3E" />
+  <!-- Favicon: dos anillos entrelazados (verde salvia y dorado trigo) -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%2064%2064%22%3E%3Crect%20width=%2264%22%20height=%2264%22%20rx=%2210%22%20fill=%22%23eef0e8%22/%3E%3Ccircle%20cx=%2224%22%20cy=%2232%22%20r=%2213%22%20fill=%22none%22%20stroke=%22%237a9070%22%20stroke-width=%223.5%22/%3E%3Ccircle%20cx=%2240%22%20cy=%2232%22%20r=%2213%22%20fill=%22none%22%20stroke=%22%23c9a878%22%20stroke-width=%223.5%22/%3E%3Cpath%20d=%22M%2035.5%2022%20A%2013%2013%200%200%201%2037%2032%22%20fill=%22none%22%20stroke=%22%237a9070%22%20stroke-width=%223.5%22/%3E%3C/svg%3E" />
 
   <!-- Tipografías: serif con carácter para titulares, sans humanista para texto -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -16,14 +16,17 @@
 
   <style>
     :root {
-      --color-bg: #f3ede2;          /* lino crudo */
-      --color-bg-warm: #ebe1d0;     /* arena */
-      --color-ink: #2a2218;         /* tinta oscura */
-      --color-ink-soft: #5a4f3f;    /* tinta suave */
-      --color-accent: #7a1e1e;      /* granate vasco */
-      --color-accent-soft: #b8865a; /* madera */
-      --color-green: #4a5d3a;       /* verde monte */
-      --color-line: #c8b89c;        /* línea cálida */
+      --color-bg: #eef0e8;          /* fondo claro principal */
+      --color-bg-warm: #e3e7da;     /* variante un poco más cálida */
+      --color-ink: #3a3a2e;         /* tinta oliva oscura para texto */
+      --color-ink-soft: #6a6a55;    /* tinta verdosa suave */
+      --color-dark-bg: #2a3029;     /* fondo oscuro (RSVP) */
+      --color-accent: #7a9070;      /* verde salvia (color principal) */
+      --color-accent-soft: #b5c4a8; /* verde pastel claro */
+      --color-accent-deep: #5a7355; /* verde más profundo, para hover/contraste */
+      --color-warm: #c9a878;        /* dorado trigo cálido */
+      --color-roof: #b86a52;        /* teja apagada, para mantener el caserío */
+      --color-line: #d4c8b0;        /* línea cálida clara */
 
       --font-display: 'Fraunces', Georgia, serif;
       --font-body: 'Inter', system-ui, sans-serif;
@@ -52,8 +55,8 @@
       pointer-events: none;
       z-index: 0;
       background-image:
-        radial-gradient(circle at 20% 10%, rgba(122,30,30,0.04) 0, transparent 40%),
-        radial-gradient(circle at 80% 80%, rgba(74,93,58,0.05) 0, transparent 45%);
+        radial-gradient(circle at 20% 10%, rgba(122,144,112,0.05) 0, transparent 40%),
+        radial-gradient(circle at 80% 80%, rgba(181,196,168,0.07) 0, transparent 45%);
     }
 
     main, header, section, footer { position: relative; z-index: 1; }
@@ -127,6 +130,66 @@
       text-transform: uppercase;
       color: var(--color-ink-soft);
       margin-top: 0.8rem;
+    }
+
+    /* ---------- COUNTDOWN ---------- */
+    .countdown {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      align-items: stretch;
+      margin: 2.5rem auto 0;
+      flex-wrap: wrap;
+      max-width: 560px;
+    }
+    .countdown-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-width: 88px;
+      padding: 0.9rem 0.5rem;
+      background: rgba(255,255,255,0.4);
+      border: 1px solid var(--color-line);
+      border-radius: var(--radius);
+      backdrop-filter: blur(2px);
+      transition: transform 0.4s ease;
+    }
+    .countdown-item.tick {
+      transform: scale(1.04);
+    }
+    .countdown-num {
+      font-family: var(--font-display);
+      font-weight: 300;
+      font-size: clamp(2rem, 5vw, 2.8rem);
+      line-height: 1;
+      color: var(--color-accent-deep);
+      letter-spacing: -0.02em;
+      font-variant-numeric: tabular-nums;
+    }
+    .countdown-label {
+      font-family: var(--font-body);
+      font-size: 0.65rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--color-ink-soft);
+      margin-top: 0.5rem;
+    }
+    .countdown-message {
+      display: none;
+      font-family: var(--font-display);
+      font-style: italic;
+      font-size: 1.4rem;
+      color: var(--color-accent-deep);
+      margin: 2.5rem auto 0;
+      text-align: center;
+    }
+    .countdown.is-finished { display: none; }
+    .countdown.is-finished + .countdown-message { display: block; }
+
+    @media (max-width: 540px) {
+      .countdown { gap: 0.5rem; }
+      .countdown-item { min-width: 70px; padding: 0.7rem 0.3rem; }
+      .countdown-label { font-size: 0.6rem; letter-spacing: 0.18em; }
     }
 
     .hero-divider {
@@ -260,7 +323,7 @@
     /* ---------- CONFIRMACIÓN ---------- */
     .rsvp {
       text-align: center;
-      background: var(--color-ink);
+      background: var(--color-dark-bg);
       color: var(--color-bg);
       max-width: none;
       padding-left: 1.5rem;
@@ -272,19 +335,70 @@
     .rsvp h2 em { color: var(--color-accent-soft); }
     .rsvp p { color: rgba(243,237,226,0.8); }
 
+    .rsvp-phones {
+      display: flex;
+      justify-content: center;
+      gap: 3rem;
+      flex-wrap: wrap;
+      margin: 1.5rem 0 0.5rem;
+    }
+    .rsvp-phone-block {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .rsvp-phone-name {
+      font-family: var(--font-display);
+      font-style: italic;
+      font-weight: 400;
+      font-size: 1rem;
+      letter-spacing: 0.05em;
+      color: var(--color-accent-soft);
+      margin-bottom: 0.2rem;
+    }
+
     .rsvp-phone {
       display: inline-block;
       font-family: var(--font-display);
       font-weight: 500;
-      font-size: clamp(2rem, 6vw, 3.5rem);
+      font-size: clamp(1.6rem, 4.5vw, 2.6rem);
       letter-spacing: 0.02em;
       color: var(--color-bg);
-      margin: 1.5rem 0 0.5rem;
-      padding: 0.3rem 0;
+      padding: 0.2rem 0;
       border-bottom: 1px solid var(--color-accent-soft);
       transition: color 0.2s ease;
     }
     .rsvp-phone:hover { color: var(--color-accent-soft); text-decoration: none; }
+
+    .rsvp-info {
+      max-width: 540px;
+      margin: 0 auto;
+      text-align: left;
+    }
+    .rsvp-list {
+      list-style: none;
+      padding: 0;
+      margin: 1rem 0 0;
+    }
+    .rsvp-list li {
+      padding: 0.6rem 0 0.6rem 1.5rem;
+      position: relative;
+      color: rgba(243,237,226,0.9);
+      font-size: 1rem;
+      border-bottom: 1px solid rgba(184,134,90,0.2);
+    }
+    .rsvp-list li:last-child { border-bottom: none; }
+    .rsvp-list li::before {
+      content: "·";
+      position: absolute;
+      left: 0.4rem;
+      color: var(--color-accent-soft);
+      font-weight: bold;
+      font-size: 1.5rem;
+      line-height: 1;
+      top: 0.6rem;
+    }
+    .rsvp-list li strong { color: var(--color-bg); font-weight: 500; }
 
     .rsvp-deadline {
       font-family: var(--font-display);
@@ -435,20 +549,6 @@
       margin: 0;
     }
 
-    /* ---------- REGALO ---------- */
-    .gift {
-      text-align: center;
-      max-width: 760px;
-    }
-    .gift p.lead { margin-left: auto; margin-right: auto; }
-    .gift::before {
-      content: "❦";
-      display: block;
-      font-size: 1.5rem;
-      color: var(--color-accent);
-      margin-bottom: 1.5rem;
-    }
-
     /* ---------- FOOTER ---------- */
     footer {
       text-align: center;
@@ -495,13 +595,34 @@
     </h1>
 
     <svg class="ornament" viewBox="0 0 80 16" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-      <line x1="0" y1="8" x2="30" y2="8" stroke="#c8b89c" stroke-width="0.8"/>
-      <circle cx="40" cy="8" r="2.5" fill="none" stroke="#7a1e1e" stroke-width="0.8"/>
-      <line x1="50" y1="8" x2="80" y2="8" stroke="#c8b89c" stroke-width="0.8"/>
+      <line x1="0" y1="8" x2="30" y2="8" stroke="#d4c8b0" stroke-width="0.8"/>
+      <circle cx="40" cy="8" r="2.5" fill="none" stroke="#7a9070" stroke-width="0.8"/>
+      <line x1="50" y1="8" x2="80" y2="8" stroke="#d4c8b0" stroke-width="0.8"/>
     </svg>
 
-    <p class="hero-date">Jueves, 25 de septiembre de 2025</p>
+    <p class="hero-date">Sábado, 28 de agosto de 2027</p>
     <p class="hero-place">Asador Arraiz · Bilbao</p>
+
+    <!-- Contador hacia atrás -->
+    <div class="countdown" id="countdown" aria-label="Cuenta atrás para la boda">
+      <div class="countdown-item">
+        <span class="countdown-num" id="cd-days">—</span>
+        <span class="countdown-label">días</span>
+      </div>
+      <div class="countdown-item">
+        <span class="countdown-num" id="cd-hours">—</span>
+        <span class="countdown-label">horas</span>
+      </div>
+      <div class="countdown-item">
+        <span class="countdown-num" id="cd-mins">—</span>
+        <span class="countdown-label">min</span>
+      </div>
+      <div class="countdown-item">
+        <span class="countdown-num" id="cd-secs">—</span>
+        <span class="countdown-label">seg</span>
+      </div>
+    </div>
+    <p class="countdown-message">¡Hoy es el día!</p>
 
     <div class="hero-scroll">desliza</div>
   </header>
@@ -521,8 +642,8 @@
 
           <div class="info-block">
             <div class="info-label">Cuándo</div>
-            <div class="info-value">25 de septiembre de 2025</div>
-            <div class="info-sub">A las 12:00 del mediodía</div>
+            <div class="info-value">28 de agosto de 2027</div>
+            <div class="info-sub">Hora por confirmar</div>
           </div>
 
           <div class="info-block">
@@ -538,7 +659,13 @@
           <div class="info-block">
             <div class="info-label">Vestimenta</div>
             <div class="info-value">Como mejor te sientas</div>
-            <div class="info-sub">Sin código, sin complicaciones. Cómodo y a vuestro estilo.</div>
+            <div class="info-sub">
+              Sin código, sin complicaciones. Cómodo y a vuestro estilo.<br /><br />
+              Eso sí, un aviso práctico: el convite es en un caserío con
+              <strong>césped</strong>, así que cuidado con los <strong>tacones</strong>,
+              porque pueden ser una trampa. El novio irá con <strong>traje y zapatillas</strong>,
+              así que los chicos podéis venir tranquilos también con calzado cómodo.
+            </div>
           </div>
 
           <div class="info-block">
@@ -554,16 +681,16 @@
             <!-- Cielo con tono cálido -->
             <defs>
               <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0%" stop-color="#ebe1d0"/>
-                <stop offset="100%" stop-color="#f3ede2"/>
+                <stop offset="0%" stop-color="#e3e7da"/>
+                <stop offset="100%" stop-color="#eef0e8"/>
               </linearGradient>
               <linearGradient id="hill" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0%" stop-color="#4a5d3a"/>
-                <stop offset="100%" stop-color="#5d6f48"/>
+                <stop offset="0%" stop-color="#8aa080"/>
+                <stop offset="100%" stop-color="#9eb293"/>
               </linearGradient>
               <linearGradient id="hill2" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0%" stop-color="#6b7b52"/>
-                <stop offset="100%" stop-color="#7a8a60"/>
+                <stop offset="0%" stop-color="#b5c4a8"/>
+                <stop offset="100%" stop-color="#c4d1b8"/>
               </linearGradient>
             </defs>
 
@@ -577,117 +704,117 @@
             <path d="M 0 290 Q 100 230 200 270 T 380 250 T 500 280 L 500 320 L 0 320 Z" fill="url(#hill)" opacity="0.85"/>
 
             <!-- Suelo / prado -->
-            <rect x="0" y="320" width="500" height="100" fill="#8a9b6a"/>
+            <rect x="0" y="320" width="500" height="100" fill="#b9c9a6"/>
 
             <!-- Camino -->
-            <path d="M 100 420 Q 200 380 250 360 Q 300 345 400 340" stroke="#c8b89c" stroke-width="14" fill="none" opacity="0.6"/>
-            <path d="M 100 420 Q 200 380 250 360 Q 300 345 400 340" stroke="#b8865a" stroke-width="2" fill="none" stroke-dasharray="4 6" opacity="0.5"/>
+            <path d="M 100 420 Q 200 380 250 360 Q 300 345 400 340" stroke="#d4c8b0" stroke-width="14" fill="none" opacity="0.6"/>
+            <path d="M 100 420 Q 200 380 250 360 Q 300 345 400 340" stroke="#c9a878" stroke-width="2" fill="none" stroke-dasharray="4 6" opacity="0.5"/>
 
             <!-- Caserío vasco -->
             <!-- Sombra del edificio -->
-            <ellipse cx="250" cy="335" rx="130" ry="8" fill="#2a2218" opacity="0.15"/>
+            <ellipse cx="250" cy="335" rx="130" ry="8" fill="#5a5040" opacity="0.15"/>
 
             <!-- Cuerpo principal del caserío -->
-            <rect x="160" y="200" width="180" height="135" fill="#f3ede2" stroke="#2a2218" stroke-width="2"/>
+            <rect x="160" y="200" width="180" height="135" fill="#eef0e8" stroke="#5a5040" stroke-width="2"/>
 
             <!-- Tejado a dos aguas -->
-            <polygon points="150,205 250,135 350,205" fill="#7a1e1e" stroke="#2a2218" stroke-width="2"/>
-            <polygon points="150,205 250,135 350,205" fill="#5a1414" opacity="0.3"/>
+            <polygon points="150,205 250,135 350,205" fill="#b86a52" stroke="#5a5040" stroke-width="2"/>
+            <polygon points="150,205 250,135 350,205" fill="#8a4a38" opacity="0.3"/>
 
             <!-- Líneas del tejado (tejas) -->
-            <line x1="170" y1="195" x2="180" y2="180" stroke="#2a2218" stroke-width="0.8" opacity="0.4"/>
-            <line x1="200" y1="170" x2="210" y2="155" stroke="#2a2218" stroke-width="0.8" opacity="0.4"/>
-            <line x1="230" y1="148" x2="240" y2="138" stroke="#2a2218" stroke-width="0.8" opacity="0.4"/>
-            <line x1="280" y1="148" x2="290" y2="158" stroke="#2a2218" stroke-width="0.8" opacity="0.4"/>
-            <line x1="310" y1="170" x2="320" y2="180" stroke="#2a2218" stroke-width="0.8" opacity="0.4"/>
+            <line x1="170" y1="195" x2="180" y2="180" stroke="#5a5040" stroke-width="0.8" opacity="0.4"/>
+            <line x1="200" y1="170" x2="210" y2="155" stroke="#5a5040" stroke-width="0.8" opacity="0.4"/>
+            <line x1="230" y1="148" x2="240" y2="138" stroke="#5a5040" stroke-width="0.8" opacity="0.4"/>
+            <line x1="280" y1="148" x2="290" y2="158" stroke="#5a5040" stroke-width="0.8" opacity="0.4"/>
+            <line x1="310" y1="170" x2="320" y2="180" stroke="#5a5040" stroke-width="0.8" opacity="0.4"/>
 
             <!-- Vigas de madera (típicas vascas) -->
-            <rect x="160" y="200" width="180" height="6" fill="#5a4f3f"/>
-            <rect x="160" y="265" width="180" height="5" fill="#5a4f3f"/>
-            <line x1="200" y1="206" x2="200" y2="265" stroke="#5a4f3f" stroke-width="3"/>
-            <line x1="250" y1="206" x2="250" y2="265" stroke="#5a4f3f" stroke-width="3"/>
-            <line x1="300" y1="206" x2="300" y2="265" stroke="#5a4f3f" stroke-width="3"/>
+            <rect x="160" y="200" width="180" height="6" fill="#7a6f5f"/>
+            <rect x="160" y="265" width="180" height="5" fill="#7a6f5f"/>
+            <line x1="200" y1="206" x2="200" y2="265" stroke="#7a6f5f" stroke-width="3"/>
+            <line x1="250" y1="206" x2="250" y2="265" stroke="#7a6f5f" stroke-width="3"/>
+            <line x1="300" y1="206" x2="300" y2="265" stroke="#7a6f5f" stroke-width="3"/>
 
             <!-- Puerta -->
-            <rect x="232" y="285" width="36" height="50" fill="#5a4f3f" stroke="#2a2218" stroke-width="1.5"/>
-            <rect x="234" y="287" width="32" height="46" fill="#7a1e1e" opacity="0.6"/>
-            <line x1="250" y1="287" x2="250" y2="333" stroke="#2a2218" stroke-width="0.8"/>
-            <circle cx="244" cy="312" r="1.2" fill="#b8865a"/>
-            <circle cx="256" cy="312" r="1.2" fill="#b8865a"/>
+            <rect x="232" y="285" width="36" height="50" fill="#7a6f5f" stroke="#5a5040" stroke-width="1.5"/>
+            <rect x="234" y="287" width="32" height="46" fill="#b86a52" opacity="0.6"/>
+            <line x1="250" y1="287" x2="250" y2="333" stroke="#5a5040" stroke-width="0.8"/>
+            <circle cx="244" cy="312" r="1.2" fill="#c9a878"/>
+            <circle cx="256" cy="312" r="1.2" fill="#c9a878"/>
 
             <!-- Ventanas planta superior -->
-            <rect x="180" y="220" width="22" height="28" fill="#2a2218"/>
-            <rect x="182" y="222" width="18" height="24" fill="#b8865a" opacity="0.5"/>
-            <line x1="191" y1="222" x2="191" y2="246" stroke="#2a2218" stroke-width="0.8"/>
-            <line x1="182" y1="234" x2="200" y2="234" stroke="#2a2218" stroke-width="0.8"/>
+            <rect x="180" y="220" width="22" height="28" fill="#5a5040"/>
+            <rect x="182" y="222" width="18" height="24" fill="#c9a878" opacity="0.5"/>
+            <line x1="191" y1="222" x2="191" y2="246" stroke="#5a5040" stroke-width="0.8"/>
+            <line x1="182" y1="234" x2="200" y2="234" stroke="#5a5040" stroke-width="0.8"/>
 
-            <rect x="237" y="220" width="26" height="28" fill="#2a2218"/>
-            <rect x="239" y="222" width="22" height="24" fill="#b8865a" opacity="0.5"/>
-            <line x1="250" y1="222" x2="250" y2="246" stroke="#2a2218" stroke-width="0.8"/>
-            <line x1="239" y1="234" x2="261" y2="234" stroke="#2a2218" stroke-width="0.8"/>
+            <rect x="237" y="220" width="26" height="28" fill="#5a5040"/>
+            <rect x="239" y="222" width="22" height="24" fill="#c9a878" opacity="0.5"/>
+            <line x1="250" y1="222" x2="250" y2="246" stroke="#5a5040" stroke-width="0.8"/>
+            <line x1="239" y1="234" x2="261" y2="234" stroke="#5a5040" stroke-width="0.8"/>
 
-            <rect x="298" y="220" width="22" height="28" fill="#2a2218"/>
-            <rect x="300" y="222" width="18" height="24" fill="#b8865a" opacity="0.5"/>
-            <line x1="309" y1="222" x2="309" y2="246" stroke="#2a2218" stroke-width="0.8"/>
-            <line x1="300" y1="234" x2="318" y2="234" stroke="#2a2218" stroke-width="0.8"/>
+            <rect x="298" y="220" width="22" height="28" fill="#5a5040"/>
+            <rect x="300" y="222" width="18" height="24" fill="#c9a878" opacity="0.5"/>
+            <line x1="309" y1="222" x2="309" y2="246" stroke="#5a5040" stroke-width="0.8"/>
+            <line x1="300" y1="234" x2="318" y2="234" stroke="#5a5040" stroke-width="0.8"/>
 
             <!-- Ventanas planta inferior -->
-            <rect x="180" y="285" width="22" height="26" fill="#2a2218"/>
-            <rect x="182" y="287" width="18" height="22" fill="#b8865a" opacity="0.5"/>
-            <line x1="191" y1="287" x2="191" y2="309" stroke="#2a2218" stroke-width="0.8"/>
+            <rect x="180" y="285" width="22" height="26" fill="#5a5040"/>
+            <rect x="182" y="287" width="18" height="22" fill="#c9a878" opacity="0.5"/>
+            <line x1="191" y1="287" x2="191" y2="309" stroke="#5a5040" stroke-width="0.8"/>
 
-            <rect x="298" y="285" width="22" height="26" fill="#2a2218"/>
-            <rect x="300" y="287" width="18" height="22" fill="#b8865a" opacity="0.5"/>
-            <line x1="309" y1="287" x2="309" y2="309" stroke="#2a2218" stroke-width="0.8"/>
+            <rect x="298" y="285" width="22" height="26" fill="#5a5040"/>
+            <rect x="300" y="287" width="18" height="22" fill="#c9a878" opacity="0.5"/>
+            <line x1="309" y1="287" x2="309" y2="309" stroke="#5a5040" stroke-width="0.8"/>
 
             <!-- Detalle floral en ventana (geranio) -->
-            <circle cx="186" cy="245" r="1.8" fill="#7a1e1e"/>
-            <circle cx="191" cy="244" r="1.8" fill="#7a1e1e"/>
-            <circle cx="196" cy="245" r="1.8" fill="#7a1e1e"/>
-            <circle cx="304" cy="245" r="1.8" fill="#7a1e1e"/>
-            <circle cx="309" cy="244" r="1.8" fill="#7a1e1e"/>
-            <circle cx="314" cy="245" r="1.8" fill="#7a1e1e"/>
+            <circle cx="186" cy="245" r="1.8" fill="#b86a52"/>
+            <circle cx="191" cy="244" r="1.8" fill="#b86a52"/>
+            <circle cx="196" cy="245" r="1.8" fill="#b86a52"/>
+            <circle cx="304" cy="245" r="1.8" fill="#b86a52"/>
+            <circle cx="309" cy="244" r="1.8" fill="#b86a52"/>
+            <circle cx="314" cy="245" r="1.8" fill="#b86a52"/>
 
             <!-- Chimenea -->
-            <rect x="290" y="148" width="14" height="30" fill="#f3ede2" stroke="#2a2218" stroke-width="1.5"/>
-            <rect x="288" y="146" width="18" height="4" fill="#5a4f3f"/>
+            <rect x="290" y="148" width="14" height="30" fill="#eef0e8" stroke="#5a5040" stroke-width="1.5"/>
+            <rect x="288" y="146" width="18" height="4" fill="#7a6f5f"/>
 
             <!-- Humo -->
-            <path d="M 297 145 Q 295 130 300 120 Q 304 110 297 95 Q 290 85 295 75" stroke="#c8b89c" stroke-width="2.5" fill="none" opacity="0.6" stroke-linecap="round"/>
+            <path d="M 297 145 Q 295 130 300 120 Q 304 110 297 95 Q 290 85 295 75" stroke="#d4c8b0" stroke-width="2.5" fill="none" opacity="0.6" stroke-linecap="round"/>
 
             <!-- Árboles a los lados -->
             <!-- Árbol izquierda -->
-            <rect x="80" y="290" width="6" height="25" fill="#5a4f3f"/>
-            <circle cx="83" cy="285" r="22" fill="#4a5d3a"/>
-            <circle cx="75" cy="280" r="14" fill="#4a5d3a"/>
-            <circle cx="91" cy="280" r="14" fill="#4a5d3a"/>
-            <circle cx="83" cy="270" r="16" fill="#5d6f48"/>
+            <rect x="80" y="290" width="6" height="25" fill="#7a6f5f"/>
+            <circle cx="83" cy="285" r="22" fill="#8aa080"/>
+            <circle cx="75" cy="280" r="14" fill="#8aa080"/>
+            <circle cx="91" cy="280" r="14" fill="#8aa080"/>
+            <circle cx="83" cy="270" r="16" fill="#9eb293"/>
 
             <!-- Árbol derecha -->
-            <rect x="410" y="295" width="6" height="22" fill="#5a4f3f"/>
-            <circle cx="413" cy="290" r="20" fill="#4a5d3a"/>
-            <circle cx="406" cy="285" r="13" fill="#5d6f48"/>
-            <circle cx="420" cy="285" r="13" fill="#4a5d3a"/>
+            <rect x="410" y="295" width="6" height="22" fill="#7a6f5f"/>
+            <circle cx="413" cy="290" r="20" fill="#8aa080"/>
+            <circle cx="406" cy="285" r="13" fill="#9eb293"/>
+            <circle cx="420" cy="285" r="13" fill="#8aa080"/>
 
             <!-- Árbol pequeño -->
-            <rect x="125" y="305" width="4" height="15" fill="#5a4f3f"/>
-            <circle cx="127" cy="302" r="11" fill="#4a5d3a"/>
+            <rect x="125" y="305" width="4" height="15" fill="#7a6f5f"/>
+            <circle cx="127" cy="302" r="11" fill="#8aa080"/>
 
             <!-- Pájaros lejanos -->
-            <path d="M 100 90 q 4 -3 8 0 q 4 -3 8 0" stroke="#5a4f3f" stroke-width="1.2" fill="none"/>
-            <path d="M 380 70 q 3 -2 6 0 q 3 -2 6 0" stroke="#5a4f3f" stroke-width="1" fill="none"/>
+            <path d="M 100 90 q 4 -3 8 0 q 4 -3 8 0" stroke="#7a6f5f" stroke-width="1.2" fill="none"/>
+            <path d="M 380 70 q 3 -2 6 0 q 3 -2 6 0" stroke="#7a6f5f" stroke-width="1" fill="none"/>
 
             <!-- Sol suave -->
-            <circle cx="420" cy="80" r="22" fill="#b8865a" opacity="0.25"/>
-            <circle cx="420" cy="80" r="14" fill="#b8865a" opacity="0.35"/>
+            <circle cx="420" cy="80" r="22" fill="#c9a878" opacity="0.25"/>
+            <circle cx="420" cy="80" r="14" fill="#c9a878" opacity="0.35"/>
 
             <!-- Hierbas en primer plano -->
-            <path d="M 50 410 q 2 -8 0 -14 M 55 410 q -2 -6 0 -12 M 60 410 q 2 -7 0 -13" stroke="#5d6f48" stroke-width="1" fill="none"/>
-            <path d="M 440 410 q 2 -8 0 -14 M 445 410 q -2 -6 0 -12 M 450 410 q 2 -7 0 -13" stroke="#5d6f48" stroke-width="1" fill="none"/>
+            <path d="M 50 410 q 2 -8 0 -14 M 55 410 q -2 -6 0 -12 M 60 410 q 2 -7 0 -13" stroke="#9eb293" stroke-width="1" fill="none"/>
+            <path d="M 440 410 q 2 -8 0 -14 M 445 410 q -2 -6 0 -12 M 450 410 q 2 -7 0 -13" stroke="#9eb293" stroke-width="1" fill="none"/>
 
             <!-- Cartel con nombre -->
-            <rect x="200" y="345" width="100" height="22" fill="#5a4f3f" stroke="#2a2218" stroke-width="1.5"/>
-            <text x="250" y="361" font-family="Georgia, serif" font-size="13" font-style="italic" fill="#f3ede2" text-anchor="middle" letter-spacing="2">Arraiz</text>
+            <rect x="200" y="345" width="100" height="22" fill="#7a6f5f" stroke="#5a5040" stroke-width="1.5"/>
+            <text x="250" y="361" font-family="Georgia, serif" font-size="13" font-style="italic" fill="#eef0e8" text-anchor="middle" letter-spacing="2">Arraiz</text>
           </svg>
         </div>
 
@@ -695,29 +822,35 @@
     </div>
   </section>
 
-  <!-- ============= REGALO / NO REGALOS ============= -->
-  <section class="gift" id="regalo">
-    <p class="section-tag">Sobre los regalos</p>
-    <p class="lead">
-      Vuestra presencia es nuestro mejor regalo. Sabemos que venir hasta Bilbao
-      ya supone un esfuerzo y un gasto importante, así que no queremos que os
-      preocupéis por nada más. Nada de transferencias ni Bizums: solo queremos
-      veros, abrazaros y disfrutar del día con vosotros.
-    </p>
-  </section>
-
   <!-- ============= RSVP ============= -->
   <section class="rsvp" id="rsvp">
     <div class="rsvp-inner">
       <p class="section-tag">Confirmación de asistencia</p>
       <h2>¿Os <em>venís</em>?</h2>
-      <p>Para organizarlo todo bien, necesitamos saber si podréis acompañarnos. Llamadnos o mandadnos un mensaje al teléfono:</p>
+      <p>Para organizarlo todo bien, necesitamos saber si podréis acompañarnos. Llamadnos o escribidnos un WhatsApp:</p>
 
-      <a class="rsvp-phone" href="tel:+34619099711">619 099 711</a>
+      <div class="rsvp-phones">
+        <div class="rsvp-phone-block">
+          <span class="rsvp-phone-name">Alberto</span>
+          <a class="rsvp-phone" href="tel:+34619099711">619 099 711</a>
+        </div>
+        <div class="rsvp-phone-block">
+          <span class="rsvp-phone-name">Iratxe</span>
+          <a class="rsvp-phone" href="tel:+34669338721">669 338 721</a>
+        </div>
+      </div>
 
-      <p style="margin-top:1.5rem;">También podéis escribirnos por WhatsApp al mismo número.</p>
+      <div class="rsvp-info">
+        <p style="margin-top:2rem;">Cuando nos confirméis, decidnos también, por favor:</p>
+        <ul class="rsvp-list">
+          <li>Si sois <strong>alérgicos</strong> a algo (y a qué).</li>
+          <li>Si estáis <strong>embarazadas</strong>.</li>
+          <li>Si sois <strong>vegetarianos</strong> o <strong>veganos</strong>.</li>
+        </ul>
+        <p style="margin-top:1rem; font-size:0.95rem; opacity:0.85;">Así podemos avisar al asador con tiempo para que nadie se quede con hambre.</p>
+      </div>
 
-      <p class="rsvp-deadline">Por favor, confirmad antes del 1 de enero de 2027.</p>
+      <p class="rsvp-deadline">Por favor, confirmad antes del 1 de abril de 2027.</p>
     </div>
   </section>
 
@@ -952,6 +1085,43 @@
   <footer>
     <p>Con muchas ganas de veros, <span class="heart">❦</span> Iratxe y Alberto</p>
   </footer>
+
+  <script>
+    // Cuenta atrás hacia el 28 de agosto de 2027 (00:00 hora local)
+    (function() {
+      var target = new Date(2027, 7, 28, 13, 30, 0).getTime(); // mes 7 = agosto, 13:30
+      var $days = document.getElementById('cd-days');
+      var $hours = document.getElementById('cd-hours');
+      var $mins = document.getElementById('cd-mins');
+      var $secs = document.getElementById('cd-secs');
+      var $cd = document.getElementById('countdown');
+
+      function pad(n) { return n < 10 ? '0' + n : '' + n; }
+
+      function tick() {
+        var now = Date.now();
+        var diff = target - now;
+
+        if (diff <= 0) {
+          $cd.classList.add('is-finished');
+          return;
+        }
+
+        var days = Math.floor(diff / (1000 * 60 * 60 * 24));
+        var hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        var mins = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+        var secs = Math.floor((diff % (1000 * 60)) / 1000);
+
+        $days.textContent = days;
+        $hours.textContent = pad(hours);
+        $mins.textContent = pad(mins);
+        $secs.textContent = pad(secs);
+      }
+
+      tick();
+      setInterval(tick, 1000);
+    })();
+  </script>
 
 </body>
 </html>

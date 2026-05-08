@@ -400,6 +400,19 @@
     }
     .rsvp-list li strong { color: var(--color-bg); font-weight: 500; }
 
+    /* Versión para fondos claros (fuera del bloque .rsvp oscuro) */
+    section:not(.rsvp) .rsvp-list li {
+      color: var(--color-ink);
+      border-bottom: 1px solid var(--color-line);
+    }
+    section:not(.rsvp) .rsvp-list li::before {
+      color: var(--color-accent);
+    }
+    section:not(.rsvp) .rsvp-list li strong {
+      color: var(--color-ink);
+      font-weight: 600;
+    }
+
     .rsvp-deadline {
       font-family: var(--font-display);
       font-style: italic;
@@ -510,6 +523,152 @@
     .place-list li span {
       font-size: 0.85rem;
       color: var(--color-ink-soft);
+    }
+
+    /* ---------- RECOMENDACIONES (menú) ---------- */
+    .recommendations {
+      text-align: center;
+    }
+    .recommendations .lead {
+      max-width: 720px;
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 3rem;
+    }
+    .reco-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1rem;
+      margin-top: 2rem;
+      text-align: left;
+    }
+    .reco-card {
+      display: block;
+      padding: 1.6rem 1.5rem 1.4rem;
+      background: var(--color-bg-warm);
+      border: 1px solid var(--color-line);
+      border-radius: var(--radius);
+      text-decoration: none;
+      color: var(--color-ink);
+      transition: transform 0.25s ease, border-color 0.25s ease, background 0.25s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    .reco-card::after {
+      content: "→";
+      position: absolute;
+      top: 1.4rem;
+      right: 1.3rem;
+      font-family: var(--font-display);
+      font-size: 1.1rem;
+      color: var(--color-accent);
+      opacity: 0.4;
+      transition: opacity 0.25s ease, transform 0.25s ease;
+    }
+    .reco-card:hover {
+      transform: translateY(-3px);
+      border-color: var(--color-accent);
+      background: #e9ede0;
+      text-decoration: none;
+    }
+    .reco-card:hover::after {
+      opacity: 1;
+      transform: translateX(3px);
+    }
+    .reco-num {
+      font-family: var(--font-display);
+      font-style: italic;
+      font-weight: 300;
+      font-size: 0.9rem;
+      color: var(--color-accent);
+      letter-spacing: 0.05em;
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+    .reco-card h3 {
+      font-family: var(--font-display);
+      font-weight: 500;
+      font-size: 1.25rem;
+      color: var(--color-ink);
+      margin-bottom: 0.5rem;
+      letter-spacing: -0.005em;
+    }
+    .reco-card p {
+      font-size: 0.9rem;
+      color: var(--color-ink-soft);
+      line-height: 1.5;
+      margin: 0;
+    }
+
+    /* ---------- TRAVEL MODES (cómo llegar) ---------- */
+    .travel-modes {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.2rem;
+      margin-top: 1rem;
+    }
+    .travel-mode {
+      padding: 1.2rem 1.4rem;
+      background: var(--color-bg-warm);
+      border-left: 3px solid var(--color-accent);
+      border-radius: var(--radius);
+    }
+    .travel-mode h4 {
+      font-family: var(--font-display);
+      font-weight: 500;
+      font-size: 1.05rem;
+      color: var(--color-ink);
+      margin-bottom: 0.5rem;
+    }
+    .travel-mode p {
+      font-size: 0.92rem;
+      margin-bottom: 0.4rem;
+    }
+    .travel-mode p:last-child { margin-bottom: 0; }
+
+    /* ---------- ALERT BLOCK (avisos importantes) ---------- */
+    .alert-block {
+      background: rgba(184, 106, 82, 0.1);
+      border-left: 3px solid var(--color-roof);
+      padding: 1.1rem 1.4rem;
+      margin: 1rem 0 1.5rem;
+      border-radius: var(--radius);
+      font-size: 0.95rem;
+      color: var(--color-ink);
+      line-height: 1.55;
+    }
+    .alert-block strong {
+      color: var(--color-roof);
+      font-weight: 600;
+    }
+
+    /* ---------- ZONES MAP (mapa SVG) ---------- */
+    .zones-map {
+      width: 100%;
+      max-width: 700px;
+      margin: 2rem auto 1rem;
+      background: var(--color-bg-warm);
+      border: 1px solid var(--color-line);
+      border-radius: var(--radius);
+      padding: 1rem;
+    }
+    .zones-map svg {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    /* ---------- SECCIÓN FIESTAS (fondo cálido) ---------- */
+    .rsvp-light {
+      background: var(--color-bg-warm);
+      max-width: none;
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+    }
+    .rsvp-light > * {
+      max-width: 1100px;
+      margin-left: auto;
+      margin-right: auto;
     }
 
     /* ---------- VISITAS ---------- */
@@ -634,10 +793,12 @@
 
         <div>
           <p class="section-tag">El plan</p>
-          <h2>Una comida <em>entre los nuestros</em></h2>
+          <h2>Un buen día para disfrutar <em>entre buena gente</em></h2>
           <p class="lead">
-            Queremos celebrarlo con vosotros sin ceremonias largas ni protocolos.
-            Comida buena, gente querida y todo el tiempo del mundo.
+            La idea es sencilla: pasarlo bien y disfrutar todos juntos de un día
+            divertido, en un entorno precioso, con mucha comida, mucha bebida y
+            las mejores compañías. Sin prisas, sin protocolos, solo ganas de
+            celebrarlo con vosotros.
           </p>
 
           <div class="info-block">
@@ -660,18 +821,27 @@
             <div class="info-label">Vestimenta</div>
             <div class="info-value">Como mejor te sientas</div>
             <div class="info-sub">
-              Sin código, sin complicaciones. Cómodo y a vuestro estilo.<br /><br />
-              Eso sí, un aviso práctico: el convite es en un caserío con
+              Sin código, sin complicaciones. Venid cómodos y a vuestro estilo,
+              que la idea es disfrutar.<br /><br />
+              Un aviso práctico: el convite es en un caserío con
               <strong>césped</strong>, así que cuidado con los <strong>tacones</strong>,
               porque pueden ser una trampa. El novio irá con <strong>traje y zapatillas</strong>,
-              así que los chicos podéis venir tranquilos también con calzado cómodo.
+              así que quien quiera puede venir tranquilamente con calzado cómodo.
+              No queremos que nadie se preocupe por la ropa: lo importante es que
+              os lo paséis bien.
             </div>
           </div>
 
           <div class="info-block">
-            <div class="info-label">Aparcamiento</div>
-            <div class="info-value">Parking propio del asador</div>
-            <div class="info-sub">Amplio y vigilado, justo en el restaurante.</div>
+            <div class="info-label">Transporte</div>
+            <div class="info-value">Habrá servicio de autobús</div>
+            <div class="info-sub">
+              Para que vengáis tranquilos, organizaremos servicio de autobús desde un
+              punto céntrico de Bilbao hasta el asador (y vuelta). Os iremos dando
+              los detalles del recorrido y horarios más adelante.<br /><br />
+              Quien prefiera ir en coche, sin problema: hay sitio de sobra para
+              aparcar en la zona del asador.
+            </div>
           </div>
         </div>
 
@@ -848,89 +1018,176 @@
           <li>Si sois <strong>vegetarianos</strong> o <strong>veganos</strong>.</li>
         </ul>
         <p style="margin-top:1rem; font-size:0.95rem; opacity:0.85;">Así podemos avisar al asador con tiempo para que nadie se quede con hambre.</p>
+        <p style="margin-top:1.5rem; font-size:0.95rem; opacity:0.85;">
+          Y si tenéis cualquier duda — alojamiento, transporte, qué hacer en Bilbao,
+          recomendaciones varias — escribidnos sin problema. Estamos para ayudaros.
+        </p>
       </div>
 
       <p class="rsvp-deadline">Por favor, confirmad antes del 1 de abril de 2027.</p>
     </div>
   </section>
 
-  <!-- ============= TIPS - INTRO ============= -->
-  <section class="tips-section" id="tips">
-    <p class="section-tag">Consejos para el viaje</p>
-    <h2>Aprovechad y <em>conoced</em> Bilbao</h2>
-    <p class="lead tips-intro">
-      Si os vais a desplazar, qué menos que disfrutarlo. Os hemos preparado unas
-      cuantas ideas: dónde comer pintxos, dónde aparcar si venís en coche, dónde
-      dormir, y qué visitar en la ciudad y los alrededores.
-    </p>
-  </section>
-
-  <!-- ============= PINTXOS ============= -->
-  <section id="pintxos" style="padding-top: 0;">
-    <p class="section-tag">Pintxos</p>
-    <h2>De <em>poteo</em> por Bilbao</h2>
+  <!-- ============= ÍNDICE / MENÚ DE RECOMENDACIONES ============= -->
+  <section id="recomendaciones" class="recommendations">
+    <p class="section-tag">Recomendaciones</p>
+    <h2>Aprovechad y <em>disfrutad</em> de Bilbao</h2>
     <p class="lead">
-      Bilbao es una ciudad para callejear y picotear. Aquí van algunas zonas y
-      bares clásicos para empezar la ruta. Lo bueno: están todos cerca, así que
-      podéis ir saltando de uno a otro.
+      Queremos que disfrutéis al 100 % del viaje a Bilbao. Por eso, os recomendamos
+      que le echéis un vistazo a nuestras recomendaciones: dónde dormir, dónde comer,
+      qué visitar y todo lo que conviene saber para que el fin de semana sea redondo.
     </p>
+
+    <div class="reco-grid">
+      <a href="#llegar" class="reco-card">
+        <span class="reco-num">01</span>
+        <h3>Cómo llegar</h3>
+        <p>Coche, tren, avión y autobús desde Madrid, Fuente el Fresno y Zamora.</p>
+      </a>
+      <a href="#aparcar" class="reco-card">
+        <span class="reco-num">02</span>
+        <h3>Dónde aparcar</h3>
+        <p>OTA, parkings públicos y la buena noticia sobre los sábados de agosto.</p>
+      </a>
+      <a href="#alojamiento" class="reco-card">
+        <span class="reco-num">03</span>
+        <h3>Dónde dormir</h3>
+        <p>Cinco zonas y hoteles para todos los gustos. Reservad pronto.</p>
+      </a>
+      <a href="#visitas" class="reco-card">
+        <span class="reco-num">04</span>
+        <h3>Qué visitar</h3>
+        <p>Lo imprescindible de Bilbao y los alrededores que merecen la pena.</p>
+      </a>
+      <a href="#comer" class="reco-card">
+        <span class="reco-num">05</span>
+        <h3>Dónde comer</h3>
+        <p>Pintxos, zonas y bares clásicos para hacer un buen poteo.</p>
+      </a>
+      <a href="#fiestas" class="reco-card">
+        <span class="reco-num">06</span>
+        <h3>Las fiestas</h3>
+        <p>La Aste Nagusia. Lo que conviene saber antes de aterrizar en Bilbao.</p>
+      </a>
+      <a href="#tips" class="reco-card">
+        <span class="reco-num">07</span>
+        <h3>Tips prácticos</h3>
+        <p>La tarjeta Barik, horarios, baños públicos y otros detalles útiles.</p>
+      </a>
+    </div>
+  </section>
+
+  <!-- ============= 4. CÓMO LLEGAR ============= -->
+  <section id="llegar">
+    <p class="section-tag">Cómo llegar</p>
+    <h2>Hasta <em>Bilbao</em></h2>
+    <p class="lead">
+      Os contamos las distintas opciones para llegar. Importante: el <strong>28 de agosto
+      cae dentro de la Aste Nagusia (Semana Grande de Bilbao)</strong>, así que puede
+      haber cortes de tráfico en el centro y mucha gente por la ciudad. Mejor reservad
+      transporte y alojamiento con tiempo.
+    </p>
+
     <div class="zone-block">
-      <h3 class="zone-title">Casco Viejo · <em>Las Siete Calles</em></h3>
-      <p class="zone-desc">El corazón histórico. La Plaza Nueva concentra varios de los bares más conocidos. Pintxos entre 2 y 3,50 € y zuritos en torno a 1,50–2,50 €.</p>
-      <ul class="place-list">
-        <li><strong>Gure Toki</strong><span>Plaza Nueva. Pintxos creativos y de mucha calidad.</span></li>
-        <li><strong>Sorginzulo</strong><span>Plaza Nueva. Variedad y producto local.</span></li>
-        <li><strong>Café Bar Bilbao</strong><span>Plaza Nueva. Clásico, ambiente local.</span></li>
-        <li><strong>Víctor Montes</strong><span>Plaza Nueva. Histórico, desde 1849.</span></li>
-        <li><strong>Charly</strong><span>Plaza Nueva. Abierto desde 1973, ofertas de combinados de pintxos.</span></li>
-        <li><strong>Baste</strong><span>Calle Diputación. Famoso por sus mejillones rellenos.</span></li>
-        <li><strong>Bar Berton</strong><span>Calle Jardines. Pintxos de solomillo y foie.</span></li>
-        <li><strong>Bodega Joserra</strong><span>Cantón Alejandro de la Sota. Bocadillos pequeños "medios" tradicionales.</span></li>
-      </ul>
+      <h3 class="zone-title">Desde <em>Madrid</em></h3>
+      <div class="travel-modes">
+        <div class="travel-mode">
+          <h4>En coche</h4>
+          <p>Unos <strong>400 km</strong> y entre <strong>4 h y 4 h 30 min</strong>.</p>
+          <p>Ruta recomendada: <strong>A-1</strong> dirección Burgos → <strong>AP-1</strong> hasta Armiñón → <strong>AP-68</strong> hasta Bilbao.</p>
+          <p><strong>Peajes</strong>: solo en la AP-68 (Miranda de Ebro–Bilbao), unos <strong>10–12 €</strong>. La AP-1 entre Burgos y Armiñón es <strong>gratuita</strong> desde 2018, así que ya no hay peaje en ese tramo.</p>
+        </div>
+        <div class="travel-mode">
+          <h4>En tren</h4>
+          <p>Renfe opera la línea <strong>Madrid Chamartín – Bilbao Abando</strong>. Trayecto de unas <strong>4 h 30 min</strong>, con paradas como Burgos y Miranda de Ebro.</p>
+          <p>La estación de Abando está en pleno centro, muy cerca del Casco Viejo y de los hoteles.</p>
+        </div>
+        <div class="travel-mode">
+          <h4>En avión</h4>
+          <p>Vuelos directos <strong>Madrid–Bilbao</strong> de unos <strong>55 minutos</strong>. Iberia y Vueling operan varias frecuencias diarias.</p>
+          <p>Del aeropuerto al centro: la línea <strong>Bizkaibus A3247</strong> conecta el aeropuerto con Bilbao centro en unos 25 minutos por <strong>5 €</strong>.</p>
+        </div>
+        <div class="travel-mode">
+          <h4>En autobús</h4>
+          <p>ALSA opera la línea <strong>Madrid–Bilbao</strong> con varias salidas diarias desde la estación de Avenida de América. Trayecto de <strong>4 h 30 min a 5 h</strong>.</p>
+          <p>La estación de autobuses de Bilbao (Termibus) está bien comunicada con metro.</p>
+        </div>
+      </div>
     </div>
 
     <div class="zone-block">
-      <h3 class="zone-title">Ensanche · <em>Indautxu y alrededores</em></h3>
-      <p class="zone-desc">La zona moderna del centro. Locales más cuidados, pintxos algo más elaborados (entre 3 y 4 €).</p>
-      <ul class="place-list">
-        <li><strong>La Viña del Ensanche</strong><span>Calle Diputación. Productos de calidad e ibéricos.</span></li>
-        <li><strong>El Globo</strong><span>Calle Diputación. Clásico imprescindible.</span></li>
-        <li><strong>Bascook</strong><span>Cocina vasca con toques internacionales.</span></li>
-      </ul>
+      <h3 class="zone-title">Desde <em>Fuente el Fresno</em> (Ciudad Real)</h3>
+      <div class="travel-modes">
+        <div class="travel-mode">
+          <h4>En coche</h4>
+          <p>Unos <strong>520 km</strong> y entre <strong>5 h y 5 h 30 min</strong>.</p>
+          <p>Lo más práctico es subir a Madrid por la <strong>A-4</strong> (unos 130 km, 1 h 15 min) y desde ahí coger la <strong>A-1 + AP-1 + AP-68</strong> hasta Bilbao como se indica en la ruta de Madrid.</p>
+          <p>Misma información de peajes que desde Madrid: <strong>10–12 €</strong> en la AP-68.</p>
+        </div>
+        <div class="travel-mode">
+          <h4>En tren o avión</h4>
+          <p>No hay conexión directa. Lo razonable es desplazarse a Madrid (en coche o en autobús a Ciudad Real, y luego AVE) y desde Madrid coger tren o vuelo a Bilbao según la opción que más os convenga.</p>
+        </div>
+      </div>
     </div>
 
     <div class="zone-block">
-      <h3 class="zone-title">Pozas y San Mamés · <em>ambiente joven</em></h3>
-      <p class="zone-desc">Calle Pozas y alrededores del estadio. Mucho ambiente y precios algo más ajustados.</p>
-      <ul class="place-list">
-        <li><strong>El Txoko de Gros</strong><span>Calle Pozas. Variedad amplia.</span></li>
-        <li><strong>Asador Bideko (entorno Pozas)</strong><span>Carnes y pintxos de calidad.</span></li>
-      </ul>
+      <h3 class="zone-title">Desde <em>Zamora</em></h3>
+      <div class="travel-modes">
+        <div class="travel-mode">
+          <h4>En coche</h4>
+          <p>Unos <strong>376 km</strong> y entre <strong>3 h 45 min y 4 h</strong>.</p>
+          <p>Ruta recomendada: <strong>A-11</strong> hasta Tordesillas → <strong>A-62</strong> hacia Burgos → enlazar con la <strong>AP-1</strong> y luego la <strong>AP-68</strong> hasta Bilbao.</p>
+          <p><strong>Peajes</strong>: solo en la AP-68, unos <strong>10–12 €</strong>.</p>
+        </div>
+        <div class="travel-mode">
+          <h4>En tren</h4>
+          <p>No hay tren directo Zamora–Bilbao. Lo más cómodo es ir en tren hasta Valladolid o Madrid y desde ahí coger el tren a Bilbao.</p>
+        </div>
+        <div class="travel-mode">
+          <h4>En autobús</h4>
+          <p>ALSA y otras compañías operan la línea Zamora–Bilbao (algunas con transbordo en Valladolid). Duración de unas <strong>5 h 30 min</strong>.</p>
+        </div>
+      </div>
     </div>
 
-    <p style="margin-top:2rem; font-size:0.9rem; font-style:italic;">
-      Consejo local: en el Casco Viejo los domingos cierran pronto, así que si vais en domingo, mejor a mediodía.
+    <p style="margin-top: 2rem; font-size: 0.95rem; font-style: italic;">
+      Atentos al estado de la carretera al llegar a Bilbao: durante la <strong>Aste Nagusia</strong>
+      hay cortes de tráfico en el Casco Viejo, en torno al Teatro Arriaga y en El Arenal,
+      y en distintas zonas según el programa de cada día. Si entráis en coche, dejadlo
+      en parking y moveos por la ciudad andando o en metro.
     </p>
   </section>
 
-  <!-- ============= APARCAR ============= -->
+  <!-- ============= 5. APARCAR ============= -->
   <section id="aparcar">
     <p class="section-tag">Aparcamiento</p>
     <h2>Dónde <em>dejar el coche</em></h2>
     <p class="lead">
       Para el día del convite no os preocupéis: el Asador Arraiz tiene parking
-      propio amplio y vigilado. Si venís a pasar el día o el fin de semana en
-      Bilbao centro, aquí van las opciones.
+      propio amplio. Si venís a pasar el día o el fin de semana en Bilbao centro,
+      aquí van las opciones.
     </p>
 
     <div class="zone-block">
       <h3 class="zone-title">El día de la boda</h3>
-      <p class="zone-desc">El Asador Arraiz dispone de parking propio gratuito en el restaurante, con punto de recarga para coches eléctricos. No hay que preocuparse de buscar sitio ni pagar OTA.</p>
+      <p class="zone-desc">El Asador Arraiz dispone de parking propio gratuito en el restaurante. No hay que preocuparse de buscar sitio ni de pagar OTA.</p>
     </div>
 
     <div class="zone-block">
       <h3 class="zone-title">Si os quedáis en Bilbao centro</h3>
-      <p class="zone-desc">El centro de Bilbao tiene OTA (zona regulada de pago) prácticamente en todas las calles, y muchas son peatonales. Lo más cómodo es dejar el coche en un parking público. Algunas opciones céntricas:</p>
+
+      <h4 style="font-family:var(--font-display); font-weight:500; font-size:1.15rem; margin-top:1rem;">La OTA: cómo funciona</h4>
+      <p class="zone-desc">Bilbao tiene OTA (zona de aparcamiento regulado de pago) en gran parte del centro. La buena noticia para vosotros:</p>
+      <ul class="rsvp-list" style="color: var(--color-ink); margin-top: 0.5rem;">
+        <li><strong>Sábados de julio y agosto: NO HAY OTA.</strong> Como vuestro plan de fin de semana cae en pleno agosto, el sábado podéis aparcar en superficie sin pagar (si encontráis sitio, claro).</li>
+        <li>Las <strong>tardes de agosto</strong> tampoco hay OTA en toda la ciudad: solo funciona por las mañanas.</li>
+        <li>Por las mañanas de agosto, el horario es de <strong>9:00 a 14:00</strong> en el centro.</li>
+        <li>Más información oficial y planos detallados: <a href="https://www.bilbao.eus/ota" target="_blank" rel="noopener">bilbao.eus/ota</a></li>
+      </ul>
+
+      <h4 style="font-family:var(--font-display); font-weight:500; font-size:1.15rem; margin-top:1.5rem;">Parkings públicos en el centro</h4>
+      <p class="zone-desc">Si preferís dejar el coche en parking cubierto (más cómodo durante todo el fin de semana, especialmente con la Aste Nagusia y mucho tráfico):</p>
       <ul class="place-list">
         <li><strong>Parking Indigo Instituto</strong><span>Desde aprox. 2,10 € / hora · 13 € / día</span></li>
         <li><strong>Parking Zabalburu</strong><span>Desde aprox. 2,50 € / hora · 16 € / día</span></li>
@@ -938,70 +1195,190 @@
         <li><strong>Parking SABA Estación de Tren</strong><span>Calle Bailén, 22 bis · 24 h</span></li>
         <li><strong>Parking Pío Baroja (Copark)</strong><span>Desde aprox. 16 € / día</span></li>
       </ul>
-      <p style="margin-top:1rem; font-size:0.9rem;">
-        Reservar plaza con antelación a través de apps como Parclick, Parkimeter, ElParking o EasyPark suele salir más barato.
-        Tened también en cuenta la <strong>ZBE</strong> (Zona de Bajas Emisiones) en Abando e Indautxu: los vehículos sin etiqueta o con etiqueta B no pueden acceder de lunes a viernes entre 7:00 y 20:00.
+      <p style="margin-top:1rem; font-size:0.92rem;">
+        Reservar plaza con antelación a través de apps como <strong>Parclick</strong>, <strong>Parkimeter</strong> o <strong>ElParking</strong> suele salir más barato. Y durante la Aste Nagusia, mejor reservar con tiempo.
+      </p>
+      <p style="margin-top:0.5rem; font-size:0.92rem;">
+        Otra cosa importante: tened en cuenta la <strong>ZBE</strong> (Zona de Bajas Emisiones) en Abando e Indautxu. Los vehículos sin etiqueta o con etiqueta B no pueden acceder de lunes a viernes entre 7:00 y 20:00.
       </p>
     </div>
   </section>
 
-  <!-- ============= ALOJAMIENTO ============= -->
+  <!-- ============= 6. ALOJAMIENTO ============= -->
   <section id="alojamiento">
     <p class="section-tag">Alojamiento</p>
     <h2>Dónde <em>dormir</em></h2>
     <p class="lead">
       Bilbao es una ciudad pequeña y bien comunicada: desde el centro a casi cualquier
-      sitio se llega andando o en metro. Os dejamos algunas opciones por zonas y
-      estilos para que elijáis la que más os encaje.
+      sitio se llega andando o en metro.
+    </p>
+
+    <div class="alert-block">
+      <strong>Aviso importante:</strong> el <strong>28 de agosto cae en plena Aste Nagusia</strong>
+      (Semana Grande de Bilbao, del 21 al 29 de agosto de 2027). Es la semana de mayor
+      ocupación hotelera del año. <strong>Reservad cuanto antes</strong>: cuanto más tarde,
+      menos opciones y precios más altos.
+    </div>
+
+    <p style="margin-bottom: 2rem;">
+      Estas son las cinco zonas que os recomendamos, ordenadas de menos a más ambiente
+      festivo. Si queréis dormir tranquilos, mejor las primeras; si queréis estar en
+      pleno meollo, las últimas.
+    </p>
+
+    <!-- Mapa SVG estilizado de zonas -->
+    <div class="zones-map">
+      <svg viewBox="0 0 600 380" xmlns="http://www.w3.org/2000/svg" aria-label="Mapa de zonas de alojamiento en Bilbao">
+        <defs>
+          <linearGradient id="zone-bg" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#e3e7da"/>
+            <stop offset="100%" stop-color="#eef0e8"/>
+          </linearGradient>
+          <linearGradient id="ria-zone" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#a8b8b0"/>
+            <stop offset="100%" stop-color="#7a9090"/>
+          </linearGradient>
+        </defs>
+
+        <!-- Fondo -->
+        <rect x="0" y="0" width="600" height="380" fill="url(#zone-bg)"/>
+
+        <!-- Ría que atraviesa la ciudad -->
+        <path d="M 20 80 Q 100 100 180 130 Q 260 160 320 200 Q 380 240 460 260 Q 540 280 580 320"
+              stroke="url(#ria-zone)" stroke-width="22" fill="none" stroke-linecap="round" opacity="0.85"/>
+        <!-- Reflejos del agua: ondulaciones suaves -->
+        <path d="M 60 95 Q 80 92 100 96" stroke="#eef0e8" stroke-width="1.2" fill="none" opacity="0.5" stroke-linecap="round"/>
+        <path d="M 200 145 Q 220 142 240 148" stroke="#eef0e8" stroke-width="1.2" fill="none" opacity="0.5" stroke-linecap="round"/>
+        <path d="M 340 215 Q 360 213 380 220" stroke="#eef0e8" stroke-width="1.2" fill="none" opacity="0.5" stroke-linecap="round"/>
+        <path d="M 480 270 Q 500 268 520 274" stroke="#eef0e8" stroke-width="1.2" fill="none" opacity="0.5" stroke-linecap="round"/>
+        <path d="M 130 115 Q 145 113 160 118" stroke="#eef0e8" stroke-width="1" fill="none" opacity="0.4" stroke-linecap="round"/>
+        <path d="M 280 180 Q 295 178 310 183" stroke="#eef0e8" stroke-width="1" fill="none" opacity="0.4" stroke-linecap="round"/>
+        <path d="M 420 252 Q 435 250 450 255" stroke="#eef0e8" stroke-width="1" fill="none" opacity="0.4" stroke-linecap="round"/>
+
+        <!-- Etiqueta ría -->
+        <text x="60" y="70" font-family="Georgia, serif" font-size="11" font-style="italic" fill="#5a6a6a" letter-spacing="2">Ría del Nervión</text>
+
+        <!-- DEUSTO (norte de la ría, izquierda) -->
+        <g class="zone-deusto">
+          <ellipse cx="130" cy="180" rx="75" ry="40" fill="#b5c4a8" opacity="0.65" stroke="#7a9070" stroke-width="1.5"/>
+          <text x="130" y="180" font-family="Georgia, serif" font-size="14" font-weight="500" fill="#3a3a2e" text-anchor="middle">Deusto</text>
+          <text x="130" y="195" font-family="Inter, sans-serif" font-size="9" fill="#6a6a55" text-anchor="middle">tranquilo</text>
+        </g>
+
+        <!-- REKALDE-AMETZOLA (sur, izquierda) -->
+        <g class="zone-rekalde">
+          <ellipse cx="180" cy="320" rx="85" ry="40" fill="#b5c4a8" opacity="0.65" stroke="#7a9070" stroke-width="1.5"/>
+          <text x="180" y="320" font-family="Georgia, serif" font-size="13" font-weight="500" fill="#3a3a2e" text-anchor="middle">Rekalde · Ametzola</text>
+          <text x="180" y="335" font-family="Inter, sans-serif" font-size="9" fill="#6a6a55" text-anchor="middle">residencial · tranquilo</text>
+        </g>
+
+        <!-- MOYÚA (centro) -->
+        <g class="zone-moyua">
+          <ellipse cx="340" cy="285" rx="70" ry="35" fill="#c9a878" opacity="0.55" stroke="#a88550" stroke-width="1.5"/>
+          <text x="340" y="285" font-family="Georgia, serif" font-size="14" font-weight="500" fill="#3a3a2e" text-anchor="middle">Moyúa</text>
+          <text x="340" y="300" font-family="Inter, sans-serif" font-size="9" fill="#6a6a55" text-anchor="middle">céntrico · práctico</text>
+        </g>
+
+        <!-- INDAUTXU (centro-este) -->
+        <g class="zone-indautxu">
+          <ellipse cx="430" cy="330" rx="75" ry="35" fill="#c9a878" opacity="0.55" stroke="#a88550" stroke-width="1.5"/>
+          <text x="430" y="328" font-family="Georgia, serif" font-size="14" font-weight="500" fill="#3a3a2e" text-anchor="middle">Indautxu</text>
+          <text x="430" y="343" font-family="Inter, sans-serif" font-size="9" fill="#6a6a55" text-anchor="middle">céntrico · animado</text>
+        </g>
+
+        <!-- ABANDO (centro-norte, junto a la ría) -->
+        <g class="zone-abando">
+          <ellipse cx="350" cy="200" rx="85" ry="38" fill="#e89149" opacity="0.5" stroke="#c46c2a" stroke-width="1.5"/>
+          <text x="350" y="198" font-family="Georgia, serif" font-size="14" font-weight="500" fill="#3a3a2e" text-anchor="middle">Abando</text>
+          <text x="350" y="213" font-family="Inter, sans-serif" font-size="9" fill="#6a6a55" text-anchor="middle">céntrico · más ruido</text>
+        </g>
+
+        <!-- Zona de fiestas: El Arenal y Casco Viejo (con marca de "fiestas") -->
+        <g class="zone-fiestas">
+          <ellipse cx="500" cy="180" rx="60" ry="32" fill="#b86a52" opacity="0.42" stroke="#8a4a38" stroke-width="1.5" stroke-dasharray="4 3"/>
+          <text x="500" y="178" font-family="Georgia, serif" font-size="11" font-weight="500" fill="#3a3a2e" text-anchor="middle">El Arenal</text>
+          <text x="500" y="193" font-family="Georgia, serif" font-size="11" font-weight="500" font-style="italic" fill="#8a4a38" text-anchor="middle">¡fiestas!</text>
+          <text x="500" y="206" font-family="Inter, sans-serif" font-size="8" fill="#6a6a55" text-anchor="middle">Casco Viejo</text>
+        </g>
+
+        <!-- Leyenda -->
+        <g transform="translate(20, 340)">
+          <circle cx="6" cy="6" r="5" fill="#b5c4a8" opacity="0.7" stroke="#7a9070" stroke-width="1"/>
+          <text x="18" y="10" font-family="Inter, sans-serif" font-size="10" fill="#3a3a2e">tranquilo</text>
+
+          <circle cx="92" cy="6" r="5" fill="#c9a878" opacity="0.7" stroke="#a88550" stroke-width="1"/>
+          <text x="104" y="10" font-family="Inter, sans-serif" font-size="10" fill="#3a3a2e">centro</text>
+
+          <circle cx="160" cy="6" r="5" fill="#b86a52" opacity="0.55" stroke="#8a4a38" stroke-width="1" stroke-dasharray="2 1"/>
+          <text x="172" y="10" font-family="Inter, sans-serif" font-size="10" fill="#3a3a2e">zona de fiestas</text>
+        </g>
+      </svg>
+    </div>
+
+    <p style="margin-top:1rem; font-size:0.92rem; font-style:italic; opacity:0.85;">
+      La zona caliente de las fiestas (txosnas, conciertos, fuegos artificiales) está en
+      <strong>El Arenal</strong> y el <strong>Casco Viejo</strong>. Si queréis descansar bien,
+      evitad hoteles ahí y reservad un poco más al sur o al oeste.
     </p>
 
     <div class="zone-block">
-      <h3 class="zone-title">Centro / Abando · <em>la opción más práctica</em></h3>
-      <p class="zone-desc">Bien comunicado, cerca de la estación de tren y a un paseo del Casco Viejo y del Guggenheim.</p>
+      <h3 class="zone-title">Deusto · <em>el más tranquilo</em></h3>
+      <p class="zone-desc">Al otro lado de la ría, en pleno barrio universitario. Vida local, calles tranquilas y bien conectado por metro y tranvía. Buena opción si queréis dormir lejos del bullicio.</p>
       <ul class="place-list">
-        <li><strong>Hotel Carlton</strong><span>Histórico y elegante, en plena Plaza Moyúa.</span></li>
-        <li><strong>Ercilla Hotel</strong><span>Clásico de Bilbao, muy céntrico.</span></li>
-        <li><strong>Hotel Indautxu</strong><span>Zona Indautxu, ambiente animado.</span></li>
+        <li><strong>Hotel Conde Duque Bilbao</strong><span>Junto a la ría, vistas al Guggenheim.</span></li>
+        <li><strong>Hotel NH Collection Villa de Bilbao</strong><span>Próximo a Deusto, moderno.</span></li>
+        <li><strong>Apartamentos / Airbnb en Deusto</strong><span>Buena oferta de pisos turísticos en zona residencial.</span></li>
+      </ul>
+    </div>
+
+    <div class="zone-block">
+      <h3 class="zone-title">Rekalde · Ametzola · <em>residencial</em></h3>
+      <p class="zone-desc">Zona local, sin glamour pero práctica. Bien conectada por cercanías y metro con el centro (5–10 minutos). Precios algo más ajustados.</p>
+      <ul class="place-list">
+        <li><strong>Hotel Zenit Bilbao</strong><span>Zona Ametzola, junto a la estación.</span></li>
+        <li><strong>Hotel Petit Palace Tres Naciones</strong><span>Cerca de Rekalde, bien comunicado.</span></li>
+        <li><strong>Apartamentos en Ametzola</strong><span>Buena relación calidad-precio en pisos turísticos.</span></li>
+      </ul>
+    </div>
+
+    <div class="zone-block">
+      <h3 class="zone-title">Moyúa · <em>el centro práctico</em></h3>
+      <p class="zone-desc">Plaza Moyúa y alrededores. Céntrico pero algo más recogido que Abando. Buena base si queréis estar a tiro de piedra de todo.</p>
+      <ul class="place-list">
+        <li><strong>Hotel Carlton</strong><span>Histórico y elegante, en plena plaza Moyúa.</span></li>
+        <li><strong>Hotel Ercilla</strong><span>Clásico de Bilbao, muy céntrico.</span></li>
         <li><strong>NYX Hotel Bilbao</strong><span>Moderno, junto a Gran Vía.</span></li>
         <li><strong>Sercotel Coliseo</strong><span>En el antiguo edificio de la ópera.</span></li>
       </ul>
     </div>
 
     <div class="zone-block">
-      <h3 class="zone-title">Casco Viejo · <em>en pleno ambiente</em></h3>
-      <p class="zone-desc">Para salir andando a tomar pintxos. Algunas calles son peatonales, así que ojo con el coche.</p>
+      <h3 class="zone-title">Indautxu · <em>céntrico y animado</em></h3>
+      <p class="zone-desc">Zona moderna con muchos bares, tiendas y vida en general. Más ambiente que Moyúa pero todavía algo separado del epicentro de las fiestas.</p>
       <ul class="place-list">
-        <li><strong>Petit Palace Arana</strong><span>Junto al Teatro Arriaga.</span></li>
-        <li><strong>Tayko Bilbao</strong><span>Hotel de lujo en edificio histórico, con restaurante de gran nivel.</span></li>
-        <li><strong>Casual Bilbao Gurea</strong><span>Sencillo, buena ubicación y precio.</span></li>
+        <li><strong>Hotel Indautxu</strong><span>En plena plaza Indautxu, ambiente animado.</span></li>
+        <li><strong>Hotel Vincci Consulado de Bilbao</strong><span>Boutique cerca de Gran Vía.</span></li>
+        <li><strong>Petit Palace Arana</strong><span>A medio camino con el Casco Viejo.</span></li>
       </ul>
     </div>
 
     <div class="zone-block">
-      <h3 class="zone-title">Zona Guggenheim / Abandoibarra · <em>vistas y diseño</em></h3>
+      <h3 class="zone-title">Abando · <em>centro y ría</em></h3>
+      <p class="zone-desc">Zona junto a la estación de tren y la ría. Cerca del Guggenheim, del Casco Viejo y de toda la zona de fiestas. <strong>Atención: durante la Aste Nagusia es la zona con más ruido por las noches.</strong></p>
       <ul class="place-list">
-        <li><strong>Gran Hotel Domine Bilbao</strong><span>Frente al Guggenheim, con terraza panorámica.</span></li>
+        <li><strong>Gran Hotel Domine Bilbao</strong><span>Frente al Guggenheim, terraza panorámica.</span></li>
         <li><strong>Hotel Miró</strong><span>Boutique, junto al Museo de Bellas Artes.</span></li>
         <li><strong>Meliá Bilbao</strong><span>Junto al Palacio Euskalduna y la ría.</span></li>
+        <li><strong>Tayko Bilbao</strong><span>Lujo en edificio histórico, junto al Arriaga (¡ojo, en plena zona de fiestas!).</span></li>
       </ul>
     </div>
 
-    <div class="zone-block">
-      <h3 class="zone-title">Opciones más económicas</h3>
-      <ul class="place-list">
-        <li><strong>Ibis Bilbao Centro</strong><span>Buena relación calidad-precio.</span></li>
-        <li><strong>Ibis Budget Bilbao City</strong><span>Lo más económico de la cadena.</span></li>
-        <li><strong>LATROUPE La Granja</strong><span>Hostel-hotel moderno en el centro.</span></li>
-        <li><strong>All Iron Hostel</strong><span>Albergue bien valorado.</span></li>
-      </ul>
-    </div>
-
-    <p style="margin-top:2rem; font-size:0.9rem; font-style:italic;">
-      Como referencia, los precios suelen ir desde unos 50–80 € por noche en hoteles más sencillos hasta 200–300 € en los de 4–5 estrellas, dependiendo de la temporada. Septiembre suele estar bastante demandado, así que mejor reservar con tiempo.
+    <p style="margin-top:2rem; font-size:0.92rem; font-style:italic;">
+      Como referencia, los precios suelen ir desde unos 70–100 € por noche en hoteles más sencillos hasta 250–350 € en los de 4–5 estrellas durante la Aste Nagusia. <strong>Septiembre suele estar más barato y más tranquilo, pero la boda es en pleno agosto, así que no esperéis demasiado para reservar.</strong>
     </p>
   </section>
 
-  <!-- ============= QUÉ VISITAR ============= -->
+  <!-- ============= 7. QUÉ VISITAR ============= -->
   <section class="visits-section" id="visitas">
     <div class="visits-inner">
       <p class="section-tag">Qué visitar</p>
@@ -1080,6 +1457,185 @@
       </div>
     </div>
   </section>
+
+  <!-- ============= 8. DÓNDE COMER (PINTXOS) ============= -->
+  <section id="comer">
+    <p class="section-tag">Dónde comer</p>
+    <h2>De <em>poteo</em> por Bilbao</h2>
+    <p class="lead">
+      Bilbao es una ciudad para callejear y picotear. Aquí van algunas zonas y
+      bares clásicos para empezar la ruta. Lo bueno: están todos cerca, así que
+      podéis ir saltando de uno a otro.
+    </p>
+
+    <div class="zone-block">
+      <h3 class="zone-title">Casco Viejo · <em>Las Siete Calles</em></h3>
+      <p class="zone-desc">El corazón histórico. La Plaza Nueva concentra varios de los bares más conocidos. Pintxos entre 2 y 3,50 € y zuritos en torno a 1,50–2,50 €.</p>
+      <ul class="place-list">
+        <li><strong>Gure Toki</strong><span>Plaza Nueva. Pintxos creativos y de mucha calidad.</span></li>
+        <li><strong>Sorginzulo</strong><span>Plaza Nueva. Variedad y producto local.</span></li>
+        <li><strong>Café Bar Bilbao</strong><span>Plaza Nueva. Clásico, ambiente local.</span></li>
+        <li><strong>Víctor Montes</strong><span>Plaza Nueva. Histórico, desde 1849.</span></li>
+        <li><strong>Charly</strong><span>Plaza Nueva. Abierto desde 1973, ofertas de combinados de pintxos.</span></li>
+        <li><strong>Baste</strong><span>Calle Diputación. Famoso por sus mejillones rellenos.</span></li>
+        <li><strong>Bar Berton</strong><span>Calle Jardines. Pintxos de solomillo y foie.</span></li>
+        <li><strong>Bodega Joserra</strong><span>Cantón Alejandro de la Sota. Bocadillos pequeños "medios" tradicionales.</span></li>
+      </ul>
+    </div>
+
+    <div class="zone-block">
+      <h3 class="zone-title">Ensanche · <em>Indautxu y alrededores</em></h3>
+      <p class="zone-desc">La zona moderna del centro. Locales más cuidados, pintxos algo más elaborados (entre 3 y 4 €).</p>
+      <ul class="place-list">
+        <li><strong>La Viña del Ensanche</strong><span>Calle Diputación. Productos de calidad e ibéricos.</span></li>
+        <li><strong>El Globo</strong><span>Calle Diputación. Clásico imprescindible.</span></li>
+        <li><strong>Bascook</strong><span>Cocina vasca con toques internacionales.</span></li>
+      </ul>
+    </div>
+
+    <div class="zone-block">
+      <h3 class="zone-title">Pozas y San Mamés · <em>ambiente joven</em></h3>
+      <p class="zone-desc">Calle Pozas y alrededores del estadio. Mucho ambiente y precios algo más ajustados.</p>
+      <ul class="place-list">
+        <li><strong>El Txoko de Gros</strong><span>Calle Pozas. Variedad amplia.</span></li>
+        <li><strong>Asador Bideko (entorno Pozas)</strong><span>Carnes y pintxos de calidad.</span></li>
+      </ul>
+    </div>
+
+    <p style="margin-top:2rem; font-size:0.9rem; font-style:italic;">
+      Consejo local: en el Casco Viejo los domingos cierran pronto, así que si vais en domingo, mejor a mediodía.
+    </p>
+  </section>
+
+  <!-- ============= 9. FIESTAS DE BILBAO ============= -->
+  <section id="fiestas" class="rsvp-light">
+    <p class="section-tag">Aste Nagusia</p>
+    <h2>Las <em>fiestas</em> de Bilbao</h2>
+    <p class="lead">
+      Vuestra boda cae en plena Semana Grande. Lo bueno: la ciudad estará
+      espectacular, con ambiente de fiesta por todos lados. Lo "malo": habrá mucha
+      gente, mucho ruido y algunos cortes de tráfico. Aquí va lo básico para que
+      sepáis qué os vais a encontrar.
+    </p>
+
+    <div class="zone-block">
+      <h3 class="zone-title">Cuándo</h3>
+      <p class="zone-desc">
+        La <strong>Aste Nagusia 2027</strong> se celebra del <strong>sábado 21 al domingo 29 de agosto</strong> (siempre empieza el sábado siguiente al 15 de agosto y dura 9 días). El día de la boda, <strong>28 de agosto, es el penúltimo día</strong> de las fiestas. Pleno apogeo.
+      </p>
+    </div>
+
+    <div class="zone-block">
+      <h3 class="zone-title">Cómo funciona</h3>
+      <p class="zone-desc">
+        Las fiestas se organizan en torno a las <strong>comparsas (konpartsak)</strong>: agrupaciones vecinales que montan sus <strong>txosnas</strong> (carpas con barra y cocina) en el recinto festivo, principalmente en El Arenal. Cada noche hay actividades, conciertos, baile y los famosos <strong>fuegos artificiales</strong> sobre la ría a las 22:30 (Concurso Internacional de Pirotecnia, durante toda la semana).
+      </p>
+      <p class="zone-desc">
+        El símbolo de las fiestas es <strong>Marijaia</strong>, una muñeca gigante que preside El Arenal hasta el último día, en que se quema en una hoguera al final de los fuegos.
+      </p>
+    </div>
+
+    <div class="zone-block">
+      <h3 class="zone-title">Zonas afectadas</h3>
+      <p class="zone-desc">El epicentro de las fiestas está en estas zonas. Si reserváis hotel cerca, dormiréis poco; si estáis lejos, las cruzaréis fácilmente en metro o andando para disfrutar.</p>
+      <ul class="place-list">
+        <li><strong>El Arenal</strong><span>Recinto principal de txosnas y conciertos. Junto al Teatro Arriaga.</span></li>
+        <li><strong>Casco Viejo / Plaza Nueva</strong><span>Música, danzas tradicionales, ambiente todo el día.</span></li>
+        <li><strong>Plaza del Arriaga</strong><span>Lugar del txupinazo (chupinazo) de inicio.</span></li>
+        <li><strong>Riberas de la ría</strong><span>Mejor punto para ver los fuegos artificiales nocturnos.</span></li>
+        <li><strong>Plaza Nueva, Unamuno, Encarnación</strong><span>Conciertos y espectáculos en distintas plazas del Casco Viejo.</span></li>
+        <li><strong>Parque Etxebarria</strong><span>Recinto de barracas y atracciones (feria).</span></li>
+      </ul>
+    </div>
+
+    <div class="zone-block">
+      <h3 class="zone-title">Consejos prácticos</h3>
+      <ul class="rsvp-list" style="color: var(--color-ink);">
+        <li>El <strong>dress code</strong> de las fiestas es informal y muy reconocible: <strong>camiseta blanca y pañuelo azul Bilbao</strong> al cuello. El pantalón o la falda también suelen ser azul Bilbao. Si os apetece integraros, esa es la pista.</li>
+        <li>En las txosnas se paga en <strong>efectivo</strong>. Llevad cash.</li>
+        <li>Los precios son populares: pintxos 2–3 €, kalimotxos 2–3 €.</li>
+        <li>Si queréis ver el <strong>chupinazo de inicio</strong> (sábado 21 a mediodía), llegad a la Plaza del Arriaga sobre las 11:00 para encontrar sitio. <strong>Aviso</strong>: cuanto más cerca estéis del pregón, más probable es que acabéis empapados de harina, huevos, kalimotxo, cava y todo tipo de líquidos. Ropa que no os importe arruinar.</li>
+        <li>Para los <strong>fuegos artificiales</strong>: muy buenos puntos son las riberas junto al Arenal, el Campo Volantín, el Puente de Deusto o cualquier azotea con vistas a la ría.</li>
+        <li>Programa completo: lo publica el Ayuntamiento de Bilbao en <a href="https://www.bilbao.eus" target="_blank" rel="noopener">bilbao.eus</a> a inicios de julio.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============= 10. TIPS PRÁCTICOS ============= -->
+  <section id="tips">
+    <p class="section-tag">Tips prácticos</p>
+    <h2>Cosas <em>útiles</em> para vuestro viaje</h2>
+    <p class="lead">
+      Una mezcla de cosas que conviene saber para moverse por Bilbao sin quebraderos
+      de cabeza.
+    </p>
+
+    <div class="zone-block">
+      <h3 class="zone-title">Transporte público · <em>la tarjeta Barik</em></h3>
+      <p class="zone-desc">
+        Bilbao tiene una red de transporte público pequeña, eficiente y bien conectada: metro, tranvía, autobuses urbanos (Bilbobus) e interurbanos (Bizkaibus), Renfe Cercanías y el Funicular de Artxanda. Todo se puede pagar con la <strong>tarjeta Barik</strong>.
+      </p>
+      <ul class="rsvp-list" style="color: var(--color-ink);">
+        <li>La tarjeta cuesta <strong>3 €</strong> y se compra en máquinas del metro, cabinas de Bilbobus/Bizkaibus, estancos y muchos comercios. Hay que <strong>cargarla con un mínimo de 5 €</strong>.</li>
+        <li>Una sola tarjeta Barik anónima la pueden usar <strong>hasta 10 personas a la vez</strong>: cada uno la pasa por el lector al subir. Muy útil si viajáis en grupo.</li>
+        <li>Los precios bonificados con Barik son bastante más baratos que el billete sencillo.</li>
+        <li>Sirve para <strong>metro, tranvía, Bilbobus, Bizkaibus, Funicular de Artxanda, Puente Colgante</strong> y también para Renfe Cercanías.</li>
+        <li>Más info y tarifas oficiales: <a href="https://www.ctb.eus/es/como-funciona-barik" target="_blank" rel="noopener">ctb.eus</a></li>
+      </ul>
+    </div>
+
+    <div class="zone-block">
+      <h3 class="zone-title">Moverse a pie · <em>Bilbao es pequeño</em></h3>
+      <p class="zone-desc">
+        Bilbao es muy peatonal y se cruza el centro de un extremo a otro andando en 30 minutos. Del Casco Viejo al Guggenheim hay 20 minutos a pie por la orilla de la ría, un paseo precioso. Para distancias más largas o si llueve, el metro es rapidísimo.
+      </p>
+    </div>
+
+    <div class="zone-block">
+      <h3 class="zone-title">Baños públicos</h3>
+      <p class="zone-desc">
+        Hay baños públicos gratuitos repartidos por la ciudad (en la mayoría de plazas del centro y parques). En zonas turísticas como el Casco Viejo y junto al Guggenheim también hay módulos. En los bares, eso sí, lo habitual es que te pidan consumir antes de usar el baño.
+      </p>
+      <p class="zone-desc">
+        Durante la <strong>Aste Nagusia</strong> se instalan baños químicos adicionales en El Arenal y zonas de fiesta.
+      </p>
+    </div>
+
+    <div class="zone-block">
+      <h3 class="zone-title">Horarios de tiendas y comidas</h3>
+      <ul class="rsvp-list" style="color: var(--color-ink);">
+        <li><strong>Comercio pequeño</strong>: típicamente abre de 10:00 a 14:00 y de 17:00 a 20:00 (o 16:30 a 20:30). Los <strong>domingos cierra</strong> casi todo, salvo en el Casco Viejo y zonas turísticas.</li>
+        <li><strong>Centros comerciales</strong> (Zubiarte, El Corte Inglés): horario continuo, suelen abrir de 10:00 a 22:00.</li>
+        <li><strong>Comida</strong>: en restaurantes, la hora local es <strong>14:00–15:30</strong> para comer y <strong>21:00–22:30</strong> para cenar. Antes os mirarán raro y el ambiente será nulo.</li>
+        <li><strong>Pintxos</strong>: el "<em>txikiteo</em>" (ir de pote en pote) es el deporte local. Lo habitual es ir antes de comer (12:30–14:00) y antes de cenar (19:30–21:00).</li>
+      </ul>
+    </div>
+
+    <div class="zone-block">
+      <h3 class="zone-title">El tiempo en Bilbao</h3>
+      <p class="zone-desc">
+        Bilbao es verde por algo: <strong>llueve con cierta frecuencia incluso en verano</strong>. En agosto las temperaturas suelen estar entre 18 y 28 °C, pero puede caer una buena tromba en cualquier momento. Llevad una chaqueta ligera o paraguas plegable, no os la juguéis. Aunque a veces hace mucho calor, la humedad del Cantábrico se nota.
+      </p>
+    </div>
+
+    <div class="zone-block">
+      <h3 class="zone-title">Idioma</h3>
+      <p class="zone-desc">
+        El País Vasco es bilingüe: <strong>euskera y castellano</strong>. Todos los carteles están en los dos idiomas y todo el mundo habla castellano sin problema. Aprended unas palabras básicas si os apetece: "kaixo" (hola), "eskerrik asko" (gracias), "agur" (adiós).
+      </p>
+    </div>
+
+    <div class="zone-block">
+      <h3 class="zone-title">Pequeñas cosas que ayudan</h3>
+      <ul class="rsvp-list" style="color: var(--color-ink);">
+        <li>Las <strong>fuentes públicas</strong> tienen agua potable: rellenad la botella sin problema.</li>
+        <li>Casi todos los bares aceptan <strong>tarjeta</strong>, pero en las txosnas de las fiestas <strong>solo efectivo</strong>.</li>
+        <li>El <strong>Wifi gratuito</strong> está disponible en muchos bares, en el aeropuerto y en zonas céntricas (red municipal "Bilbao Wifi").</li>
+        <li>Para <strong>taxi</strong>, las apps Free Now y Bolt funcionan bien. También hay paradas céntricas y se cogen al vuelo.</li>
+      </ul>
+    </div>
+  </section>
+
 
   <!-- ============= CIERRE ============= -->
   <footer>

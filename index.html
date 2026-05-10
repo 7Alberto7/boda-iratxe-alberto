@@ -738,6 +738,82 @@
       .convite, .rsvp, .visits-section { padding: 3.5rem 1.25rem; }
       .place-list { grid-template-columns: 1fr; }
     }
+    /* ---------- BOTÓN FLOTANTE "VOLVER AL MENÚ" ---------- */
+    .menu-fab {
+      position: fixed;
+      bottom: 1.5rem;
+      right: 1.5rem;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      padding: 0.75rem 1.1rem 0.75rem 1rem;
+      background: var(--color-dark-bg);
+      color: var(--color-bg);
+      border-radius: 999px;
+      text-decoration: none;
+      font-family: var(--font-body);
+      font-size: 0.85rem;
+      font-weight: 500;
+      letter-spacing: 0.05em;
+      box-shadow: 0 6px 18px rgba(42, 48, 41, 0.18), 0 1px 3px rgba(42, 48, 41, 0.1);
+      opacity: 0;
+      transform: translateY(12px) scale(0.96);
+      pointer-events: none;
+      transition: opacity 0.35s ease, transform 0.35s ease, background 0.2s ease, box-shadow 0.2s ease;
+    }
+    .menu-fab.is-visible {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+      pointer-events: auto;
+    }
+    .menu-fab:hover {
+      background: var(--color-accent-deep);
+      text-decoration: none;
+      box-shadow: 0 8px 22px rgba(42, 48, 41, 0.25), 0 2px 4px rgba(42, 48, 41, 0.12);
+    }
+    .menu-fab .fab-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      background: var(--color-accent);
+      color: var(--color-bg);
+    }
+    .menu-fab:hover .fab-icon {
+      background: var(--color-accent-soft);
+      color: var(--color-dark-bg);
+    }
+    .menu-fab .fab-icon svg {
+      width: 12px;
+      height: 12px;
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 2.2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    /* En móvil: solo el icono, sin texto */
+    @media (max-width: 540px) {
+      .menu-fab {
+        bottom: 1rem;
+        right: 1rem;
+        padding: 0.7rem;
+        gap: 0;
+      }
+      .menu-fab .fab-text { display: none; }
+      .menu-fab .fab-icon {
+        width: 26px;
+        height: 26px;
+      }
+      .menu-fab .fab-icon svg {
+        width: 14px;
+        height: 14px;
+      }
+    }
   </style>
 </head>
 
@@ -1642,6 +1718,18 @@
     <p>Con muchas ganas de veros, <span class="heart">❦</span> Iratxe y Alberto</p>
   </footer>
 
+  <!-- Botón flotante para volver al menú -->
+  <a href="#recomendaciones" class="menu-fab" id="menu-fab" aria-label="Volver al menú de recomendaciones">
+    <span class="fab-icon" aria-hidden="true">
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <line x1="4" y1="6" x2="20" y2="6"/>
+        <line x1="4" y1="12" x2="20" y2="12"/>
+        <line x1="4" y1="18" x2="20" y2="18"/>
+      </svg>
+    </span>
+    <span class="fab-text">Volver al menú</span>
+  </a>
+
   <script>
     // Cuenta atrás hacia el 28 de agosto de 2027 (00:00 hora local)
     (function() {
@@ -1676,6 +1764,45 @@
 
       tick();
       setInterval(tick, 1000);
+    })();
+
+    // Botón flotante "Volver al menú": aparece cuando se llega al apartado "Cómo llegar"
+    (function() {
+      var fab = document.getElementById('menu-fab');
+      var trigger = document.getElementById('llegar');
+      if (!fab || !trigger) return;
+
+      // Usamos IntersectionObserver con rootMargin para activar el botón
+      // un poco antes de que la sección entre en pantalla (cuando se está acercando).
+      var observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          // Si la sección "llegar" ya ha entrado en el viewport (o lo está cruzando),
+          // mostramos el botón. Si está completamente por debajo (antes de llegar),
+          // lo ocultamos.
+          if (entry.boundingClientRect.top <= 0 || entry.isIntersecting) {
+            fab.classList.add('is-visible');
+          } else {
+            fab.classList.remove('is-visible');
+          }
+        });
+      }, {
+        threshold: 0,
+        rootMargin: '0px 0px -100% 0px'
+      });
+
+      observer.observe(trigger);
+
+      // Fallback adicional con scroll para mayor fiabilidad
+      function check() {
+        var rect = trigger.getBoundingClientRect();
+        if (rect.top <= window.innerHeight * 0.5) {
+          fab.classList.add('is-visible');
+        } else {
+          fab.classList.remove('is-visible');
+        }
+      }
+      window.addEventListener('scroll', check, { passive: true });
+      check();
     })();
   </script>
 

@@ -642,6 +642,29 @@
       font-weight: 600;
     }
 
+    /* ---------- MAPA ZBE (imagen) ---------- */
+    .zbe-map {
+      margin: 1.5rem 0 0;
+      padding: 1rem;
+      background: var(--color-bg-warm);
+      border: 1px solid var(--color-line);
+      border-radius: var(--radius);
+    }
+    .zbe-map img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: var(--radius);
+    }
+    .zbe-map figcaption {
+      margin-top: 0.6rem;
+      font-family: var(--font-display);
+      font-style: italic;
+      font-size: 0.9rem;
+      color: var(--color-ink-soft);
+      text-align: center;
+    }
+
     /* ---------- ZONES MAP (mapa SVG) ---------- */
     .zones-map {
       width: 100%;
@@ -1266,23 +1289,67 @@
     </div>
 
     <div class="zone-block">
-      <h3 class="zone-title">Parkings públicos <em>recomendados</em></h3>
-      <p class="zone-desc">Os dejamos parkings repartidos por distintas zonas, todos <strong>lejos del epicentro de las fiestas</strong> (El Arenal y Casco Viejo) para evitar tráfico y ruido nocturno:</p>
+      <h3 class="zone-title">La ZBE · <em>Zona de Bajas Emisiones</em></h3>
+      <p class="zone-desc">
+        Bilbao tiene una <strong>Zona de Bajas Emisiones</strong> que cubre los barrios de
+        <strong>Abando, Indautxu y Abandoibarra</strong>. Es importante saberlo si venís en coche:
+      </p>
+      <div class="alert-block" style="margin-top:1rem;">
+        <strong>Sin distintivo ambiental: no podéis aparcar en la ZBE.</strong> Está prohibido el acceso a los vehículos sin etiqueta de la DGT.<br /><br />
+        <strong>Con etiqueta B: solo se puede ir directo a un parking público autorizado</strong> dentro de la ZBE. No podéis circular libremente por la zona, solo entrar al parking y salir de la ZBE.<br /><br />
+        <strong>Con etiquetas 0, ECO o C</strong>: podéis circular y aparcar sin restricciones.
+      </div>
+      <ul class="rsvp-list" style="color: var(--color-ink); margin-top: 1rem;">
+        <li>La restricción se aplica de <strong>lunes a viernes, de 7:00 a 20:00</strong>. Fines de semana y festivos no hay control, así que el sábado de la boda no afecta.</li>
+        <li>El control se hace por <strong>cámaras que leen matrículas</strong>: no hace falta llevar pegatina física, pero sí estar al corriente.</li>
+        <li>Las sanciones son de <strong>200 €</strong>.</li>
+        <li>Podéis comprobar la etiqueta de vuestro coche en <a href="https://sede.dgt.gob.es/es/vehiculos/distintivo-ambiental/" target="_blank" rel="noopener">la web de la DGT</a>.</li>
+        <li>Más información oficial: <a href="https://www.bilbao.eus/zbe" target="_blank" rel="noopener">bilbao.eus/zbe</a></li>
+      </ul>
+
+      <figure class="zbe-map">
+        <img src="zbe-bilbao.webp" alt="Mapa de la Zona de Bajas Emisiones de Bilbao: cubre los barrios de Abando, Indautxu y Abandoibarra" loading="lazy" />
+        <figcaption>Mapa oficial de la ZBE: la zona sombreada es donde aplican las restricciones.</figcaption>
+      </figure>
+    </div>
+
+    <div class="zone-block">
+      <h3 class="zone-title">Parkings <em>dentro de la ZBE</em></h3>
+      <p class="zone-desc">
+        Si vuestro alojamiento o destino está en pleno centro, estos son parkings públicos de rotación.
+        Recordad: <strong>con etiqueta B, solo se puede acceder directos al parking</strong>.
+      </p>
       <ul class="place-list">
-        <li><strong>Parking Alhóndiga (Telpark)</strong><span>Alameda Urquijo, 43 · bajo el Azkuna Zentroa · 24 h</span></li>
-        <li><strong>Parking Indigo Instituto</strong><span>Calle Hurtado de Amézaga · zona Moyúa · desde aprox. 2,10 €/hora</span></li>
-        <li><strong>Parking Zabalburu</strong><span>Plaza Zabalburu · zona Indautxu · desde aprox. 2,50 €/hora</span></li>
-        <li><strong>Parking iPark Madariaga</strong><span>Heliodoro de la Torre, 14 · zona Deusto-Sarriko · desde aprox. 10 €/día</span></li>
-        <li><strong>Parking Hospital IMQ Zorrotzaurre</strong><span>Julio Urquijo, 1 · San Pedro de Deusto · 24 h</span></li>
-        <li><strong>Parking La Casilla</strong><span>Plaza La Casilla · zona Basurto, junto al pabellón</span></li>
+        <li><strong>Parking Alhóndiga (Telpark)</strong><span>Alameda Urquijo, 43 · bajo el Azkuna Zentroa · Indautxu</span></li>
+        <li><strong>Parking Plaza Indautxu (Telpark)</strong><span>Plaza Indautxu · zona Indautxu</span></li>
+        <li><strong>Parking Indigo Instituto</strong><span>Hurtado de Amézaga · Abando</span></li>
+        <li><strong>Parking Zabalburu</strong><span>Plaza Zabalburu · Indautxu</span></li>
+        <li><strong>Parking Plaza Euskadi (Interparking)</strong><span>Plaza Euskadi · bajo la Torre Iberdrola · Abandoibarra</span></li>
+        <li><strong>Parking Pío Baroja (Copark)</strong><span>Plaza Pío Baroja · Abando, junto a la ría</span></li>
+        <li><strong>Parking Palacio Euskalduna (Copark)</strong><span>Avenida Abandoibarra, 4 · Abandoibarra</span></li>
+        <li><strong>Parking Plaza del Ensanche</strong><span>Plaza Zabalgune · zona Indautxu</span></li>
+      </ul>
+    </div>
+
+    <div class="zone-block">
+      <h3 class="zone-title">Parkings <em>fuera de la ZBE</em></h3>
+      <p class="zone-desc">
+        Si no podéis entrar en la ZBE (sin distintivo o con etiqueta B y queréis evitar restricciones),
+        estos parkings están en <strong>Deusto, Basurto, Rekalde y Ametzola</strong>, fuera de la zona regulada
+        y a una distancia razonable del centro andando o en metro.
+      </p>
+      <ul class="place-list">
+        <li><strong>Parking iPark Madariaga</strong><span>Heliodoro de la Torre, 14 · Deusto-Sarriko</span></li>
+        <li><strong>Parking Hospital IMQ Zorrotzaurre</strong><span>Julio Urquijo, 1 · San Pedro de Deusto</span></li>
         <li><strong>Parking Intermodal</strong><span>Gurtubay, 1 · bajo la estación de autobuses (Termibus) · 526 plazas</span></li>
-        <li><strong>Parking IC Termibus / San Mamés</strong><span>Gurtubay, 2 · frente a Termibus, junto al estadio de San Mamés · 24 h</span></li>
+        <li><strong>Parking IC Termibus / San Mamés</strong><span>Gurtubay, 2 · frente a Termibus, junto al estadio · 24 h</span></li>
+        <li><strong>Parking La Casilla</strong><span>Plaza La Casilla · Basurto, junto al pabellón</span></li>
+        <li><strong>Parking SABA Estación Tren Bilbao</strong><span>Calle Bailén, 22 bis · zona Ametzola · 24 h</span></li>
+        <li><strong>Parking Polideportivo de Rekalde</strong><span>Aparcamiento de superficie, 150 plazas · zona Rekalde</span></li>
+        <li><strong>Parking ParkApp Termibus</strong><span>Junto a Termibus · paquetes por horas</span></li>
       </ul>
       <p style="margin-top:1rem; font-size:0.92rem;">
         Reservar plaza con antelación a través de apps como <strong>Parclick</strong>, <strong>Parkimeter</strong> o <strong>ElParking</strong> suele salir más barato. Y durante la Aste Nagusia, mejor reservar con tiempo.
-      </p>
-      <p style="margin-top:0.5rem; font-size:0.92rem;">
-        Otra cosa importante: tened en cuenta la <strong>ZBE</strong> (Zona de Bajas Emisiones) en Abando e Indautxu. Los vehículos sin etiqueta o con etiqueta B no pueden acceder de lunes a viernes entre 7:00 y 20:00.
       </p>
     </div>
   </section>

@@ -2,8 +2,11 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
+  <meta name="robots" content="noindex, nofollow, noarchive, nosnippet" />
+  <meta name="googlebot" content="noindex, nofollow, noarchive, nosnippet" />
+  <meta name="Bingbot" content="noindex, nofollow" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Iratxe y Alberto · 28 de agosto de 2027</title>
+  <title>Nuestra boda · 28 de agosto de 2027</title>
   <meta name="description" content="Nos casamos. Convite el 28 de agosto de 2027 en el Asador Arraiz, Bilbao." />
 
   <!-- Favicon: dos anillos entrelazados (verde salvia y dorado trigo) -->
@@ -368,7 +371,10 @@
       border-bottom: 1px solid var(--color-accent-soft);
       transition: color 0.2s ease;
     }
-    .rsvp-phone:hover { color: var(--color-accent-soft); text-decoration: none; }
+    /* Teléfono renderizado por CSS desde data-attrs: no aparece en el DOM */
+    span.rsvp-phone::before {
+      content: attr(data-n) "\00a0" attr(data-m) "\00a0" attr(data-e);
+    }
 
     .rsvp-info {
       max-width: 540px;
@@ -870,9 +876,9 @@
     <div class="hero-mark">nos casamos</div>
 
     <h1>
-      Iratxe<br />
+      <span aria-label="Iratxe">Ir<span aria-hidden="true"></span>at<span aria-hidden="true"></span>xe</span><br />
       <span class="amp">y</span><br />
-      Alberto
+      <span aria-label="Alberto">Al<span aria-hidden="true"></span>be<span aria-hidden="true"></span>rto</span>
     </h1>
 
     <svg class="ornament" viewBox="0 0 80 16" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
@@ -1123,12 +1129,12 @@
 
       <div class="rsvp-phones">
         <div class="rsvp-phone-block">
-          <span class="rsvp-phone-name">Alberto</span>
-          <a class="rsvp-phone" href="tel:+34619099711">619 099 711</a>
+          <span class="rsvp-phone-name"><span aria-label="Alberto">Al<span aria-hidden="true"></span>be<span aria-hidden="true"></span>rto</span></span>
+          <span class="rsvp-phone" data-n="619" data-m="099" data-e="711"></span>
         </div>
         <div class="rsvp-phone-block">
-          <span class="rsvp-phone-name">Iratxe</span>
-          <a class="rsvp-phone" href="tel:+34669338721">669 338 721</a>
+          <span class="rsvp-phone-name"><span aria-label="Iratxe">Ir<span aria-hidden="true"></span>at<span aria-hidden="true"></span>xe</span></span>
+          <span class="rsvp-phone" data-n="669" data-m="338" data-e="721"></span>
         </div>
       </div>
 
@@ -1831,7 +1837,7 @@
 
   <!-- ============= CIERRE ============= -->
   <footer>
-    <p>Con muchas ganas de veros, <span class="heart">❦</span> Iratxe y Alberto</p>
+    <p>Con muchas ganas de veros, <span class="heart">❦</span> <span aria-label="Iratxe">Ir<span aria-hidden="true"></span>at<span aria-hidden="true"></span>xe</span> y <span aria-label="Alberto">Al<span aria-hidden="true"></span>be<span aria-hidden="true"></span>rto</span></p>
   </footer>
 
   <!-- Botón flotante para volver al menú -->

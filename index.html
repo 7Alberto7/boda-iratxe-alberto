@@ -665,20 +665,42 @@
       text-align: center;
     }
 
-    /* ---------- ZONES MAP (mapa SVG) ---------- */
-    .zones-map {
+    /* ---------- ZONES MAP (imagen del mapa) ---------- */
+    .zones-map-image {
       width: 100%;
-      max-width: 700px;
+      max-width: 900px;
       margin: 2rem auto 1rem;
       background: var(--color-bg-warm);
       border: 1px solid var(--color-line);
       border-radius: var(--radius);
       padding: 1rem;
     }
-    .zones-map svg {
+    .zones-map-image img {
       width: 100%;
       height: auto;
       display: block;
+      border-radius: var(--radius);
+    }
+    .zones-map-image figcaption {
+      margin-top: 0.8rem;
+      font-family: var(--font-display);
+      font-style: italic;
+      font-size: 0.9rem;
+      color: var(--color-ink-soft);
+      text-align: center;
+      line-height: 1.5;
+    }
+
+    /* Bloque destacado de zonas de fiesta */
+    .fiestas-block {
+      background: rgba(184, 106, 82, 0.08);
+      border-left: 3px solid var(--color-roof);
+      padding-left: 1.4rem;
+      padding-right: 1.4rem;
+      margin-top: 2rem;
+    }
+    .fiestas-block .zone-title em {
+      color: var(--color-roof);
     }
 
     /* ---------- SECCIÓN FIESTAS (fondo cálido) ---------- */
@@ -1316,8 +1338,8 @@
     <div class="zone-block">
       <h3 class="zone-title">Parkings <em>dentro de la ZBE</em></h3>
       <p class="zone-desc">
-        Estos son los <strong>únicos 7 parkings dentro de la ZBE donde puede entrar un vehículo con etiqueta B</strong>.
-        El acceso solo está permitido para ir directos al parking, no para circular por la zona.
+        Los <strong>únicos 7 parkings dentro de la ZBE donde puede entrar un vehículo con etiqueta B</strong> son
+        los seis primeros de la lista. El acceso solo está permitido para ir directos al parking, no para circular por la zona.
       </p>
       <ul class="place-list">
         <li><strong>Parking Pío Baroja</strong><span>Plaza Pío Baroja · Abando, junto a la ría</span></li>
@@ -1326,13 +1348,13 @@
         <li><strong>Parking Plaza Indautxu</strong><span>Plaza Indautxu · Indautxu</span></li>
         <li><strong>Parking Instituto Unamuno</strong><span>Calle Hurtado de Amézaga · Abando</span></li>
         <li><strong>Parking Zubiarte</strong><span>Bajo el centro comercial Zubiarte · Abandoibarra</span></li>
-        <li><strong>Parking El Corte Inglés</strong><span>Gran Vía · Abando</span></li>
+        <li><strong>Parking Palacio Euskalduna</strong><span>Avenida Abandoibarra, 4 · Abandoibarra · <strong style="color: var(--color-roof);">No apto para vehículos sin etiqueta o con etiqueta B</strong></span></li>
       </ul>
       <p style="margin-top:1rem; font-size:0.92rem;">
         <strong>Con etiquetas 0, ECO o C</strong> podéis aparcar también en cualquier otro parking público dentro de la ZBE (hay más parkings disponibles en Abando, Indautxu y Abandoibarra). En cambio, sin distintivo ambiental no se puede aparcar en ningún parking dentro de la ZBE.
       </p>
       <p style="margin-top:0.5rem; font-size:0.92rem; font-style:italic; opacity:0.85;">
-        La moratoria que permite a la etiqueta B usar estos 7 parkings está vigente hasta el <strong>31 de diciembre de 2029</strong>.
+        La moratoria que permite a la etiqueta B usar los 6 primeros parkings está vigente hasta el <strong>31 de diciembre de 2029</strong>.
       </p>
     </div>
 
@@ -1373,81 +1395,67 @@
     </div>
 
     <p style="margin-bottom: 2rem;">
-      Estas son las cinco zonas que os recomendamos, ordenadas de menos a más ambiente
-      festivo. Si queréis dormir tranquilos, mejor las primeras; si queréis estar en
-      pleno meollo, las últimas.
+      Estas son las seis zonas que os recomendamos para alojaros, ordenadas de más céntrico
+      a más residencial. Si queréis dormir tranquilos, mejor las últimas; si queréis estar
+      cerca de todo, las primeras.
     </p>
 
     <!-- Mapa de barrios de Bilbao -->
-    <div class="zones-map">
-      <svg viewBox="0 0 1200 840" xmlns="http://www.w3.org/2000/svg" aria-label="Mapa de barrios de Bilbao">
-  <defs>
-    <pattern id="fiestas-stripes" patternUnits="userSpaceOnUse" width="10" height="10" patternTransform="rotate(45)">
-      <rect width="10" height="10" fill="none"/>
-      <line x1="0" y1="0" x2="0" y2="10" stroke="#b86a52" stroke-width="2" opacity="0.45"/>
-    </pattern>
-  </defs>
-  <image href="mapa-bilbao.webp" x="0" y="0" width="1200" height="840"/>
-  <ellipse cx="745" cy="600" rx="55" ry="35" fill="url(#fiestas-stripes)" opacity="0.9"/>
-  <ellipse cx="700" cy="540" rx="55" ry="35" fill="url(#fiestas-stripes)" opacity="0.9"/>
-  <ellipse cx="820" cy="605" rx="55" ry="35" fill="url(#fiestas-stripes)" opacity="0.9"/>
-  <ellipse cx="720" cy="477" rx="55" ry="35" fill="url(#fiestas-stripes)" opacity="0.9"/>
-  <ellipse cx="500" cy="410" rx="70" ry="32" fill="#7a9070" opacity="0.22" stroke="#5a7355" stroke-width="2.5"/>
-  <ellipse cx="400" cy="205" rx="70" ry="32" fill="#7a9070" opacity="0.22" stroke="#5a7355" stroke-width="2.5"/>
-  <ellipse cx="395" cy="545" rx="70" ry="32" fill="#7a9070" opacity="0.22" stroke="#5a7355" stroke-width="2.5"/>
-  <ellipse cx="675" cy="385" rx="70" ry="32" fill="#7a9070" opacity="0.22" stroke="#5a7355" stroke-width="2.5"/>
-  <text x="50" y="170" font-family="Fraunces, Georgia, serif" font-size="16" font-weight="500" fill="#2a3029" text-anchor="middle" style="paint-order:stroke;stroke:#eef0e8;stroke-width:3;stroke-linejoin:round;">Zorroza</text>
-  <text x="200" y="30" font-family="Fraunces, Georgia, serif" font-size="16" font-weight="500" fill="#2a3029" text-anchor="middle" style="paint-order:stroke;stroke:#eef0e8;stroke-width:3;stroke-linejoin:round;">San Inazio</text>
-  <text x="240" y="135" font-family="Fraunces, Georgia, serif" font-size="16" font-weight="500" fill="#2a3029" text-anchor="middle" style="paint-order:stroke;stroke:#eef0e8;stroke-width:3;stroke-linejoin:round;">Ibarrekolanda</text>
-  <text x="400" y="100" font-family="Fraunces, Georgia, serif" font-size="16" font-weight="500" fill="#2a3029" text-anchor="middle" style="paint-order:stroke;stroke:#eef0e8;stroke-width:3;stroke-linejoin:round;">Arangoiti</text>
-  <text x="400" y="210" font-family="Fraunces, Georgia, serif" font-size="20" font-weight="700" fill="#2a3029" text-anchor="middle" style="paint-order:stroke;stroke:#eef0e8;stroke-width:3;stroke-linejoin:round;">Deusto</text>
-  <text x="690" y="250" font-family="Fraunces, Georgia, serif" font-size="16" font-weight="500" fill="#2a3029" text-anchor="middle" style="paint-order:stroke;stroke:#eef0e8;stroke-width:3;stroke-linejoin:round;">Castaños</text>
-  <text x="750" y="290" font-family="Fraunces, Georgia, serif" font-size="16" font-weight="500" fill="#2a3029" text-anchor="middle" style="paint-order:stroke;stroke:#eef0e8;stroke-width:3;stroke-linejoin:round;">Matiko</text>
-  <text x="870" y="275" font-family="Fraunces, Georgia, serif" font-size="16" font-weight="500" fill="#2a3029" text-anchor="middle" style="paint-order:stroke;stroke:#eef0e8;stroke-width:3;stroke-linejoin:round;">Uribarri</text>
-  <text x="945" y="320" font-family="Fraunces, Georgia, serif" font-size="16" font-weight="500" fill="#2a3029" text-anchor="middle" style="paint-order:stroke;stroke:#eef0e8;stroke-width:3;stroke-linejoin:round;">Zurbaran</text>
-  <text x="1015" y="365" font-family="Fraunces, Georgia, serif" font-size="16" font-weight="500" fill="#2a3029" text-anchor="middle" style="paint-order:stroke;stroke:#eef0e8;stroke-width:3;stroke-linejoin:round;">Arabella</text>
-  <text x="675" y="390" font-family="Fraunces, Georgia, serif" font-size="20" font-weight="700" fill="#2a3029" text-anchor="middle" style="paint-order:stroke;stroke:#eef0e8;stroke-width:3;stroke-linejoin:round;">Abando</text>
-  <text x="500" y="415" font-family="Fraunces, Georgia, serif" font-size="20" font-weight="700" fill="#2a3029" text-anchor="middle" style="paint-order:stroke;stroke:#eef0e8;stroke-width:3;stroke-linejoin:round;">Indautxu</text>
-  <text x="290" y="465" font-family="Fraunces, Georgia, serif" font-size="16" font-weight="500" fill="#2a3029" text-anchor="middle" style="paint-order:stroke;stroke:#eef0e8;stroke-width:3;stroke-linejoin:round;">Basurto</text>
-  <text x="190" y="510" font-family="Fraunces, Georgia, serif" font-size="16" font-weight="500" fill="#2a3029" text-anchor="middle" style="paint-order:stroke;stroke:#eef0e8;stroke-width:3;stroke-linejoin:round;">Masustegi</text>
-  <text x="395" y="550" font-family="Fraunces, Georgia, serif" font-size="20" font-weight="700" fill="#2a3029" text-anchor="middle" style="paint-order:stroke;stroke:#eef0e8;stroke-width:3;stroke-linejoin:round;">Ametzola</text>
-  <text x="700" y="533" font-family="Fraunces, Georgia, serif" font-size="17" font-weight="700" fill="#2a3029" text-anchor="middle" style="paint-order:stroke;stroke:#eef0e8;stroke-width:3;stroke-linejoin:round;">San</text>
-  <text x="700" y="552" font-family="Fraunces, Georgia, serif" font-size="17" font-weight="700" fill="#2a3029" text-anchor="middle" style="paint-order:stroke;stroke:#eef0e8;stroke-width:3;stroke-linejoin:round;">Francisco</text>
-  <text x="335" y="605" font-family="Fraunces, Georgia, serif" font-size="16" font-weight="500" fill="#2a3029" text-anchor="middle" style="paint-order:stroke;stroke:#eef0e8;stroke-width:3;stroke-linejoin:round;">Rekaldeberri</text>
-  <text x="530" y="605" font-family="Fraunces, Georgia, serif" font-size="16" font-weight="500" fill="#2a3029" text-anchor="middle" style="paint-order:stroke;stroke:#eef0e8;stroke-width:3;stroke-linejoin:round;">Iralabarri</text>
-  <text x="665" y="600" font-family="Fraunces, Georgia, serif" font-size="16" font-weight="500" fill="#2a3029" text-anchor="middle" style="paint-order:stroke;stroke:#eef0e8;stroke-width:3;stroke-linejoin:round;">Zabala</text>
-  <text x="745" y="593" font-family="Fraunces, Georgia, serif" font-size="18" font-weight="700" fill="#2a3029" text-anchor="middle" style="paint-order:stroke;stroke:#eef0e8;stroke-width:3;stroke-linejoin:round;">Bilbao</text>
-  <text x="745" y="612" font-family="Fraunces, Georgia, serif" font-size="18" font-weight="700" fill="#2a3029" text-anchor="middle" style="paint-order:stroke;stroke:#eef0e8;stroke-width:3;stroke-linejoin:round;">La Vieja</text>
-  <text x="820" y="610" font-family="Fraunces, Georgia, serif" font-size="17" font-weight="700" fill="#2a3029" text-anchor="middle" style="paint-order:stroke;stroke:#eef0e8;stroke-width:3;stroke-linejoin:round;">Atxuri</text>
-  <text x="720" y="470" font-family="Fraunces, Georgia, serif" font-size="17" font-weight="700" fill="#2a3029" text-anchor="middle" style="paint-order:stroke;stroke:#eef0e8;stroke-width:3;stroke-linejoin:round;">Casco</text>
-  <text x="720" y="489" font-family="Fraunces, Georgia, serif" font-size="17" font-weight="700" fill="#2a3029" text-anchor="middle" style="paint-order:stroke;stroke:#eef0e8;stroke-width:3;stroke-linejoin:round;">Viejo</text>
-  <text x="820" y="480" font-family="Fraunces, Georgia, serif" font-size="16" font-weight="500" fill="#2a3029" text-anchor="middle" style="paint-order:stroke;stroke:#eef0e8;stroke-width:3;stroke-linejoin:round;">Iturralde</text>
-  <text x="905" y="475" font-family="Fraunces, Georgia, serif" font-size="16" font-weight="500" fill="#2a3029" text-anchor="middle" style="paint-order:stroke;stroke:#eef0e8;stroke-width:3;stroke-linejoin:round;">Begoña</text>
-  <text x="855" y="530" font-family="Fraunces, Georgia, serif" font-size="16" font-weight="500" fill="#2a3029" text-anchor="middle" style="paint-order:stroke;stroke:#eef0e8;stroke-width:3;stroke-linejoin:round;">Solokoetxe</text>
-  <text x="1075" y="475" font-family="Fraunces, Georgia, serif" font-size="16" font-weight="500" fill="#2a3029" text-anchor="middle" style="paint-order:stroke;stroke:#eef0e8;stroke-width:3;stroke-linejoin:round;">Otxarkoaga</text>
-  <text x="1000" y="560" font-family="Fraunces, Georgia, serif" font-size="16" font-weight="500" fill="#2a3029" text-anchor="middle" style="paint-order:stroke;stroke:#eef0e8;stroke-width:3;stroke-linejoin:round;">Txurdinaga</text>
-  <text x="905" y="590" font-family="Fraunces, Georgia, serif" font-size="16" font-weight="500" fill="#2a3029" text-anchor="middle" style="paint-order:stroke;stroke:#eef0e8;stroke-width:3;stroke-linejoin:round;">Santutxu</text>
-  <text x="725" y="650" font-family="Fraunces, Georgia, serif" font-size="16" font-weight="500" fill="#2a3029" text-anchor="middle" style="paint-order:stroke;stroke:#eef0e8;stroke-width:3;stroke-linejoin:round;">Miribilla</text>
-  <text x="615" y="690" font-family="Fraunces, Georgia, serif" font-size="16" font-weight="500" fill="#2a3029" text-anchor="middle" style="paint-order:stroke;stroke:#eef0e8;stroke-width:3;stroke-linejoin:round;">San Adrián</text>
-  <text x="260" y="670" font-family="Fraunces, Georgia, serif" font-size="16" font-weight="500" fill="#2a3029" text-anchor="middle" style="paint-order:stroke;stroke:#eef0e8;stroke-width:3;stroke-linejoin:round;">Uretamendi</text>
-  <text x="1015" y="700" font-family="Fraunces, Georgia, serif" font-size="16" font-weight="500" fill="#2a3029" text-anchor="middle" style="paint-order:stroke;stroke:#eef0e8;stroke-width:3;stroke-linejoin:round;">Bolueta</text>
-  <text x="745" y="785" font-family="Fraunces, Georgia, serif" font-size="16" font-weight="500" fill="#2a3029" text-anchor="middle" style="paint-order:stroke;stroke:#eef0e8;stroke-width:3;stroke-linejoin:round;">La Peña</text>
-  <g transform="translate(20, 800)">
-    <ellipse cx="14" cy="12" rx="14" ry="8" fill="#7a9070" opacity="0.22" stroke="#5a7355" stroke-width="2"/>
-    <text x="35" y="17" font-family="Inter, sans-serif" font-size="14" fill="#3a3a2e">Barrios recomendados para alojamiento</text>
-    <rect x="420" y="3" width="22" height="18" fill="url(#fiestas-stripes)" stroke="#8a4a38" stroke-width="1"/>
-    <text x="450" y="17" font-family="Inter, sans-serif" font-size="14" fill="#3a3a2e">Zona caliente de las fiestas (Aste Nagusia)</text>
-  </g>
-</svg>
-    </div>
-
-    <p style="margin-top:1rem; font-size:0.92rem; font-style:italic; opacity:0.85;">
-      En verde más oscuro y con borde marcado, los <strong>barrios que os recomendamos para alojaros</strong>: Deusto, Indautxu, Abando y Ametzola. Con rayado, la <strong>zona caliente de las fiestas</strong> (Casco Viejo, San Francisco, Bilbao La Vieja y Atxuri): mucho ambiente pero también mucho ruido por las noches durante la Aste Nagusia. Mejor reservar un poco más al sur o al oeste si queréis descansar.
-    </p>
+    <figure class="zones-map-image">
+      <img src="mapa-zonas-bilbao.png" alt="Mapa de los barrios de Bilbao con las zonas recomendadas para alojarse marcadas" loading="lazy" />
+      <figcaption>
+        En <strong>verde oscuro</strong>, los barrios más centrales (Indautxu, Abando).
+        En <strong>verde claro</strong>, Deusto y los barrios al norte de la ría.
+        En <strong>naranja</strong>, las zonas residenciales (Ametzola, Basurto, Santutxu y otras).
+        En <strong>rojo</strong>, las zonas más periféricas o con peor conexión.
+      </figcaption>
+    </figure>
 
     <div class="zone-block">
-      <h3 class="zone-title">Deusto · <em>el más tranquilo</em></h3>
-      <p class="zone-desc">Al otro lado de la ría, en pleno barrio universitario. Vida local, calles tranquilas y bien conectado por metro y tranvía. Buena opción si queréis dormir lejos del bullicio.</p>
+      <h3 class="zone-title">Indautxu · <em>céntrico y animado</em></h3>
+      <p class="zone-desc">
+        Zona moderna y vibrante del Ensanche bilbaíno, con muchos bares, tiendas y vida
+        local. Es de las zonas más cómodas para alojarse: céntrica, bien comunicada y con
+        ambiente todo el día, pero algo más recogida que el entorno del Casco Viejo.
+        Buena opción si queréis estar a tiro de piedra de todo sin pillar de lleno el meollo de las fiestas.
+      </p>
+      <p class="zone-desc"><strong>Estaciones de metro:</strong> Indautxu (L1 y L2), San Mamés (L1 y L2).</p>
+      <ul class="place-list">
+        <li><strong>Hotel Indautxu</strong><span>En plena plaza Indautxu, ambiente animado.</span></li>
+        <li><strong>Hotel Vincci Consulado de Bilbao</strong><span>Boutique cerca de Gran Vía.</span></li>
+        <li><strong>Hotel Ercilla</strong><span>Clásico de Bilbao, muy céntrico.</span></li>
+        <li><strong>NYX Hotel Bilbao</strong><span>Moderno, junto a Gran Vía.</span></li>
+      </ul>
+    </div>
+
+    <div class="zone-block">
+      <h3 class="zone-title">Abando · <em>entre Alameda de Urquijo y Alameda de Mazarredo</em></h3>
+      <p class="zone-desc">
+        La parte más céntrica y elegante de Abando, la franja comprendida entre la
+        <strong>Alameda de Urquijo</strong> y la <strong>Alameda de Mazarredo</strong>. Aquí está la
+        plaza Moyúa, el corazón comercial de Bilbao, edificios señoriales, hoteles de gama media-alta
+        y mucha vida diurna. Excelente base si queréis estar en el centro absoluto pero algo
+        más alejados del bullicio nocturno del Casco Viejo.
+      </p>
+      <p class="zone-desc"><strong>Estaciones de metro:</strong> Moyúa (L1 y L2), Abando (L1 y L2).</p>
+      <ul class="place-list">
+        <li><strong>Hotel Carlton</strong><span>Histórico y elegante, en plena plaza Moyúa.</span></li>
+        <li><strong>Gran Hotel Domine Bilbao</strong><span>Frente al Guggenheim, terraza panorámica.</span></li>
+        <li><strong>Hotel Miró</strong><span>Boutique, junto al Museo de Bellas Artes.</span></li>
+        <li><strong>Sercotel Coliseo</strong><span>En el antiguo edificio de la ópera, en Alameda de Urquijo.</span></li>
+      </ul>
+    </div>
+
+    <div class="zone-block">
+      <h3 class="zone-title">Deusto · <em>al otro lado de la ría</em></h3>
+      <p class="zone-desc">
+        Esta es la gran zona al norte de la ría e incluye los barrios de
+        <strong>San Pedro de Deusto, Ibarrekolanda y San Inazio</strong>. Pleno barrio
+        universitario, vida local, calles tranquilas y bien conectado por metro y tranvía
+        con todo el centro en pocos minutos. Buena opción si queréis dormir lejos del
+        bullicio del centro pero con acceso rápido a todo.
+      </p>
+      <p class="zone-desc"><strong>Estaciones de metro:</strong> Deustu (L1 y L2), Sarriko (L1 y L2), San Inazio (intercambiador L1 y L2).</p>
       <ul class="place-list">
         <li><strong>Hotel Conde Duque Bilbao</strong><span>Junto a la ría, vistas al Guggenheim.</span></li>
         <li><strong>Hotel NH Collection Villa de Bilbao</strong><span>Próximo a Deusto, moderno.</span></li>
@@ -1456,44 +1464,64 @@
     </div>
 
     <div class="zone-block">
-      <h3 class="zone-title">Rekalde · Ametzola · <em>residencial</em></h3>
-      <p class="zone-desc">Zona local, sin glamour pero práctica. Bien conectada por cercanías y metro con el centro (5–10 minutos). Precios algo más ajustados.</p>
+      <h3 class="zone-title">Ametzola · <em>residencial y bien conectado</em></h3>
+      <p class="zone-desc">
+        Zona residencial al sur de Indautxu, sin glamour pero muy práctica. Bien conectada
+        por cercanías con el centro (5–10 minutos) y con buena oferta de hoteles de gama
+        media a precios algo más ajustados que en el centro absoluto.
+      </p>
+      <p class="zone-desc"><strong>Estaciones cercanas:</strong> Ametzola (Cercanías Renfe C-3), Zabalburu (L3) a 5 minutos a pie.</p>
       <ul class="place-list">
-        <li><strong>Hotel Zenit Bilbao</strong><span>Zona Ametzola, junto a la estación.</span></li>
-        <li><strong>Hotel Petit Palace Tres Naciones</strong><span>Cerca de Rekalde, bien comunicado.</span></li>
+        <li><strong>Hotel Zenit Bilbao</strong><span>Zona Ametzola, junto a la estación de cercanías.</span></li>
+        <li><strong>Hotel Petit Palace Tres Naciones</strong><span>Cerca de Ametzola, bien comunicado.</span></li>
         <li><strong>Apartamentos en Ametzola</strong><span>Buena relación calidad-precio en pisos turísticos.</span></li>
       </ul>
     </div>
 
     <div class="zone-block">
-      <h3 class="zone-title">Moyúa · <em>el centro práctico</em></h3>
-      <p class="zone-desc">Plaza Moyúa y alrededores. Céntrico pero algo más recogido que Abando. Buena base si queréis estar a tiro de piedra de todo.</p>
+      <h3 class="zone-title">Basurto · <em>tranquilo, junto a San Mamés</em></h3>
+      <p class="zone-desc">
+        Barrio residencial al oeste del centro, junto al estadio de San Mamés. Zona
+        tranquila, con vida local y muy bien comunicada por metro, cercanías y autobús.
+        A 10 minutos andando del centro y del Guggenheim por la ría.
+      </p>
+      <p class="zone-desc"><strong>Estaciones cercanas:</strong> San Mamés (L1, L2 y Cercanías Renfe C-1 y C-2), Basurto-Hospital (Cercanías C-1 y C-2).</p>
       <ul class="place-list">
-        <li><strong>Hotel Carlton</strong><span>Histórico y elegante, en plena plaza Moyúa.</span></li>
-        <li><strong>Hotel Ercilla</strong><span>Clásico de Bilbao, muy céntrico.</span></li>
-        <li><strong>NYX Hotel Bilbao</strong><span>Moderno, junto a Gran Vía.</span></li>
-        <li><strong>Sercotel Coliseo</strong><span>En el antiguo edificio de la ópera.</span></li>
+        <li><strong>Occidental Bilbao</strong><span>Junto a San Mamés, vistas al estadio y a la ría.</span></li>
+        <li><strong>Hotel Holiday Inn Express Bilbao</strong><span>Próximo a San Mamés, cómodo y funcional.</span></li>
+        <li><strong>Apartamentos en Basurto</strong><span>Oferta amplia de pisos turísticos en zona residencial.</span></li>
       </ul>
     </div>
 
     <div class="zone-block">
-      <h3 class="zone-title">Indautxu · <em>céntrico y animado</em></h3>
-      <p class="zone-desc">Zona moderna con muchos bares, tiendas y vida en general. Más ambiente que Moyúa pero todavía algo separado del epicentro de las fiestas.</p>
+      <h3 class="zone-title">Santutxu · <em>auténtico y económico</em></h3>
+      <p class="zone-desc">
+        Uno de los barrios más populares y con más vida de Bilbao, al este. Ambiente
+        de barrio, bares de pintxos a precios populares y buen acceso al centro en
+        metro (3–5 minutos al Casco Viejo). Buena opción si buscáis precios más
+        ajustados y experiencia local.
+      </p>
+      <p class="zone-desc"><strong>Estaciones de metro:</strong> Santutxu (L1 y L2), Basarrate (L1 y L2).</p>
       <ul class="place-list">
-        <li><strong>Hotel Indautxu</strong><span>En plena plaza Indautxu, ambiente animado.</span></li>
-        <li><strong>Hotel Vincci Consulado de Bilbao</strong><span>Boutique cerca de Gran Vía.</span></li>
-        <li><strong>Petit Palace Arana</strong><span>A medio camino con el Casco Viejo.</span></li>
+        <li><strong>Hotel Vista Alegre Bilbao</strong><span>Cómodo y bien comunicado, junto a Santutxu.</span></li>
+        <li><strong>Apartamentos en Santutxu</strong><span>Oferta amplia y precios contenidos.</span></li>
+        <li><strong>Pensiones y B&B</strong><span>Varias opciones económicas en la zona.</span></li>
       </ul>
     </div>
 
-    <div class="zone-block">
-      <h3 class="zone-title">Abando · <em>centro y ría</em></h3>
-      <p class="zone-desc">Zona junto a la estación de tren y la ría. Cerca del Guggenheim, del Casco Viejo y de toda la zona de fiestas. <strong>Atención: durante la Aste Nagusia es la zona con más ruido por las noches.</strong></p>
+    <div class="zone-block fiestas-block">
+      <h3 class="zone-title">Zonas de <em>fiesta</em> · evitar si queréis descansar</h3>
+      <p class="zone-desc">
+        Durante la Aste Nagusia, estas son las zonas <strong>más animadas y ruidosas</strong>
+        por las noches. Si os apetece estar en pleno meollo de las fiestas, son la
+        mejor opción; si queréis descansar, mejor reservad en alguna de las zonas
+        anteriores.
+      </p>
       <ul class="place-list">
-        <li><strong>Gran Hotel Domine Bilbao</strong><span>Frente al Guggenheim, terraza panorámica.</span></li>
-        <li><strong>Hotel Miró</strong><span>Boutique, junto al Museo de Bellas Artes.</span></li>
-        <li><strong>Meliá Bilbao</strong><span>Junto al Palacio Euskalduna y la ría.</span></li>
-        <li><strong>Tayko Bilbao</strong><span>Lujo en edificio histórico, junto al Arriaga (¡ojo, en plena zona de fiestas!).</span></li>
+        <li><strong>Abando (al norte de las alamedas)</strong><span>La parte de Abando más cercana al Casco Viejo, hacia la ría y el Arenal. Epicentro de txosnas y fuegos artificiales.</span></li>
+        <li><strong>Casco Viejo</strong><span>Las Siete Calles. Música, danzas tradicionales y ambiente todo el día.</span></li>
+        <li><strong>Iturralde</strong><span>Pegado al Casco Viejo, dentro de la zona de actividad festiva.</span></li>
+        <li><strong>Solokoetxe</strong><span>Junto al Casco Viejo, en la ladera de Begoña. Vida intensa durante las fiestas.</span></li>
       </ul>
     </div>
 

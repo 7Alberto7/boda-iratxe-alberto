@@ -530,6 +530,38 @@
       font-size: 0.85rem;
       color: var(--color-ink-soft);
     }
+    .hotel-links {
+      display: flex;
+      gap: 0.5rem;
+      margin-top: 0.45rem;
+      flex-wrap: wrap;
+    }
+    .hotel-links a {
+      font-size: 0.78rem;
+      font-weight: 500;
+      padding: 0.18rem 0.55rem;
+      border-radius: 999px;
+      text-decoration: none;
+      transition: background 0.2s ease, color 0.2s ease;
+    }
+    .hotel-links a.web-link {
+      background: rgba(122, 144, 112, 0.12);
+      color: var(--color-accent-deep);
+      border: 1px solid var(--color-accent-soft);
+    }
+    .hotel-links a.web-link:hover {
+      background: var(--color-accent-soft);
+      color: var(--color-bg);
+    }
+    .hotel-links a.map-link {
+      background: rgba(201, 168, 120, 0.14);
+      color: #7a5a20;
+      border: 1px solid #d4b888;
+    }
+    .hotel-links a.map-link:hover {
+      background: #d4b888;
+      color: var(--color-bg);
+    }
 
     /* ---------- RECOMENDACIONES (menú) ---------- */
     .recommendations {
@@ -604,6 +636,105 @@
       color: var(--color-ink-soft);
       line-height: 1.5;
       margin: 0;
+    }
+
+    /* ---------- DESPLEGABLE HOTELES ---------- */
+    .hotels-toggle {
+      margin-top: 1.2rem;
+      border: 1px solid var(--color-line);
+      border-radius: var(--radius);
+      overflow: hidden;
+    }
+    .hotels-toggle summary {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.85rem 1.1rem;
+      cursor: pointer;
+      background: var(--color-bg-warm);
+      font-family: var(--font-body);
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: var(--color-ink);
+      letter-spacing: 0.02em;
+      list-style: none;
+      user-select: none;
+      transition: background 0.2s ease;
+    }
+    .hotels-toggle summary::-webkit-details-marker { display: none; }
+    .hotels-toggle summary::after {
+      content: "›";
+      font-family: var(--font-display);
+      font-size: 1.3rem;
+      color: var(--color-accent);
+      transform: rotate(90deg);
+      display: inline-block;
+      transition: transform 0.25s ease;
+      line-height: 1;
+    }
+    .hotels-toggle[open] summary::after {
+      transform: rotate(270deg);
+    }
+    .hotels-toggle summary:hover { background: #e9ede0; }
+    .hotels-toggle[open] summary {
+      border-bottom: 1px solid var(--color-line);
+      background: #e9ede0;
+    }
+    .hotels-toggle .hotels-inner {
+      padding: 0.4rem 0;
+    }
+    .hotels-toggle .place-list {
+      margin: 0;
+      border: none;
+    }
+    .hotels-toggle .place-list li {
+      border-radius: 0;
+      border-left: none;
+      border-right: none;
+      border-top: none;
+      background: transparent;
+    }
+    .hotels-toggle .place-list li:last-child { border-bottom: none; }
+
+    /* Badge de apartamentos */
+    .apt-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      font-size: 0.82rem;
+      font-weight: 500;
+      padding: 0.25rem 0.65rem;
+      border-radius: 999px;
+      margin-top: 0.9rem;
+    }
+    .apt-badge.yes {
+      background: rgba(122, 144, 112, 0.15);
+      color: var(--color-accent-deep);
+      border: 1px solid var(--color-accent-soft);
+    }
+    .apt-badge.limited {
+      background: rgba(201, 168, 120, 0.18);
+      color: #7a6030;
+      border: 1px solid #d4b888;
+    }
+    .apt-badge.pension-yes {
+      background: rgba(178, 160, 196, 0.18);
+      color: #5a406a;
+      border: 1px solid #b8a4cc;
+    }
+    .apt-badge.pension-limited {
+      background: rgba(201, 168, 120, 0.12);
+      color: #7a6030;
+      border: 1px solid #d4b888;
+    }
+    .badges-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 0.9rem;
+    }
+    .badges-row .apt-badge {
+      margin-top: 0;
     }
 
     /* ---------- TRAVEL MODES (cómo llegar) ---------- */
@@ -1427,12 +1558,65 @@
         Buena opción si queréis estar a tiro de piedra de todo sin pillar de lleno el meollo de las fiestas.
       </p>
       <p class="zone-desc"><strong>Estaciones de metro:</strong> Indautxu (L1 y L2), San Mamés (L1 y L2).</p>
-      <ul class="place-list">
-        <li><strong>Hotel Indautxu</strong><span>En plena plaza Indautxu, ambiente animado.</span></li>
-        <li><strong>Hotel Vincci Consulado de Bilbao</strong><span>Boutique cerca de Gran Vía.</span></li>
-        <li><strong>Hotel Ercilla</strong><span>Clásico de Bilbao, muy céntrico.</span></li>
-        <li><strong>NYX Hotel Bilbao</strong><span>Moderno, junto a Gran Vía.</span></li>
-      </ul>
+      <div class="badges-row">
+        <span class="apt-badge yes">✓ Amplia oferta de apartamentos turísticos</span>
+        <span class="apt-badge pension-yes">✓ Amplia oferta de pensiones y B&amp;B</span>
+      </div>
+      <details class="hotels-toggle">
+        <summary>Hoteles destacados</summary>
+        <div class="hotels-inner">
+          <ul class="place-list">
+            <li>
+              <strong>Catalonia Gran Bilbao</strong>
+              <span>4★ · Gran Vía, frente al parque Doña Casilda. Piscina en azotea y spa.</span>
+              <div class="hotel-links">
+                <a href="https://www.cataloniahotels.com/es/hotel/catalonia-gran-via-bilbao" target="_blank" rel="noopener" class="web-link">🌐 Web oficial</a>
+                <a href="https://maps.google.com/?q=Catalonia+Gran+Vía+Bilbao" target="_blank" rel="noopener" class="map-link">📍 Ver en Maps</a>
+              </div>
+            </li>
+            <li>
+              <strong>NH Collection Villa de Bilbao</strong>
+              <span>4★ · Gran Vía, a pasos del Guggenheim y el Palacio Euskalduna.</span>
+              <div class="hotel-links">
+                <a href="https://www.nh-hotels.com/es/hotel/nh-collection-villa-de-bilbao" target="_blank" rel="noopener" class="web-link">🌐 Web oficial</a>
+                <a href="https://maps.google.com/?q=NH+Collection+Villa+de+Bilbao" target="_blank" rel="noopener" class="map-link">📍 Ver en Maps</a>
+              </div>
+            </li>
+            <li>
+              <strong>Hotel Ercilla</strong>
+              <span>4★ · Calle Ercilla, a 5 min del metro Indautxu. Clásico de referencia en Bilbao.</span>
+              <div class="hotel-links">
+                <a href="https://autograph-hotels.marriott.com/hotel-ercilla-de-bilbao" target="_blank" rel="noopener" class="web-link">🌐 Web oficial</a>
+                <a href="https://maps.google.com/?q=Hotel+Ercilla+Bilbao" target="_blank" rel="noopener" class="map-link">📍 Ver en Maps</a>
+              </div>
+            </li>
+            <li>
+              <strong>Eurostars Indautxu</strong>
+              <span>4★ · En pleno triángulo museístico. A pie del Guggenheim, Bellas Artes y Alhóndiga.</span>
+              <div class="hotel-links">
+                <a href="https://www.eurostarshotels.com/hotel-indautxu.html" target="_blank" rel="noopener" class="web-link">🌐 Web oficial</a>
+                <a href="https://maps.google.com/?q=Eurostars+Indautxu+Bilbao" target="_blank" rel="noopener" class="map-link">📍 Ver en Maps</a>
+              </div>
+            </li>
+            <li>
+              <strong>Ibis Bilbao Centro</strong>
+              <span>3★ · Económico y práctico, en el centro. Buena relación calidad-precio.</span>
+              <div class="hotel-links">
+                <a href="https://all.accor.com/hotel/A0E7/index.es.shtml" target="_blank" rel="noopener" class="web-link">🌐 Web oficial</a>
+                <a href="https://maps.google.com/?q=Ibis+Bilbao+Centro" target="_blank" rel="noopener" class="map-link">📍 Ver en Maps</a>
+              </div>
+            </li>
+            <li>
+              <strong>Ilunion Bilbao</strong>
+              <span>3★ · Junto a las estaciones de metro y bus de San Mamés. Accesible y pet-friendly.</span>
+              <div class="hotel-links">
+                <a href="https://www.ilunionhotels.com/hoteles/ilunion-bilbao" target="_blank" rel="noopener" class="web-link">🌐 Web oficial</a>
+                <a href="https://maps.google.com/?q=Ilunion+Bilbao+Hotel" target="_blank" rel="noopener" class="map-link">📍 Ver en Maps</a>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </details>
     </div>
 
     <div class="zone-block">
@@ -1445,12 +1629,65 @@
         más alejados del bullicio nocturno del Casco Viejo.
       </p>
       <p class="zone-desc"><strong>Estaciones de metro:</strong> Moyúa (L1 y L2), Abando (L1 y L2).</p>
-      <ul class="place-list">
-        <li><strong>Hotel Carlton</strong><span>Histórico y elegante, en plena plaza Moyúa.</span></li>
-        <li><strong>Gran Hotel Domine Bilbao</strong><span>Frente al Guggenheim, terraza panorámica.</span></li>
-        <li><strong>Hotel Miró</strong><span>Boutique, junto al Museo de Bellas Artes.</span></li>
-        <li><strong>Sercotel Coliseo</strong><span>En el antiguo edificio de la ópera, en Alameda de Urquijo.</span></li>
-      </ul>
+      <div class="badges-row">
+        <span class="apt-badge yes">✓ Amplia oferta de apartamentos turísticos</span>
+        <span class="apt-badge pension-yes">✓ Amplia oferta de pensiones y B&amp;B</span>
+      </div>
+      <details class="hotels-toggle">
+        <summary>Hoteles destacados</summary>
+        <div class="hotels-inner">
+          <ul class="place-list">
+            <li>
+              <strong>Hotel The Artist</strong>
+              <span>5★ · Alameda de Mazarredo, frente al Guggenheim. Lujo con vistas únicas a la ría.</span>
+              <div class="hotel-links">
+                <a href="https://www.hoteltheartist.com" target="_blank" rel="noopener" class="web-link">🌐 Web oficial</a>
+                <a href="https://maps.google.com/?q=The+Artist+Grand+Hotel+of+Art+Bilbao" target="_blank" rel="noopener" class="map-link">📍 Ver en Maps</a>
+              </div>
+            </li>
+            <li>
+              <strong>Hotel Vincci Consulado de Bilbao</strong>
+              <span>4★ · Paseo de Abandoibarra, junto a la ría y el Guggenheim. Terraza panorámica.</span>
+              <div class="hotel-links">
+                <a href="https://www.vinccihoteles.com/es/hoteles/bilbao/vincci-consulado-de-bilbao/" target="_blank" rel="noopener" class="web-link">🌐 Web oficial</a>
+                <a href="https://maps.google.com/?q=Vincci+Consulado+de+Bilbao" target="_blank" rel="noopener" class="map-link">📍 Ver en Maps</a>
+              </div>
+            </li>
+            <li>
+              <strong>Hotel Miró</strong>
+              <span>4★ · Boutique junto al Museo de Bellas Artes y el Guggenheim.</span>
+              <div class="hotel-links">
+                <a href="https://www.hotelmiro.com" target="_blank" rel="noopener" class="web-link">🌐 Web oficial</a>
+                <a href="https://maps.google.com/?q=Hotel+Miro+Bilbao" target="_blank" rel="noopener" class="map-link">📍 Ver en Maps</a>
+              </div>
+            </li>
+            <li>
+              <strong>Meliá Bilbao</strong>
+              <span>5★ · Junto al Palacio Euskalduna y la ría. Vistas espectaculares.</span>
+              <div class="hotel-links">
+                <a href="https://www.melia.com/es/hoteles/espana/bilbao/melia-bilbao" target="_blank" rel="noopener" class="web-link">🌐 Web oficial</a>
+                <a href="https://maps.google.com/?q=Meliá+Bilbao" target="_blank" rel="noopener" class="map-link">📍 Ver en Maps</a>
+              </div>
+            </li>
+            <li>
+              <strong>Hotel Carlton</strong>
+              <span>5★ · Histórico y elegante, en plena plaza Moyúa. El hotel de referencia de Bilbao.</span>
+              <div class="hotel-links">
+                <a href="https://www.hotelcarlton.es" target="_blank" rel="noopener" class="web-link">🌐 Web oficial</a>
+                <a href="https://maps.google.com/?q=Hotel+Carlton+Bilbao" target="_blank" rel="noopener" class="map-link">📍 Ver en Maps</a>
+              </div>
+            </li>
+            <li>
+              <strong>Sercotel Coliseo</strong>
+              <span>4★ · En el antiguo edificio de la ópera, en Alameda de Urquijo.</span>
+              <div class="hotel-links">
+                <a href="https://www.sercotelhoteles.com/hotel-coliseo-bilbao" target="_blank" rel="noopener" class="web-link">🌐 Web oficial</a>
+                <a href="https://maps.google.com/?q=Sercotel+Coliseo+Bilbao" target="_blank" rel="noopener" class="map-link">📍 Ver en Maps</a>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </details>
     </div>
 
     <div class="zone-block">
@@ -1463,11 +1700,25 @@
         bullicio del centro pero con acceso rápido a todo.
       </p>
       <p class="zone-desc"><strong>Estaciones de metro:</strong> Deustu (L1 y L2), Sarriko (L1 y L2), San Inazio (intercambiador L1 y L2).</p>
-      <ul class="place-list">
-        <li><strong>Hotel Conde Duque Bilbao</strong><span>Junto a la ría, vistas al Guggenheim.</span></li>
-        <li><strong>Hotel NH Collection Villa de Bilbao</strong><span>Próximo a Deusto, moderno.</span></li>
-        <li><strong>Apartamentos / Airbnb en Deusto</strong><span>Buena oferta de pisos turísticos en zona residencial.</span></li>
-      </ul>
+      <div class="badges-row">
+        <span class="apt-badge limited">~ Oferta limitada de apartamentos turísticos</span>
+        <span class="apt-badge pension-yes">✓ Hay pensiones económicas en la zona</span>
+      </div>
+      <details class="hotels-toggle">
+        <summary>Hoteles destacados</summary>
+        <div class="hotels-inner">
+          <ul class="place-list">
+            <li>
+              <strong>NH Bilbao Deusto</strong>
+              <span>3★ · En el corazón de Deusto, a 10 min a pie del Guggenheim. Renovado recientemente.</span>
+              <div class="hotel-links">
+                <a href="https://www.nh-hotels.com/es/hotel/nh-bilbao-deusto" target="_blank" rel="noopener" class="web-link">🌐 Web oficial</a>
+                <a href="https://maps.google.com/?q=NH+Bilbao+Deusto" target="_blank" rel="noopener" class="map-link">📍 Ver en Maps</a>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </details>
     </div>
 
     <div class="zone-block">
@@ -1478,11 +1729,25 @@
         media a precios algo más ajustados que en el centro absoluto.
       </p>
       <p class="zone-desc"><strong>Estaciones cercanas:</strong> Ametzola (Cercanías Renfe C-3), Zabalburu (L3) a 5 minutos a pie.</p>
-      <ul class="place-list">
-        <li><strong>Hotel Zenit Bilbao</strong><span>Zona Ametzola, junto a la estación de cercanías.</span></li>
-        <li><strong>Hotel Petit Palace Tres Naciones</strong><span>Cerca de Ametzola, bien comunicado.</span></li>
-        <li><strong>Apartamentos en Ametzola</strong><span>Buena relación calidad-precio en pisos turísticos.</span></li>
-      </ul>
+      <div class="badges-row">
+        <span class="apt-badge limited">~ Oferta limitada de apartamentos turísticos</span>
+        <span class="apt-badge pension-limited">~ Oferta limitada de pensiones y B&amp;B</span>
+      </div>
+      <details class="hotels-toggle">
+        <summary>Hoteles destacados</summary>
+        <div class="hotels-inner">
+          <ul class="place-list">
+            <li>
+              <strong>Hotel Zenit Bilbao</strong>
+              <span>4★ · Zona Ametzola, junto a la estación de cercanías. Moderno y bien comunicado.</span>
+              <div class="hotel-links">
+                <a href="https://www.zenithoteles.com/hoteles/espana/bilbao/zenit-bilbao" target="_blank" rel="noopener" class="web-link">🌐 Web oficial</a>
+                <a href="https://maps.google.com/?q=Hotel+Zenit+Bilbao" target="_blank" rel="noopener" class="map-link">📍 Ver en Maps</a>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </details>
     </div>
 
     <div class="zone-block">
@@ -1493,11 +1758,33 @@
         A 10 minutos andando del centro y del Guggenheim por la ría.
       </p>
       <p class="zone-desc"><strong>Estaciones cercanas:</strong> San Mamés (L1, L2 y Cercanías Renfe C-1 y C-2), Basurto-Hospital (Cercanías C-1 y C-2).</p>
-      <ul class="place-list">
-        <li><strong>Occidental Bilbao</strong><span>Junto a San Mamés, vistas al estadio y a la ría.</span></li>
-        <li><strong>Hotel Holiday Inn Express Bilbao</strong><span>Próximo a San Mamés, cómodo y funcional.</span></li>
-        <li><strong>Apartamentos en Basurto</strong><span>Oferta amplia de pisos turísticos en zona residencial.</span></li>
-      </ul>
+      <div class="badges-row">
+        <span class="apt-badge limited">~ Oferta limitada de apartamentos turísticos</span>
+        <span class="apt-badge pension-yes">✓ Hay pensiones y B&amp;B en la zona</span>
+      </div>
+      <details class="hotels-toggle">
+        <summary>Hoteles destacados</summary>
+        <div class="hotels-inner">
+          <ul class="place-list">
+            <li>
+              <strong>Ilunion San Mamés</strong>
+              <span>4★ · Junto a Termibus y el estadio de San Mamés. Moderno y con parking propio.</span>
+              <div class="hotel-links">
+                <a href="https://www.ilunionhotels.com/hotel-ilunion-san-mames-en-bilbao/" target="_blank" rel="noopener" class="web-link">🌐 Web oficial</a>
+                <a href="https://maps.google.com/?q=Ilunion+San+Mamés+Bilbao" target="_blank" rel="noopener" class="map-link">📍 Ver en Maps</a>
+              </div>
+            </li>
+            <li>
+              <strong>Abba Euskalduna</strong>
+              <span>4★ · Frente al estadio de San Mamés y junto al Palacio Euskalduna. Terraza panorámica.</span>
+              <div class="hotel-links">
+                <a href="https://www.abbahoteles.com/es/abba-euskalduna-hotel/hotel" target="_blank" rel="noopener" class="web-link">🌐 Web oficial</a>
+                <a href="https://maps.google.com/?q=Abba+Euskalduna+Hotel+Bilbao" target="_blank" rel="noopener" class="map-link">📍 Ver en Maps</a>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </details>
     </div>
 
     <div class="zone-block">
@@ -1509,11 +1796,41 @@
         ajustados y experiencia local.
       </p>
       <p class="zone-desc"><strong>Estaciones de metro:</strong> Santutxu (L1 y L2), Basarrate (L1 y L2).</p>
-      <ul class="place-list">
-        <li><strong>Hotel Vista Alegre Bilbao</strong><span>Cómodo y bien comunicado, junto a Santutxu.</span></li>
-        <li><strong>Apartamentos en Santutxu</strong><span>Oferta amplia y precios contenidos.</span></li>
-        <li><strong>Pensiones y B&B</strong><span>Varias opciones económicas en la zona.</span></li>
-      </ul>
+      <div class="badges-row">
+        <span class="apt-badge yes">✓ Buena oferta de apartamentos turísticos</span>
+        <span class="apt-badge pension-yes">✓ Buena oferta de pensiones y B&amp;B</span>
+      </div>
+      <details class="hotels-toggle">
+        <summary>Hoteles destacados</summary>
+        <div class="hotels-inner">
+          <ul class="place-list">
+            <li>
+              <strong>Spirit Hotel Gran Bilbao</strong>
+              <span>4★ · Junto al barrio histórico, a 8 min del centro a pie. Amplio y con parking.</span>
+              <div class="hotel-links">
+                <a href="https://www.spirithoteles.com/es/spirit-hotel-gran-bilbao/" target="_blank" rel="noopener" class="web-link">🌐 Web oficial</a>
+                <a href="https://maps.google.com/?q=Spirit+Hotel+Gran+Bilbao" target="_blank" rel="noopener" class="map-link">📍 Ver en Maps</a>
+              </div>
+            </li>
+            <li>
+              <strong>Hotel Occidental Bilbao</strong>
+              <span>4★ · Zona Begoña, entre Santutxu y el Casco Viejo. A 25 min a pie del Guggenheim.</span>
+              <div class="hotel-links">
+                <a href="https://www.melia.com/es/hoteles/espana/bilbao/occidental-bilbao" target="_blank" rel="noopener" class="web-link">🌐 Web oficial</a>
+                <a href="https://maps.google.com/?q=Occidental+Hotel+Bilbao" target="_blank" rel="noopener" class="map-link">📍 Ver en Maps</a>
+              </div>
+            </li>
+            <li>
+              <strong>Hotel Silken Sirimiri</strong>
+              <span>3★ · Plaza de la Encarnación, en el corazón histórico. Tranquilo y muy céntrico.</span>
+              <div class="hotel-links">
+                <a href="https://www.hoteles-silken.com/es/hotel-sirimiri-bilbao/" target="_blank" rel="noopener" class="web-link">🌐 Web oficial</a>
+                <a href="https://maps.google.com/?q=Hotel+Silken+Sirimiri+Bilbao" target="_blank" rel="noopener" class="map-link">📍 Ver en Maps</a>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </details>
     </div>
 
     <div class="zone-block">

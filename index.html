@@ -283,45 +283,30 @@
     }
     .convite-inner { max-width: 1100px; margin: 0 auto; }
 
-    .convite-grid {
+    .convite-header {
+      max-width: 720px;
+      margin-bottom: 3rem;
+    }
+
+    .convite-info-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 4rem;
-      align-items: center;
+      gap: 2rem;
     }
 
-    @media (max-width: 760px) {
-      .convite-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+    @media (max-width: 700px) {
+      .convite-info-grid { grid-template-columns: 1fr; }
     }
 
-    .info-block + .info-block { margin-top: 1.8rem; }
-    .info-label {
-      font-size: 0.7rem;
-      letter-spacing: 0.3em;
-      text-transform: uppercase;
-      color: var(--color-accent);
-      margin-bottom: 0.4rem;
-      font-weight: 500;
+    .convite-card {
+      background: var(--color-bg);
+      border: 1px solid var(--color-line);
+      border-radius: var(--radius);
+      padding: 1.6rem 1.8rem;
     }
-    .info-value {
-      font-family: var(--font-display);
-      font-weight: 400;
-      font-size: 1.5rem;
-      line-height: 1.3;
-      color: var(--color-ink);
-    }
-    .info-sub {
-      font-size: 0.95rem;
-      color: var(--color-ink-soft);
-      margin-top: 0.2rem;
-    }
-
-    .arraiz-illustration {
-      width: 100%;
-      max-width: 500px;
-      margin: 0 auto;
-      display: block;
-    }
+    .convite-card .info-label { margin-bottom: 0.5rem; }
+    .convite-card .info-value { font-size: 1.4rem; margin-bottom: 0.4rem; }
+    .convite-card .info-sub { font-size: 0.9rem; line-height: 1.6; }
 
     /* ---------- CONFIRMACIÓN ---------- */
     .rsvp {
@@ -1048,203 +1033,61 @@
   <!-- ============= CONVITE ============= -->
   <section class="convite" id="convite">
     <div class="convite-inner">
-      <div class="convite-grid">
 
-        <div>
-          <p class="section-tag">El plan</p>
-          <h2>Un buen día para disfrutar <em>entre buena gente</em></h2>
-          <p class="lead">
-            La idea es sencilla: pasarlo bien y disfrutar todos juntos de un día
-            divertido, en un entorno precioso, con mucha comida, mucha bebida y
-            las mejores compañías. Sin prisas, sin protocolos, solo ganas de
-            celebrarlo con vosotros.
-          </p>
+      <div class="convite-header">
+        <p class="section-tag">El plan</p>
+        <h2>Un buen día para disfrutar <em>entre buena gente</em></h2>
+        <p class="lead">
+          La idea es sencilla: pasarlo bien y disfrutar todos juntos de un día
+          divertido, en un entorno precioso, con mucha comida, mucha bebida y
+          las mejores compañías. Sin prisas, sin protocolos, solo ganas de
+          celebrarlo con vosotros.
+        </p>
+      </div>
 
-          <div class="info-block">
-            <div class="info-label">Cuándo</div>
-            <div class="info-value">28 de agosto de 2027</div>
-            <div class="info-sub">Hora por confirmar</div>
-          </div>
+      <div class="convite-info-grid">
 
-          <div class="info-block">
-            <div class="info-label">Dónde</div>
-            <div class="info-value">Asador Arraiz</div>
-            <div class="info-sub">
-              Camino Monte Arraiz, 116 · 48002 Bilbao<br />
-              <a href="https://restaurantearraiz.com/" target="_blank" rel="noopener">restaurantearraiz.com</a> ·
-              <a href="https://www.google.com/maps/search/?api=1&query=Asador+Arraiz+Bilbao+Camino+Monte+Arraiz+116" target="_blank" rel="noopener">Cómo llegar</a>
-            </div>
-          </div>
+        <div class="convite-card">
+          <div class="info-label">Cuándo</div>
+          <div class="info-value">28 de agosto de 2027</div>
+          <div class="info-sub">Hora por confirmar</div>
+        </div>
 
-          <div class="info-block">
-            <div class="info-label">Vestimenta</div>
-            <div class="info-value">Como mejor te sientas</div>
-            <div class="info-sub">
-              Sin código, sin complicaciones. Venid cómodos y a vuestro estilo,
-              que la idea es disfrutar.<br /><br />
-              Un aviso práctico: el convite es en un caserío con
-              <strong>césped</strong>, así que cuidado con los <strong>tacones</strong>,
-              porque pueden ser una trampa. El novio irá con <strong>traje y zapatillas</strong>,
-              así que quien quiera puede venir tranquilamente con calzado cómodo.
-              No queremos que nadie se preocupe por la ropa: lo importante es que
-              os lo paséis bien.
-            </div>
-          </div>
-
-          <div class="info-block">
-            <div class="info-label">Transporte</div>
-            <div class="info-value">Habrá servicio de autobús</div>
-            <div class="info-sub">
-              Para que vengáis tranquilos, organizaremos servicio de autobús desde un
-              punto céntrico de Bilbao hasta el asador (y vuelta). Os iremos dando
-              los detalles del recorrido y horarios más adelante.<br /><br />
-              Quien prefiera ir en coche, sin problema: hay sitio de sobra para
-              aparcar en la zona del asador.
-            </div>
+        <div class="convite-card">
+          <div class="info-label">Dónde</div>
+          <div class="info-value">Asador Arraiz</div>
+          <div class="info-sub">
+            Camino Monte Arraiz, 116 · 48002 Bilbao<br />
+            <a href="https://restaurantearraiz.com/" target="_blank" rel="noopener">restaurantearraiz.com</a> ·
+            <a href="https://www.google.com/maps/search/?api=1&query=Asador+Arraiz+Bilbao+Camino+Monte+Arraiz+116" target="_blank" rel="noopener">Cómo llegar</a>
           </div>
         </div>
 
-        <!-- Ilustración del Asador Arraiz -->
-        <div>
-          <svg class="arraiz-illustration" viewBox="0 0 500 420" xmlns="http://www.w3.org/2000/svg" aria-label="Ilustración del Asador Arraiz">
-            <!-- Cielo con tono cálido -->
-            <defs>
-              <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0%" stop-color="#e3e7da"/>
-                <stop offset="100%" stop-color="#eef0e8"/>
-              </linearGradient>
-              <linearGradient id="hill" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0%" stop-color="#8aa080"/>
-                <stop offset="100%" stop-color="#9eb293"/>
-              </linearGradient>
-              <linearGradient id="hill2" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0%" stop-color="#b5c4a8"/>
-                <stop offset="100%" stop-color="#c4d1b8"/>
-              </linearGradient>
-            </defs>
+        <div class="convite-card">
+          <div class="info-label">Vestimenta</div>
+          <div class="info-value">Como mejor te sientas</div>
+          <div class="info-sub">
+            Sin código, sin complicaciones. Venid cómodos y a vuestro estilo,
+            que la idea es disfrutar.<br /><br />
+            Un aviso práctico: el convite es en un caserío con
+            <strong>césped</strong>, así que cuidado con los <strong>tacones</strong>,
+            porque pueden ser una trampa. El novio irá con <strong>traje y zapatillas</strong>,
+            así que quien quiera puede venir tranquilamente con calzado cómodo.
+            No queremos que nadie se preocupe por la ropa: lo importante es que
+            os lo paséis bien.
+          </div>
+        </div>
 
-            <!-- Fondo cielo -->
-            <rect x="0" y="0" width="500" height="320" fill="url(#sky)"/>
-
-            <!-- Montañas lejanas -->
-            <path d="M 0 240 Q 80 180 160 220 T 320 200 T 500 230 L 500 320 L 0 320 Z" fill="url(#hill2)" opacity="0.55"/>
-
-            <!-- Montaña cercana (Monte Arraiz) -->
-            <path d="M 0 290 Q 100 230 200 270 T 380 250 T 500 280 L 500 320 L 0 320 Z" fill="url(#hill)" opacity="0.85"/>
-
-            <!-- Suelo / prado -->
-            <rect x="0" y="320" width="500" height="100" fill="#b9c9a6"/>
-
-            <!-- Camino -->
-            <path d="M 100 420 Q 200 380 250 360 Q 300 345 400 340" stroke="#d4c8b0" stroke-width="14" fill="none" opacity="0.6"/>
-            <path d="M 100 420 Q 200 380 250 360 Q 300 345 400 340" stroke="#c9a878" stroke-width="2" fill="none" stroke-dasharray="4 6" opacity="0.5"/>
-
-            <!-- Caserío vasco -->
-            <!-- Sombra del edificio -->
-            <ellipse cx="250" cy="335" rx="130" ry="8" fill="#5a5040" opacity="0.15"/>
-
-            <!-- Cuerpo principal del caserío -->
-            <rect x="160" y="200" width="180" height="135" fill="#eef0e8" stroke="#5a5040" stroke-width="2"/>
-
-            <!-- Tejado a dos aguas -->
-            <polygon points="150,205 250,135 350,205" fill="#b86a52" stroke="#5a5040" stroke-width="2"/>
-            <polygon points="150,205 250,135 350,205" fill="#8a4a38" opacity="0.3"/>
-
-            <!-- Líneas del tejado (tejas) -->
-            <line x1="170" y1="195" x2="180" y2="180" stroke="#5a5040" stroke-width="0.8" opacity="0.4"/>
-            <line x1="200" y1="170" x2="210" y2="155" stroke="#5a5040" stroke-width="0.8" opacity="0.4"/>
-            <line x1="230" y1="148" x2="240" y2="138" stroke="#5a5040" stroke-width="0.8" opacity="0.4"/>
-            <line x1="280" y1="148" x2="290" y2="158" stroke="#5a5040" stroke-width="0.8" opacity="0.4"/>
-            <line x1="310" y1="170" x2="320" y2="180" stroke="#5a5040" stroke-width="0.8" opacity="0.4"/>
-
-            <!-- Vigas de madera (típicas vascas) -->
-            <rect x="160" y="200" width="180" height="6" fill="#7a6f5f"/>
-            <rect x="160" y="265" width="180" height="5" fill="#7a6f5f"/>
-            <line x1="200" y1="206" x2="200" y2="265" stroke="#7a6f5f" stroke-width="3"/>
-            <line x1="250" y1="206" x2="250" y2="265" stroke="#7a6f5f" stroke-width="3"/>
-            <line x1="300" y1="206" x2="300" y2="265" stroke="#7a6f5f" stroke-width="3"/>
-
-            <!-- Puerta -->
-            <rect x="232" y="285" width="36" height="50" fill="#7a6f5f" stroke="#5a5040" stroke-width="1.5"/>
-            <rect x="234" y="287" width="32" height="46" fill="#b86a52" opacity="0.6"/>
-            <line x1="250" y1="287" x2="250" y2="333" stroke="#5a5040" stroke-width="0.8"/>
-            <circle cx="244" cy="312" r="1.2" fill="#c9a878"/>
-            <circle cx="256" cy="312" r="1.2" fill="#c9a878"/>
-
-            <!-- Ventanas planta superior -->
-            <rect x="180" y="220" width="22" height="28" fill="#5a5040"/>
-            <rect x="182" y="222" width="18" height="24" fill="#c9a878" opacity="0.5"/>
-            <line x1="191" y1="222" x2="191" y2="246" stroke="#5a5040" stroke-width="0.8"/>
-            <line x1="182" y1="234" x2="200" y2="234" stroke="#5a5040" stroke-width="0.8"/>
-
-            <rect x="237" y="220" width="26" height="28" fill="#5a5040"/>
-            <rect x="239" y="222" width="22" height="24" fill="#c9a878" opacity="0.5"/>
-            <line x1="250" y1="222" x2="250" y2="246" stroke="#5a5040" stroke-width="0.8"/>
-            <line x1="239" y1="234" x2="261" y2="234" stroke="#5a5040" stroke-width="0.8"/>
-
-            <rect x="298" y="220" width="22" height="28" fill="#5a5040"/>
-            <rect x="300" y="222" width="18" height="24" fill="#c9a878" opacity="0.5"/>
-            <line x1="309" y1="222" x2="309" y2="246" stroke="#5a5040" stroke-width="0.8"/>
-            <line x1="300" y1="234" x2="318" y2="234" stroke="#5a5040" stroke-width="0.8"/>
-
-            <!-- Ventanas planta inferior -->
-            <rect x="180" y="285" width="22" height="26" fill="#5a5040"/>
-            <rect x="182" y="287" width="18" height="22" fill="#c9a878" opacity="0.5"/>
-            <line x1="191" y1="287" x2="191" y2="309" stroke="#5a5040" stroke-width="0.8"/>
-
-            <rect x="298" y="285" width="22" height="26" fill="#5a5040"/>
-            <rect x="300" y="287" width="18" height="22" fill="#c9a878" opacity="0.5"/>
-            <line x1="309" y1="287" x2="309" y2="309" stroke="#5a5040" stroke-width="0.8"/>
-
-            <!-- Detalle floral en ventana (geranio) -->
-            <circle cx="186" cy="245" r="1.8" fill="#b86a52"/>
-            <circle cx="191" cy="244" r="1.8" fill="#b86a52"/>
-            <circle cx="196" cy="245" r="1.8" fill="#b86a52"/>
-            <circle cx="304" cy="245" r="1.8" fill="#b86a52"/>
-            <circle cx="309" cy="244" r="1.8" fill="#b86a52"/>
-            <circle cx="314" cy="245" r="1.8" fill="#b86a52"/>
-
-            <!-- Chimenea -->
-            <rect x="290" y="148" width="14" height="30" fill="#eef0e8" stroke="#5a5040" stroke-width="1.5"/>
-            <rect x="288" y="146" width="18" height="4" fill="#7a6f5f"/>
-
-            <!-- Humo -->
-            <path d="M 297 145 Q 295 130 300 120 Q 304 110 297 95 Q 290 85 295 75" stroke="#d4c8b0" stroke-width="2.5" fill="none" opacity="0.6" stroke-linecap="round"/>
-
-            <!-- Árboles a los lados -->
-            <!-- Árbol izquierda -->
-            <rect x="80" y="290" width="6" height="25" fill="#7a6f5f"/>
-            <circle cx="83" cy="285" r="22" fill="#8aa080"/>
-            <circle cx="75" cy="280" r="14" fill="#8aa080"/>
-            <circle cx="91" cy="280" r="14" fill="#8aa080"/>
-            <circle cx="83" cy="270" r="16" fill="#9eb293"/>
-
-            <!-- Árbol derecha -->
-            <rect x="410" y="295" width="6" height="22" fill="#7a6f5f"/>
-            <circle cx="413" cy="290" r="20" fill="#8aa080"/>
-            <circle cx="406" cy="285" r="13" fill="#9eb293"/>
-            <circle cx="420" cy="285" r="13" fill="#8aa080"/>
-
-            <!-- Árbol pequeño -->
-            <rect x="125" y="305" width="4" height="15" fill="#7a6f5f"/>
-            <circle cx="127" cy="302" r="11" fill="#8aa080"/>
-
-            <!-- Pájaros lejanos -->
-            <path d="M 100 90 q 4 -3 8 0 q 4 -3 8 0" stroke="#7a6f5f" stroke-width="1.2" fill="none"/>
-            <path d="M 380 70 q 3 -2 6 0 q 3 -2 6 0" stroke="#7a6f5f" stroke-width="1" fill="none"/>
-
-            <!-- Sol suave -->
-            <circle cx="420" cy="80" r="22" fill="#c9a878" opacity="0.25"/>
-            <circle cx="420" cy="80" r="14" fill="#c9a878" opacity="0.35"/>
-
-            <!-- Hierbas en primer plano -->
-            <path d="M 50 410 q 2 -8 0 -14 M 55 410 q -2 -6 0 -12 M 60 410 q 2 -7 0 -13" stroke="#9eb293" stroke-width="1" fill="none"/>
-            <path d="M 440 410 q 2 -8 0 -14 M 445 410 q -2 -6 0 -12 M 450 410 q 2 -7 0 -13" stroke="#9eb293" stroke-width="1" fill="none"/>
-
-            <!-- Cartel con nombre -->
-            <rect x="200" y="345" width="100" height="22" fill="#7a6f5f" stroke="#5a5040" stroke-width="1.5"/>
-            <text x="250" y="361" font-family="Georgia, serif" font-size="13" font-style="italic" fill="#eef0e8" text-anchor="middle" letter-spacing="2">Arraiz</text>
-          </svg>
+        <div class="convite-card">
+          <div class="info-label">Transporte</div>
+          <div class="info-value">Habrá servicio de autobús</div>
+          <div class="info-sub">
+            Para que vengáis tranquilos, organizaremos servicio de autobús desde un
+            punto céntrico de Bilbao hasta el asador (y vuelta). Os iremos dando
+            los detalles del recorrido y horarios más adelante.<br /><br />
+            Quien prefiera ir en coche, sin problema: hay sitio de sobra para
+            aparcar en la zona del asador.
+          </div>
         </div>
 
       </div>
@@ -1480,13 +1323,13 @@
         los seis primeros de la lista. El acceso solo está permitido para ir directos al parking, no para circular por la zona.
       </p>
       <ul class="place-list">
-        <li><strong>Parking Pío Baroja</strong><span>Plaza Pío Baroja · Abando, junto a la ría</span></li>
-        <li><strong>Parking Azkuna Zentroa (Alhóndiga)</strong><span>Alameda Urquijo, 43 · Indautxu</span></li>
-        <li><strong>Parking Plaza Euskadi</strong><span>Plaza Euskadi · bajo la Torre Iberdrola · Abandoibarra</span></li>
-        <li><strong>Parking Plaza Indautxu</strong><span>Plaza Indautxu · Indautxu</span></li>
-        <li><strong>Parking Instituto Unamuno</strong><span>Calle Hurtado de Amézaga · Abando</span></li>
-        <li><strong>Parking Zubiarte</strong><span>Bajo el centro comercial Zubiarte · Abandoibarra</span></li>
-        <li><strong>Parking Palacio Euskalduna</strong><span>Avenida Abandoibarra, 4 · Abandoibarra · <strong style="color: var(--color-roof);">No apto para vehículos sin etiqueta o con etiqueta B</strong></span></li>
+        <li><strong>Parking Pío Baroja</strong><span>Plaza Pío Baroja · Abando, junto a la ría<br><strong>En coche:</strong> Acceso por Calle Conde Mirasol desde la ribera. Dentro de la ZBE (solo etiqueta B o superior, lunes a viernes 7–20 h). <a href="https://maps.google.com/?q=Parking+Pío+Baroja+Bilbao" target="_blank" rel="noopener" class="map-link" style="font-size:0.78rem;">📍 Ver en Maps</a></span></li>
+        <li><strong>Parking Azkuna Zentroa (Alhóndiga)</strong><span>Alameda Urquijo, 43 · Indautxu<br><strong>En coche:</strong> Acceso por Alameda Urquijo en dirección oeste (desde la rotonda del Palacio Euskalduna). Dentro de la ZBE. <a href="https://maps.google.com/?q=Parking+Azkuna+Zentroa+Alhóndiga+Bilbao" target="_blank" rel="noopener" class="map-link" style="font-size:0.78rem;">📍 Ver en Maps</a></span></li>
+        <li><strong>Parking Plaza Euskadi</strong><span>Plaza Euskadi · bajo la Torre Iberdrola · Abandoibarra<br><strong>En coche:</strong> Acceso por Avda. Abandoibarra o Calle Lehendakari Leizaola. Dentro de la ZBE. <a href="https://maps.google.com/?q=Parking+Plaza+Euskadi+Bilbao" target="_blank" rel="noopener" class="map-link" style="font-size:0.78rem;">📍 Ver en Maps</a></span></li>
+        <li><strong>Parking Plaza Indautxu</strong><span>Plaza Indautxu · Indautxu<br><strong>En coche:</strong> Acceso por Calle Rodríguez Arias o Calle Licenciado Poza. Dentro de la ZBE. <a href="https://maps.google.com/?q=Parking+Plaza+Indautxu+Bilbao" target="_blank" rel="noopener" class="map-link" style="font-size:0.78rem;">📍 Ver en Maps</a></span></li>
+        <li><strong>Parking Instituto Unamuno</strong><span>Calle Hurtado de Amézaga · Abando<br><strong>En coche:</strong> Acceso por Calle Hurtado de Amézaga desde la estación de Abando. Dentro de la ZBE. <a href="https://maps.google.com/?q=Parking+Instituto+Unamuno+Bilbao" target="_blank" rel="noopener" class="map-link" style="font-size:0.78rem;">📍 Ver en Maps</a></span></li>
+        <li><strong>Parking Zubiarte</strong><span>Bajo el centro comercial Zubiarte · Abandoibarra<br><strong>En coche:</strong> Acceso por Calle Lehendakari Aguirre o Avda. Abandoibarra. Dentro de la ZBE. <a href="https://maps.google.com/?q=Parking+Zubiarte+Bilbao" target="_blank" rel="noopener" class="map-link" style="font-size:0.78rem;">📍 Ver en Maps</a></span></li>
+        <li><strong>Parking Palacio Euskalduna</strong><span>Avenida Abandoibarra, 4 · Abandoibarra · <strong style="color: var(--color-roof);">No apto para vehículos sin etiqueta o con etiqueta B</strong><br><strong>En coche:</strong> Acceso por Avda. Abandoibarra dirección Guggenheim. Dentro de la ZBE. <a href="https://maps.google.com/?q=Parking+Palacio+Euskalduna+Bilbao" target="_blank" rel="noopener" class="map-link" style="font-size:0.78rem;">📍 Ver en Maps</a></span></li>
       </ul>
       <p style="margin-top:1rem; font-size:0.92rem;">
         <strong>Con etiquetas 0, ECO o C</strong> podéis aparcar también en cualquier otro parking público dentro de la ZBE (hay más parkings disponibles en Abando, Indautxu y Abandoibarra). En cambio, sin distintivo ambiental no se puede aparcar en ningún parking dentro de la ZBE.
@@ -1504,11 +1347,11 @@
         y a una distancia razonable del centro andando o en metro.
       </p>
       <ul class="place-list">
-        <li><strong>Parking iPark Madariaga</strong><span>Heliodoro de la Torre, 14 · Deusto-Sarriko</span></li>
-        <li><strong>Parking Hospital IMQ Zorrotzaurre</strong><span>Julio Urquijo, 1 · San Pedro de Deusto</span></li>
-        <li><strong>Parking Intermodal</strong><span>Gurtubay, 1 · bajo la estación de autobuses (Termibus) · 526 plazas</span></li>
-        <li><strong>Parking IC Termibus / San Mamés</strong><span>Gurtubay, 2 · frente a Termibus, junto al estadio · 24 h</span></li>
-        <li><strong>Parking La Casilla</strong><span>Plaza La Casilla · Basurto, junto al pabellón</span></li>
+        <li><strong>Parking iPark Madariaga</strong><span>Heliodoro de la Torre, 14 · Deusto-Sarriko<br><strong>En coche:</strong> Desde el puente de Deusto, por Avda. de Madariaga en dirección Sarriko. Fuera de la ZBE. <a href="https://maps.google.com/?q=iPark+Madariaga+Bilbao" target="_blank" rel="noopener" class="map-link" style="font-size:0.78rem;">📍 Ver en Maps</a></span></li>
+        <li><strong>Parking Hospital IMQ Zorrotzaurre</strong><span>Julio Urquijo, 1 · San Pedro de Deusto<br><strong>En coche:</strong> Acceso por Calle Julio Urquijo desde Avda. Madariaga. Fuera de la ZBE. <a href="https://maps.google.com/?q=Parking+Hospital+IMQ+Zorrotzaurre+Bilbao" target="_blank" rel="noopener" class="map-link" style="font-size:0.78rem;">📍 Ver en Maps</a></span></li>
+        <li><strong>Parking Intermodal</strong><span>Gurtubay, 1 · bajo la estación de autobuses (Termibus) · 526 plazas<br><strong>En coche:</strong> Acceso por Calle Gurtubay desde Calle San Mamés. Fuera de la ZBE. <a href="https://maps.google.com/?q=Parking+Intermodal+Termibus+Bilbao" target="_blank" rel="noopener" class="map-link" style="font-size:0.78rem;">📍 Ver en Maps</a></span></li>
+        <li><strong>Parking IC Termibus / San Mamés</strong><span>Gurtubay, 2 · frente a Termibus, junto al estadio · 24 h<br><strong>En coche:</strong> Acceso por Calle Gurtubay desde Calle San Mamés, enfrente del Intermodal. Fuera de la ZBE. <a href="https://maps.google.com/?q=Parking+IC+Termibus+Bilbao" target="_blank" rel="noopener" class="map-link" style="font-size:0.78rem;">📍 Ver en Maps</a></span></li>
+        <li><strong>Parking La Casilla</strong><span>Plaza La Casilla · Basurto, junto al pabellón<br><strong>En coche:</strong> Acceso por Calle Ercilla o Avda. de Sabino Arana en dirección La Casilla. Fuera de la ZBE. <a href="https://maps.google.com/?q=Parking+La+Casilla+Bilbao" target="_blank" rel="noopener" class="map-link" style="font-size:0.78rem;">📍 Ver en Maps</a></span></li>
       </ul>
       <p style="margin-top:1rem; font-size:0.92rem;">
         Reservar plaza con antelación a través de apps como <strong>Parclick</strong>, <strong>Parkimeter</strong> o <strong>ElParking</strong> suele salir más barato. Y durante la Aste Nagusia, mejor reservar con tiempo.
@@ -2086,6 +1929,13 @@
     </p>
 
     <div class="zone-block">
+      <h3 class="zone-title">El tiempo en Bilbao</h3>
+      <p class="zone-desc">
+        Bilbao es verde por algo: <strong>llueve con cierta frecuencia incluso en verano</strong>. En agosto las temperaturas suelen estar entre 18 y 28 °C, pero puede caer una buena tromba en cualquier momento. Llevad una chaqueta ligera o paraguas plegable, no os la juguéis. Aunque a veces hace mucho calor, la humedad del Cantábrico se nota.
+      </p>
+    </div>
+
+    <div class="zone-block">
       <h3 class="zone-title">Transporte público · <em>la tarjeta Barik</em></h3>
       <p class="zone-desc">
         Bilbao tiene una red de transporte público pequeña, eficiente y bien conectada: metro, tranvía, autobuses urbanos (Bilbobus) e interurbanos (Bizkaibus), Renfe Cercanías y el Funicular de Artxanda. Todo se puede pagar con la <strong>tarjeta Barik</strong>.
@@ -2107,16 +1957,6 @@
     </div>
 
     <div class="zone-block">
-      <h3 class="zone-title">Baños públicos</h3>
-      <p class="zone-desc">
-        Hay baños públicos gratuitos repartidos por la ciudad (en la mayoría de plazas del centro y parques). En zonas turísticas como el Casco Viejo y junto al Guggenheim también hay módulos. En los bares, eso sí, lo habitual es que te pidan consumir antes de usar el baño.
-      </p>
-      <p class="zone-desc">
-        Durante la <strong>Aste Nagusia</strong> se instalan baños químicos adicionales en El Arenal y zonas de fiesta.
-      </p>
-    </div>
-
-    <div class="zone-block">
       <h3 class="zone-title">Horarios de tiendas y comidas</h3>
       <ul class="rsvp-list" style="color: var(--color-ink);">
         <li><strong>Comercio pequeño</strong>: típicamente abre de 10:00 a 14:00 y de 17:00 a 20:00 (o 16:30 a 20:30). Los <strong>domingos cierra</strong> casi todo, salvo en el Casco Viejo y zonas turísticas.</li>
@@ -2127,16 +1967,12 @@
     </div>
 
     <div class="zone-block">
-      <h3 class="zone-title">El tiempo en Bilbao</h3>
+      <h3 class="zone-title">Baños públicos</h3>
       <p class="zone-desc">
-        Bilbao es verde por algo: <strong>llueve con cierta frecuencia incluso en verano</strong>. En agosto las temperaturas suelen estar entre 18 y 28 °C, pero puede caer una buena tromba en cualquier momento. Llevad una chaqueta ligera o paraguas plegable, no os la juguéis. Aunque a veces hace mucho calor, la humedad del Cantábrico se nota.
+        Hay baños públicos gratuitos repartidos por la ciudad (en la mayoría de plazas del centro y parques). En zonas turísticas como el Casco Viejo y junto al Guggenheim también hay módulos. En los bares, eso sí, lo habitual es que te pidan consumir antes de usar el baño.
       </p>
-    </div>
-
-    <div class="zone-block">
-      <h3 class="zone-title">Idioma</h3>
       <p class="zone-desc">
-        El País Vasco es bilingüe: <strong>euskera y castellano</strong>. Todos los carteles están en los dos idiomas y todo el mundo habla castellano sin problema. Aprended unas palabras básicas si os apetece: "kaixo" (hola), "eskerrik asko" (gracias), "agur" (adiós).
+        Durante la <strong>Aste Nagusia</strong> se instalan baños químicos adicionales en El Arenal y zonas de fiesta.
       </p>
     </div>
 

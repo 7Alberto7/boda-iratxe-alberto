@@ -497,6 +497,15 @@
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: 0.8rem;
     }
+    .place-list--3col {
+      grid-template-columns: repeat(3, 1fr);
+    }
+    @media (max-width: 900px) {
+      .place-list--3col { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 600px) {
+      .place-list--3col { grid-template-columns: 1fr; }
+    }
     .place-list li {
       padding: 0.8rem 1rem;
       background: var(--color-bg-warm);
@@ -1829,85 +1838,95 @@
     <div class="zone-block">
       <h3 class="zone-title">Casco Viejo · <em>Plaza Nueva y alrededores</em></h3>
       <p class="zone-desc">El corazón histórico. La Plaza Nueva concentra varios de los bares más conocidos. Pintxos entre 2 y 3,50 € y zuritos en torno a 1,50–2,50 €.</p>
-      <ul class="place-list">
-        <li><strong>Gure Toki</strong><span>Plaza Nueva. Pintxos creativos de mucha calidad. Premio al mejor bar de pintxos de Bizkaia.</span><div class="hotel-links"><a href="https://maps.google.com/?q=Gure+Toki+Plaza+Nueva+Bilbao" target="_blank" rel="noopener" class="map-link">📍 Ver en Maps</a></div></li>
-        <li><strong>Sorginzulo</strong><span>Plaza Nueva. Pintxos de barra y de autor, foie a la plancha y croquetas de bacalao.</span><div class="hotel-links"><a href="https://maps.google.com/?q=Sorginzulo+Plaza+Nueva+Bilbao" target="_blank" rel="noopener" class="map-link">📍 Ver en Maps</a></div></li>
-        <li><strong>Víctor Montes</strong><span>Plaza Nueva. Clásico histórico desde 1849. Gran barra y bodega.</span><div class="hotel-links"><a href="https://maps.google.com/?q=Victor+Montes+Plaza+Nueva+Bilbao" target="_blank" rel="noopener" class="map-link">📍 Ver en Maps</a></div></li>
-        <li><strong>Café Bar Bilbao</strong><span>Plaza Nueva. Ambiente local auténtico, pintxos de siempre.</span><div class="hotel-links"><a href="https://maps.google.com/?q=Cafe+Bar+Bilbao+Plaza+Nueva" target="_blank" rel="noopener" class="map-link">📍 Ver en Maps</a></div></li>
-        <li><strong>Bar Berton</strong><span>Calle Jardines. Pintxos de solomillo y foie. Txapela caliente hecha al momento.</span><div class="hotel-links"><a href="https://maps.google.com/?q=Bar+Berton+Calle+Jardines+Bilbao" target="_blank" rel="noopener" class="map-link">📍 Ver en Maps</a></div></li>
-        <li><strong>Baste</strong><span>Calle Diputación. Mejillones rellenos como especialidad. Tortillas individuales recién hechas.</span><div class="hotel-links"><a href="https://maps.google.com/?q=Baste+Bar+Bilbao+Calle+Correo" target="_blank" rel="noopener" class="map-link">📍 Ver en Maps</a></div></li>
-      </ul>
+      <ul class="place-list place-list--3col"><li><strong>La Olla</strong><span>Plaza Nueva, 2. Jamón ibérico de bellota, bonito del norte, anchoas y pintxo de chuletón. Premio en varios concursos.</span><div class="hotel-links"><a href="https://maps.google.com/?q=La+Olla+de+la+Plaza+Nueva+Bilbao" target="_blank" rel="noopener" class="map-link">📍 Ver en Maps</a></div></li>
+<li><strong>El Globo</strong><span>Plaza Nueva, 1. Sede en Plaza Nueva del clásico de la calle Diputación. Txangurro gratinado y txistorra a la brasa.</span><div class="hotel-links"><a href="https://maps.google.com/?q=El+Globo+Plaza+Nueva+Bilbao" target="_blank" rel="noopener" class="map-link">📍 Ver en Maps</a></div></li>
+<li><strong>Zuga</strong><span>Cueva Goikolau s/n. Gran variedad de pintxos con protagonismo del marisco, el foie y el queso. Precios populares.</span><div class="hotel-links"><a href="https://maps.google.com/?q=Zuga+bar+Bilbao+Plaza+Nueva" target="_blank" rel="noopener" class="map-link">📍 Ver en Maps</a></div></li>
+<li><strong>Gure Toki</strong><span>Plaza Nueva. Pintxos creativos de mucha calidad. Premio al mejor bar de pintxos de Bizkaia.</span><div class="hotel-links"><a href="https://maps.google.com/?q=Gure+Toki+Plaza+Nueva+Bilbao" target="_blank" rel="noopener" class="map-link">📍 Ver en Maps</a></div></li>
+<li><strong>Sorginzulo</strong><span>Plaza Nueva. Pintxos de barra y de autor, foie a la plancha y croquetas de bacalao.</span><div class="hotel-links"><a href="https://maps.google.com/?q=Sorginzulo+Plaza+Nueva+Bilbao" target="_blank" rel="noopener" class="map-link">📍 Ver en Maps</a></div></li>
+<li><strong>Café Bar Bilbao</strong><span>Plaza Nueva. Ambiente local auténtico, pintxos de siempre.</span><div class="hotel-links"><a href="https://maps.google.com/?q=Cafe+Bar+Bilbao+Plaza+Nueva" target="_blank" rel="noopener" class="map-link">📍 Ver en Maps</a></div></li></ul>
     </div>
 
     <div class="zone-block">
       <h3 class="zone-title">Diputación · <em>clásicos del Ensanche</em></h3>
       <p class="zone-desc">Calle peatonal paralela a Gran Vía, con una clientela mezcla de profesionales y locales. Pintxos tradicionales y de autor conviven en la misma manzana.</p>
-      <ul class="place-list">
-        <li><strong>El Globo</strong><span>Diputación, 8. Txangurro gratinado imprescindible, foie y tortillas individuales.</span><div class="hotel-links"><a href="https://maps.google.com/?q=Bar+El+Globo+Diputacion+Bilbao" target="_blank" rel="noopener" class="map-link">📍 Ver en Maps</a></div></li>
-        <li><strong>La Viña del Ensanche</strong><span>Diputación, 10. Desde 1927. Jamón ibérico, foie y clásicos de la cocina vasca.</span><div class="hotel-links"><a href="https://maps.google.com/?q=La+Viña+del+Ensanche+Bilbao" target="_blank" rel="noopener" class="map-link">📍 Ver en Maps</a></div></li>
-        <li><strong>Bar Eme</strong><span>Zona Diputación. Pintxos de mercado y producto fresco.</span><div class="hotel-links"><a href="https://maps.google.com/?q=Bar+Eme+Bilbao+Diputacion" target="_blank" rel="noopener" class="map-link">📍 Ver en Maps</a></div></li>
-      </ul>
+      <ul class="place-list place-list--3col"><li><strong>El Globo</strong><span>Diputación, 8. El original. Txangurro gratinado imprescindible, foie y tortillas individuales.</span><div class="hotel-links"><a href="https://maps.google.com/?q=Bar+El+Globo+Diputacion+Bilbao" target="_blank" rel="noopener" class="map-link">📍 Ver en Maps</a></div></li>
+<li><strong>La Viña del Ensanche</strong><span>Diputación, 10. Desde 1927. Jamón ibérico, foie y clásicos de la cocina vasca.</span><div class="hotel-links"><a href="https://maps.google.com/?q=La+Viña+del+Ensanche+Bilbao" target="_blank" rel="noopener" class="map-link">📍 Ver en Maps</a></div></li>
+<li><strong>Amaren</strong><span>Diputación, 1. Pintxos a la brasa preparados al momento. Especialidad en carne de buey y hamburguesas gourmet.</span><div class="hotel-links"><a href="https://maps.google.com/?q=Amaren+Bilbao+Diputacion" target="_blank" rel="noopener" class="map-link">📍 Ver en Maps</a></div></li></ul>
     </div>
 
     <div class="zone-block">
       <h3 class="zone-title">Ledesma · <em>la calle del txikiteo</em></h3>
       <p class="zone-desc">La calle peatonal por excelencia del poteo bilbaíno, paralela a Gran Vía. Ambiente más adulto y de barrio, con bares de toda la vida.</p>
-      <ul class="place-list">
-        <li><strong>Bar Artajo</strong><span>Ledesma, 7. Rabas y croquetas caseras muy demandadas, siempre lleno.</span><div class="hotel-links"><a href="https://maps.google.com/?q=Bar+Artajo+Ledesma+Bilbao" target="_blank" rel="noopener" class="map-link">📍 Ver en Maps</a></div></li>
-        <li><strong>Bar Atseden</strong><span>Ledesma. Croquetas de jamón enormes, ambiente relajado con mesas al fondo.</span><div class="hotel-links"><a href="https://maps.google.com/?q=Bar+Atseden+Ledesma+Bilbao" target="_blank" rel="noopener" class="map-link">📍 Ver en Maps</a></div></li>
-        <li><strong>Taberna Magnum</strong><span>Astarloa, 5 (parte alta de Ledesma). Embutidos ibéricos, quesos y bocadillos de calidad.</span><div class="hotel-links"><a href="https://maps.google.com/?q=Taberna+Magnum+Astarloa+Bilbao" target="_blank" rel="noopener" class="map-link">📍 Ver en Maps</a></div></li>
-      </ul>
+      <ul class="place-list place-list--3col"><li><strong>Bar Nicolás</strong><span>Ledesma. Clásico de la calle, cocina de mercado y ambiente de toda la vida.</span><div class="hotel-links"><a href="https://maps.google.com/?q=Bar+Nicolas+Ledesma+Bilbao" target="_blank" rel="noopener" class="map-link">📍 Ver en Maps</a></div></li>
+<li><strong>Café Iruña</strong><span>Jardines de Albia (entrada por Ledesma). Desde 1903, declarado Monumento Singular. Pintxos morunos imprescindibles y decoración mudéjar espectacular.</span><div class="hotel-links"><a href="https://maps.google.com/?q=Cafe+Iruña+Bilbao+Jardines+Albia" target="_blank" rel="noopener" class="map-link">📍 Ver en Maps</a></div></li>
+<li><strong>Bar Artajo</strong><span>Ledesma, 7. Rabas y croquetas caseras muy demandadas, siempre lleno.</span><div class="hotel-links"><a href="https://maps.google.com/?q=Bar+Artajo+Ledesma+Bilbao" target="_blank" rel="noopener" class="map-link">📍 Ver en Maps</a></div></li>
+<li><strong>Periflú</strong><span>Ledesma. Referente en tortillas de patata. También gildas y pintxos variados.</span><div class="hotel-links"><a href="https://maps.google.com/?q=Periflú+Ledesma+Bilbao" target="_blank" rel="noopener" class="map-link">📍 Ver en Maps</a></div></li>
+<li><strong>Asador Getaria</strong><span>Zona Ledesma. Pescados y carnes a la brasa, pintxos de calidad.</span><div class="hotel-links"><a href="https://maps.google.com/?q=Asador+Getaria+Bilbao+Ledesma" target="_blank" rel="noopener" class="map-link">📍 Ver en Maps</a></div></li>
+<li><strong>Fratelli</strong><span>Junto a Ledesma. Ambiente animado, pintxos y buen ambiente de cuadrilla.</span><div class="hotel-links"><a href="https://maps.google.com/?q=Fratelli+Bilbao+Ledesma" target="_blank" rel="noopener" class="map-link">📍 Ver en Maps</a></div></li></ul>
     </div>
 
     <div class="zone-block">
       <h3 class="zone-title">Henao · <em>el Ensanche más animado</em></h3>
       <p class="zone-desc">La calle Henao y sus aledaños (Heros, Lersundi, Iparragirre) concentran la zona más cosmopolita y animada del Ensanche bilbaíno, con bares modernos y ambiente variado.</p>
-      <ul class="place-list">
-        <li><strong>Gildatoki</strong><span>Henao, 30. Especialistas en gildas: más de 20 variedades de la clásica banderilla vasca.</span><div class="hotel-links"><a href="https://maps.google.com/?q=Gildatoki+Henao+Bilbao" target="_blank" rel="noopener" class="map-link">📍 Ver en Maps</a></div></li>
-        <li><strong>El Sacacorchos</strong><span>Henao, 28. Pintxos y raciones de calidad, ambiente bullicioso y muy local.</span><div class="hotel-links"><a href="https://maps.google.com/?q=El+Sacacorchos+Henao+Bilbao" target="_blank" rel="noopener" class="map-link">📍 Ver en Maps</a></div></li>
-        <li><strong>Bar Mr. Marvelous</strong><span>Heros. Pintxos creativos y cerveza artesana en ambiente moderno.</span><div class="hotel-links"><a href="https://maps.google.com/?q=Mr+Marvelous+Heros+Bilbao" target="_blank" rel="noopener" class="map-link">📍 Ver en Maps</a></div></li>
-      </ul>
+      <ul class="place-list place-list--3col"><li><strong>El Capricho</strong><span>Henao, 20. Raciones y tapas de calidad: pulpo a la brasa, kokotxas, anchoas y huevos fritos con morcilla. Relación calidad-precio excelente.</span><div class="hotel-links"><a href="https://maps.google.com/?q=El+Capricho+Henao+Bilbao" target="_blank" rel="noopener" class="map-link">📍 Ver en Maps</a></div></li>
+<li><strong>La Cocina de Aitxu</strong><span>Zona Henao. Cocina vasca de mercado, ambiente acogedor y pintxos caseros.</span><div class="hotel-links"><a href="https://maps.google.com/?q=La+Cocina+de+Aitxu+Bilbao" target="_blank" rel="noopener" class="map-link">📍 Ver en Maps</a></div></li>
+<li><strong>Salitre</strong><span>Henao, 28. Bistro con pintxos y raciones de calidad, ambiente moderno y buena selección de vinos.</span><div class="hotel-links"><a href="https://maps.google.com/?q=Bistro+Salitre+Henao+Bilbao" target="_blank" rel="noopener" class="map-link">📍 Ver en Maps</a></div></li></ul>
     </div>
 
     <div class="zone-block">
       <h3 class="zone-title">Egaña · <em>entre el Ensanche y Pozas</em></h3>
       <p class="zone-desc">La calle Egaña conecta el Ensanche con la zona de Pozas. Ambiente más de barrio, precios ajustados y bares con mucha solera.</p>
-      <ul class="place-list">
-        <li><strong>Gildatoki Egaña</strong><span>Egaña, 6. Segunda sede de los especialistas en gildas, ambiente más íntimo.</span><div class="hotel-links"><a href="https://maps.google.com/?q=Gildatoki+Egana+Bilbao" target="_blank" rel="noopener" class="map-link">📍 Ver en Maps</a></div></li>
-        <li><strong>Bar Jaime</strong><span>Egaña, 11. Más de 50 años abierto. Tortilla de patata, ensaladilla y pintxos de barra todo el día desde el desayuno.</span><div class="hotel-links"><a href="https://maps.google.com/?q=Bar+Jaime+Egana+Bilbao" target="_blank" rel="noopener" class="map-link">📍 Ver en Maps</a></div></li>
-        <li><strong>Bar Bacaicoa</strong><span>Zona Egaña. Desde 1965. Pintxos de barra variados, trato familiar y mucho ambiente local.</span><div class="hotel-links"><a href="https://maps.google.com/?q=Bar+Bacaicoa+Bilbao" target="_blank" rel="noopener" class="map-link">📍 Ver en Maps</a></div></li>
-      </ul>
+      <ul class="place-list place-list--3col"><li><strong>Asador Kerren</strong><span>Iparraguirre, 56. El asador más antiguo de Bilbao, fundado hace 40 años. Carnes y pescados a la brasa sobre parrillas, cordero al burduntzi.</span><div class="hotel-links"><a href="https://maps.google.com/?q=Kerren+Asador+Iparraguirre+Bilbao" target="_blank" rel="noopener" class="map-link">📍 Ver en Maps</a></div></li>
+<li><strong>Bar Plata</strong><span>Egaña, 11. Vinos, pintxos, tapas y brochetas. Ambiente de barrio y buena barra.</span><div class="hotel-links"><a href="https://maps.google.com/?q=Bar+Plata+Egana+Bilbao" target="_blank" rel="noopener" class="map-link">📍 Ver en Maps</a></div></li>
+<li><strong>La Taberna de Zárate</strong><span>Fernández del Campo, 35. Cocina de producto, vinos cuidados y ambiente íntimo.</span><div class="hotel-links"><a href="https://maps.google.com/?q=La+Taberna+de+Zarate+Bilbao" target="_blank" rel="noopener" class="map-link">📍 Ver en Maps</a></div></li></ul>
     </div>
 
     <div class="zone-block">
       <h3 class="zone-title">Pozas · <em>el barrio de los pintxos</em></h3>
       <p class="zone-desc">La calle Licenciado Poza y alrededores (García Rivero, Rodríguez Arias) son la zona de pintxos más popular entre los bilbaínos. Ambiente animado, precios populares y bares a rebosar.</p>
-      <ul class="place-list">
-        <li><strong>Mugi</strong><span>Licenciado Poza, 55. Famoso por su tortilla de patata servida en cazuelita individual. Imprescindible.</span><div class="hotel-links"><a href="https://maps.google.com/?q=Bar+Mugi+Licenciado+Poza+Bilbao" target="_blank" rel="noopener" class="map-link">📍 Ver en Maps</a></div></li>
-        <li><strong>Bar Nashville</strong><span>Licenciado Poza, 24. Las mejores tortillas de Bilbao para muchos. También gildas y pintxos de barra.</span><div class="hotel-links"><a href="https://maps.google.com/?q=Bar+Nashville+Licenciado+Poza+Bilbao" target="_blank" rel="noopener" class="map-link">📍 Ver en Maps</a></div></li>
-        <li><strong>Poza 46</strong><span>Licenciado Poza, 46. Precios muy asequibles, pintxos de barra variados y ambiente de cuadrilla.</span><div class="hotel-links"><a href="https://maps.google.com/?q=Bar+Poza+46+Bilbao" target="_blank" rel="noopener" class="map-link">📍 Ver en Maps</a></div></li>
-        <li><strong>Ziripot</strong><span>Licenciado Poza. Pimientos rellenos como especialidad estrella, barra cuidada.</span><div class="hotel-links"><a href="https://maps.google.com/?q=Bar+Ziripot+Licenciado+Poza+Bilbao" target="_blank" rel="noopener" class="map-link">📍 Ver en Maps</a></div></li>
-        <li><strong>Zintzoa</strong><span>Esquina García Rivero con Rodríguez Arias. Barra muy visual, pintxos y sándwiches creativos.</span><div class="hotel-links"><a href="https://maps.google.com/?q=Zintzoa+Garcia+Rivero+Bilbao" target="_blank" rel="noopener" class="map-link">📍 Ver en Maps</a></div></li>
-        <li><strong>Berton Goikoa</strong><span>Rodríguez Arias. Del mismo grupo que el Berton del Casco Viejo. Txapela y bocadillo de calamares.</span><div class="hotel-links"><a href="https://maps.google.com/?q=Berton+Goikoa+Rodriguez+Arias+Bilbao" target="_blank" rel="noopener" class="map-link">📍 Ver en Maps</a></div></li>
-      </ul>
+      <ul class="place-list place-list--3col"><li><strong>Bilau</strong><span>Zona Pozas. Pintxos de barra variados, ambiente joven y precios ajustados.</span><div class="hotel-links"><a href="https://maps.google.com/?q=Bilau+bar+Bilbao+Pozas" target="_blank" rel="noopener" class="map-link">📍 Ver en Maps</a></div></li>
+<li><strong>Nashville</strong><span>Licenciado Poza, 24. Las mejores tortillas de Bilbao para muchos. Gildas y pintxos de barra.</span><div class="hotel-links"><a href="https://maps.google.com/?q=Bar+Nashville+Licenciado+Poza+Bilbao" target="_blank" rel="noopener" class="map-link">📍 Ver en Maps</a></div></li>
+<li><strong>Gaztandegi</strong><span>García Rivero, 10. Para amantes del queso: crepe de queso con hongos, milhojas de Idiazabal con nueces. Imprescindible.</span><div class="hotel-links"><a href="https://maps.google.com/?q=Gaztandegi+Garcia+Rivero+Bilbao" target="_blank" rel="noopener" class="map-link">📍 Ver en Maps</a></div></li>
+<li><strong>El Puertito</strong><span>García Rivero. El primer bar de ostras de Bilbao. Solo ostras, pero de escándalo.</span><div class="hotel-links"><a href="https://maps.google.com/?q=El+Puertito+oyster+bar+Bilbao+Garcia+Rivero" target="_blank" rel="noopener" class="map-link">📍 Ver en Maps</a></div></li>
+<li><strong>El Huevo Frito</strong><span>García Rivero. Croquetas de jamón y gildas como especialidad estrella.</span><div class="hotel-links"><a href="https://maps.google.com/?q=El+Huevo+Frito+Garcia+Rivero+Bilbao" target="_blank" rel="noopener" class="map-link">📍 Ver en Maps</a></div></li>
+<li><strong>El Pintxito</strong><span>Licenciado Poza, 24. Famoso pintxo moruno de cordero, receta familiar desde 1968. También brochetas de pulpo.</span><div class="hotel-links"><a href="https://maps.google.com/?q=El+Pintxito+Licenciado+Poza+Bilbao" target="_blank" rel="noopener" class="map-link">📍 Ver en Maps</a></div></li></ul>
+    </div>
+
+    <div class="zone-block">
+      <h3 class="zone-title">Otras zonas · <em>más allá del centro</em></h3>
+      <p class="zone-desc">Bares y locales repartidos por otros puntos de la ciudad, también muy recomendables.</p>
+      <ul class="place-list place-list--3col"><li><strong>Zaka</strong><span>Simón Bolívar, 11 (Indautxu). Bar con amplia barra de pintxos desde el desayuno, cocina internacional con toque vasco y buena relación calidad-precio.</span><div class="hotel-links"><a href="https://maps.google.com/?q=Zaka+Bilbao+Simon+Bolivar" target="_blank" rel="noopener" class="map-link">📍 Ver en Maps</a></div></li>
+<li><strong>Las Cepas</strong><span>Gran Vía, 63. Pintxos y gastronomía vasca en plena Gran Vía, mezcla de tradición e innovación.</span><div class="hotel-links"><a href="https://maps.google.com/?q=Las+Cepas+de+Estraunza+Gran+Via+Bilbao" target="_blank" rel="noopener" class="map-link">📍 Ver en Maps</a></div></li>
+<li><strong>Baka Vieja</strong><span>María Díaz de Haro, 1. Hamburguesas y pintxos de calidad, ambiente desenfadado.</span><div class="hotel-links"><a href="https://maps.google.com/?q=Baka+Vieja+Bilbao+Maria+Diaz+de+Haro" target="_blank" rel="noopener" class="map-link">📍 Ver en Maps</a></div></li>
+<li><strong>Covent Garden</strong><span>Doctor Areilza, 28. Pub irlandés clásico de Bilbao. Gran variedad de cervezas, pintxos y ambiente festivo.</span><div class="hotel-links"><a href="https://maps.google.com/?q=Covent+Garden+Doctor+Areilza+28+Bilbao" target="_blank" rel="noopener" class="map-link">📍 Ver en Maps</a></div></li>
+<li><strong>Gildatoki</strong><span>Estraunza, 1. Especialistas en gildas: más de 20 variedades de la clásica banderilla vasca.</span><div class="hotel-links"><a href="https://maps.google.com/?q=Gildatoki+Estraunza+Bilbao" target="_blank" rel="noopener" class="map-link">📍 Ver en Maps</a></div></li>
+<li><strong>El Eme</strong><span>Zona centro. Pintxos de mercado y buen ambiente.</span><div class="hotel-links"><a href="https://maps.google.com/?q=El+Eme+pintxos+Bilbao" target="_blank" rel="noopener" class="map-link">📍 Ver en Maps</a></div></li></ul>
+    </div>
+
+    <div class="zone-block">
+      <h3 class="zone-title">De postre · <em>pastelerías y heladerías</em></h3>
+      <p class="zone-desc">Bilbao tiene una gran tradición pastelera. Aquí van los imprescindibles.</p>
+      <ul class="place-list place-list--3col"><li><strong>La Suiza</strong><span>Marqués del Puerto, 4 (junto a Moyúa). Desde hace más de 60 años, famosa por sus lazos, brioches, croissants de almendra y tartas artesanas.</span><div class="hotel-links"><a href="https://maps.google.com/?q=Pasteleria+La+Suiza+Bilbao+Marques+del+Puerto" target="_blank" rel="noopener" class="map-link">📍 Ver en Maps</a></div></li>
+<li><strong>Arrese</strong><span>Berástegui, 1 / Gran Vía, 24. Desde 1852. Las trufas y palmeras de chocolate son una institución bilbaína.</span><div class="hotel-links"><a href="https://maps.google.com/?q=Pasteleria+Arrese+Bilbao+Gran+Via" target="_blank" rel="noopener" class="map-link">📍 Ver en Maps</a></div></li>
+<li><strong>Martina de Zuricalday</strong><span>Ercilla, 43. La pastelería artesanal más antigua de Euskadi. Bollos de mantequilla, pasteles de arroz y carolinas imprescindibles.</span><div class="hotel-links"><a href="https://maps.google.com/?q=Martina+de+Zuricalday+Ercilla+Bilbao" target="_blank" rel="noopener" class="map-link">📍 Ver en Maps</a></div></li>
+<li><strong>Patxes</strong><span>Heros (zona Abandoibarra). Pastelería y cafetería de referencia en el barrio.</span><div class="hotel-links"><a href="https://maps.google.com/?q=Patxes+Heros+Bilbao" target="_blank" rel="noopener" class="map-link">📍 Ver en Maps</a></div></li>
+<li><strong>Botxito</strong><span>Zona centro. Heladería artesana con sabores creativos y mucho arraigo local.</span><div class="hotel-links"><a href="https://maps.google.com/?q=Botxito+heladería+Bilbao" target="_blank" rel="noopener" class="map-link">📍 Ver en Maps</a></div></li>
+<li><strong>Gelati Gelati</strong><span>Lersundi. Heladería italiana muy popular entre los bilbaínos.</span><div class="hotel-links"><a href="https://maps.google.com/?q=Gelati+Gelati+Lersundi+Bilbao" target="_blank" rel="noopener" class="map-link">📍 Ver en Maps</a></div></li></ul>
     </div>
 
     <div class="zone-block">
       <h3 class="zone-title">Para tomar copas</h3>
       <p class="zone-desc">Después del poteo, si el plan se alarga, aquí van algunos clásicos de la noche bilbaína.</p>
-      <ul class="place-list">
+      <ul class="place-list place-list--3col">
         <li><strong>Churchill</strong><span>Avda. Sabino Arana, 1. Pub inglés con más de 45 años. Más de 250 referencias de ron, whisky y ginebra. Cócteles preparados con mucho oficio.</span><div class="hotel-links"><a href="https://maps.google.com/?q=Sir+Winston+Churchill+Pub+Bilbao+Sabino+Arana" target="_blank" rel="noopener" class="map-link">📍 Ver en Maps</a></div></li>
-        <li><strong>Covent Garden</strong><span>Doctor Areilza, 28. Pub irlandés clásico de Bilbao. Gran variedad de cervezas, pintxos y ambiente festivo.</span><div class="hotel-links"><a href="https://maps.google.com/?q=Covent+Garden+Doctor+Areilza+28+Bilbao" target="_blank" rel="noopener" class="map-link">📍 Ver en Maps</a></div></li>
+        <li><strong>La Antigua Cigarrería</strong><span>Astarloa. Bar de copas clásico de Bilbao, ambiente íntimo y buen surtido de combinados.</span><div class="hotel-links"><a href="https://maps.google.com/?q=La+Antigua+Cigarrería+Bilbao+Astarloa" target="_blank" rel="noopener" class="map-link">📍 Ver en Maps</a></div></li>
         <li><strong>Molly Malone's</strong><span>Particular de Estraunza, 8. Pub irlandés amplio con reservados de madera. Guinness, música rock y retransmisiones deportivas.</span><div class="hotel-links"><a href="https://maps.google.com/?q=Molly+Malone+Particular+Estraunza+Bilbao" target="_blank" rel="noopener" class="map-link">📍 Ver en Maps</a></div></li>
-        <li><strong>Estrómboli</strong><span>General Concha, 12. Bar de cócteles con ambiente chill-out, sofás y decoración ecléctica. Batidos, combinados y cócteles creativos.</span><div class="hotel-links"><a href="https://maps.google.com/?q=Bar+Stromboli+General+Concha+Bilbao" target="_blank" rel="noopener" class="map-link">📍 Ver en Maps</a></div></li>
+        <li><strong>La Destilería</strong><span>Particular de Indautxu. Uno de los mejores bares de cócteles de Bilbao. Gin-tonics, vermuts y combinados preparados con mucho oficio.</span><div class="hotel-links"><a href="https://maps.google.com/?q=La+Destilería+Particular+Indautxu+Bilbao" target="_blank" rel="noopener" class="map-link">📍 Ver en Maps</a></div></li>
         <li><strong>La Compañía del Ron</strong><span>Máximo Agirre, 23. Amplia carta de rones y cócteles tropicales, ambiente animado.</span><div class="hotel-links"><a href="https://maps.google.com/?q=La+Compañía+del+Ron+Maximo+Agirre+Bilbao" target="_blank" rel="noopener" class="map-link">📍 Ver en Maps</a></div></li>
         <li><strong>Tobarisch</strong><span>Heliodoro de la Torre, 6 (Deusto). Pub mítico desde 1976 con casta athleticzale. Jazz, blues y rock. Cervezas alemanas de barril y cócteles de autor.</span><div class="hotel-links"><a href="https://maps.google.com/?q=Tobarisch+Heliodoro+de+la+Torre+Bilbao" target="_blank" rel="noopener" class="map-link">📍 Ver en Maps</a></div></li>
       </ul>
     </div>
 
-    <p style="margin-top:2rem; font-size:0.9rem; font-style:italic;">
-      Consejo local: en el Casco Viejo los domingos cierran pronto, así que si vais en domingo, mejor a mediodía.
-    </p>
   </section>
 
   <!-- ============= 9. FIESTAS DE BILBAO ============= -->

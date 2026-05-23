@@ -857,28 +857,6 @@
       color: var(--color-roof);
     }
 
-    /* ---------- SECCIÓN FIESTAS (fondo cálido) ---------- */
-    .rsvp-light {
-      background: var(--color-bg-warm);
-      max-width: none;
-      padding-left: 1.5rem;
-      padding-right: 1.5rem;
-    }
-    .rsvp-light > * {
-      max-width: 1100px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-    /* El section-tag, el h2 y el lead deben quedar alineados a la izquierda,
-       igual que en las secciones normales (p. ej. "De poteo por Bilbao"),
-       no centrados dentro del bloque de 1100px. */
-    .rsvp-light > .section-tag,
-    .rsvp-light > h2,
-    .rsvp-light > .lead {
-      margin-left: 0;
-      margin-right: auto;
-    }
-
     /* ---------- VISITAS ---------- */
     .visits-section { background: var(--color-bg-warm); max-width: none; padding-left: 1.5rem; padding-right: 1.5rem; }
     .visits-inner { max-width: 1100px; margin: 0 auto; }
@@ -1982,7 +1960,8 @@
   </section>
 
   <!-- ============= 9. FIESTAS DE BILBAO ============= -->
-  <section id="fiestas" class="rsvp-light">
+  <section id="fiestas" class="visits-section">
+    <div class="visits-inner">
     <p class="section-tag">Aste Nagusia</p>
     <h2>Las <em>fiestas</em> de Bilbao</h2>
     <p class="lead">
@@ -2032,6 +2011,7 @@
         <li>Para los <strong>fuegos artificiales</strong>: muy buenos puntos son las riberas junto al Arenal, el Campo Volantín, el Puente de Deusto o cualquier azotea con vistas a la ría.</li>
         <li>Programa completo: lo publica el Ayuntamiento de Bilbao en <a href="https://www.bilbao.eus" target="_blank" rel="noopener">bilbao.eus</a> a inicios de julio.</li>
       </ul>
+    </div>
     </div>
   </section>
 

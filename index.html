@@ -407,10 +407,21 @@
     .rsvp-deadline {
       font-family: var(--font-display);
       font-style: italic;
-      font-size: 1rem;
+      font-size: 1.25rem;
       color: var(--color-accent-soft);
       margin-top: 2rem;
       letter-spacing: 0.02em;
+      border: 1.5px solid var(--color-accent-soft);
+      border-radius: 10px;
+      padding: 1rem 1.4rem;
+      text-align: center;
+      line-height: 1.4;
+    }
+    .rsvp-deadline strong {
+      font-style: normal;
+      font-weight: 600;
+      color: var(--color-bg);
+      white-space: nowrap;
     }
 
     /* ---------- TIPS GRID ---------- */
@@ -720,6 +731,17 @@
       background: rgba(201, 168, 120, 0.12);
       color: #7a6030;
       border: 1px solid #d4b888;
+    }
+    a.apt-badge.airbnb {
+      background: rgba(122, 144, 112, 0.08);
+      color: var(--color-accent-deep);
+      border: 1px dashed var(--color-accent-soft);
+      text-decoration: none;
+      transition: background 0.15s ease, border-color 0.15s ease;
+    }
+    a.apt-badge.airbnb:hover {
+      background: rgba(122, 144, 112, 0.22);
+      border-style: solid;
     }
     .badges-row {
       display: flex;
@@ -1101,8 +1123,10 @@
           <div class="info-value">Habrá servicio de autobús</div>
           <div class="info-sub">
             Para que vengáis tranquilos, organizaremos servicio de autobús desde un
-            punto céntrico de Bilbao hasta el asador (y vuelta). Os iremos dando
-            los detalles del recorrido y horarios más adelante.<br /><br />
+            punto céntrico de Bilbao hasta el asador (y vuelta). El punto de recogida
+            y el horario están todavía <strong>sin confirmar</strong>, pero lo más
+            probable es que sea en la <strong>zona de Abando o de San Mamés</strong>.
+            Os iremos dando los detalles del recorrido y horarios más adelante.<br /><br />
             Quien prefiera ir en coche, sin problema: hay sitio de sobra para
             aparcar en la zona del asador.
           </div>
@@ -1144,7 +1168,7 @@
         </p>
       </div>
 
-      <p class="rsvp-deadline">Por favor, confirmad antes del 1 de abril de 2027.</p>
+      <p class="rsvp-deadline">Por favor, confirmad antes del <strong>30 de junio de 2027</strong>.</p>
     </div>
   </section>
 
@@ -1337,8 +1361,8 @@
     <div class="zone-block">
       <h3 class="zone-title">Parkings <em>dentro de la ZBE</em></h3>
       <p class="zone-desc">
-        Los <strong>únicos 7 parkings dentro de la ZBE donde puede entrar un vehículo con etiqueta B</strong> son
-        los seis primeros de la lista. El acceso solo está permitido para ir directos al parking, no para circular por la zona.
+        Los <strong>únicos parkings dentro de la ZBE donde puede entrar un vehículo con etiqueta B</strong> son
+        los siete primeros de la lista. El acceso solo está permitido para ir directos al parking, no para circular por la zona. Si vuestro alojamiento dispone de parking propio, lo más cómodo es reservar esa plaza.
       </p>
       <ul class="place-list">
         <li><strong>Parking Pío Baroja</strong><span>Plaza Pío Baroja · Abando, junto a la ría<br>En coche: Acceso por Calle Conde Mirasol desde la ribera. Dentro de la ZBE (solo etiqueta B o superior, lunes a viernes 7–20 h).</span><div class="hotel-links"><a href="https://maps.google.com/?q=Parking+Pío+Baroja+Bilbao" target="_blank" rel="noopener" class="map-link">📍 Ver en Maps</a></div></li>
@@ -1347,13 +1371,11 @@
         <li><strong>Parking Plaza Indautxu</strong><span>Plaza Indautxu · Indautxu<br>En coche: Acceso por Calle Rodríguez Arias o Calle Licenciado Poza. Dentro de la ZBE.</span><div class="hotel-links"><a href="https://maps.google.com/?q=Parking+Plaza+Indautxu+Bilbao" target="_blank" rel="noopener" class="map-link">📍 Ver en Maps</a></div></li>
         <li><strong>Parking Instituto Unamuno</strong><span>Calle Hurtado de Amézaga · Abando<br>En coche: Acceso por Calle Hurtado de Amézaga desde la estación de Abando. Dentro de la ZBE.</span><div class="hotel-links"><a href="https://maps.google.com/?q=Parking+Instituto+Unamuno+Bilbao" target="_blank" rel="noopener" class="map-link">📍 Ver en Maps</a></div></li>
         <li><strong>Parking Zubiarte</strong><span>Bajo el centro comercial Zubiarte · Abandoibarra<br>En coche: Acceso por Calle Lehendakari Aguirre o Avda. Abandoibarra. Dentro de la ZBE.</span><div class="hotel-links"><a href="https://maps.google.com/?q=Parking+Zubiarte+Bilbao" target="_blank" rel="noopener" class="map-link">📍 Ver en Maps</a></div></li>
+        <li><strong>Parking El Corte Inglés</strong><span>Gran Vía, 7-9 · acceso por Calle Canciller Ayala · Abando · <strong style="color: var(--color-roof);">No es 24 h: abre aprox. de 9:30 a 21:00 (lunes a sábado) y de 11:00 a 19:00 (domingos). Conviene confirmar el horario.</strong><br>En coche: Acceso por Calle Canciller Ayala. Dentro de la ZBE.</span><div class="hotel-links"><a href="https://maps.google.com/?q=Parking+El+Corte+Inglés+Bilbao" target="_blank" rel="noopener" class="map-link">📍 Ver en Maps</a></div></li>
         <li><strong>Parking Palacio Euskalduna</strong><span>Avenida Abandoibarra, 4 · Abandoibarra · <strong style="color: var(--color-roof);">No apto para vehículos sin etiqueta o con etiqueta B</strong><br>En coche: Acceso por Avda. Abandoibarra dirección Guggenheim. Dentro de la ZBE.</span><div class="hotel-links"><a href="https://maps.google.com/?q=Parking+Palacio+Euskalduna+Bilbao" target="_blank" rel="noopener" class="map-link">📍 Ver en Maps</a></div></li>
       </ul>
       <p style="margin-top:1rem; font-size:0.92rem;">
         <strong>Con etiquetas 0, ECO o C</strong> podéis aparcar también en cualquier otro parking público dentro de la ZBE (hay más parkings disponibles en Abando, Indautxu y Abandoibarra). En cambio, sin distintivo ambiental no se puede aparcar en ningún parking dentro de la ZBE.
-      </p>
-      <p style="margin-top:0.5rem; font-size:0.92rem; font-style:italic; opacity:0.85;">
-        La moratoria que permite a la etiqueta B usar los 6 primeros parkings está vigente hasta el <strong>31 de diciembre de 2029</strong>.
       </p>
     </div>
 
@@ -1369,7 +1391,6 @@
         <li><strong>Parking Hospital IMQ Zorrotzaurre</strong><span>Julio Urquijo, 1 · San Pedro de Deusto<br>En coche: Acceso por Calle Julio Urquijo desde Avda. Madariaga. Fuera de la ZBE.</span><div class="hotel-links"><a href="https://maps.google.com/?q=Parking+Hospital+IMQ+Zorrotzaurre+Bilbao" target="_blank" rel="noopener" class="map-link">📍 Ver en Maps</a></div></li>
         <li><strong>Parking Intermodal</strong><span>Gurtubay, 1 · bajo la estación de autobuses (Termibus) · 526 plazas<br>En coche: Acceso por Calle Gurtubay desde Calle San Mamés. Fuera de la ZBE.</span><div class="hotel-links"><a href="https://maps.google.com/?q=Parking+Intermodal+Termibus+Bilbao" target="_blank" rel="noopener" class="map-link">📍 Ver en Maps</a></div></li>
         <li><strong>Parking IC Termibus / San Mamés</strong><span>Gurtubay, 2 · frente a Termibus, junto al estadio · 24 h<br>En coche: Acceso por Calle Gurtubay desde Calle San Mamés, enfrente del Intermodal. Fuera de la ZBE.</span><div class="hotel-links"><a href="https://maps.google.com/?q=Parking+IC+Termibus+Bilbao" target="_blank" rel="noopener" class="map-link">📍 Ver en Maps</a></div></li>
-        <li><strong>Parking La Casilla</strong><span>Plaza La Casilla · Basurto, junto al pabellón<br>En coche: Acceso por Calle Ercilla o Avda. de Sabino Arana en dirección La Casilla. Fuera de la ZBE.</span><div class="hotel-links"><a href="https://maps.google.com/?q=Parking+La+Casilla+Bilbao" target="_blank" rel="noopener" class="map-link">📍 Ver en Maps</a></div></li>
       </ul>
       <p style="margin-top:1rem; font-size:0.92rem;">
         Reservar plaza con antelación a través de apps como <strong>Parclick</strong>, <strong>Parkimeter</strong> o <strong>ElParking</strong> suele salir más barato. Y durante la Aste Nagusia, mejor reservar con tiempo.
@@ -1421,6 +1442,7 @@
       <p class="zone-desc"><strong>Estaciones de metro:</strong> Indautxu (L1 y L2), San Mamés (L1 y L2).</p>
       <div class="badges-row">
         <span class="apt-badge yes">✓ Amplia oferta de apartamentos turísticos</span>
+        <a class="apt-badge airbnb" href="https://www.airbnb.es/" target="_blank" rel="noopener">🔗 Ver en Airbnb</a>
         <span class="apt-badge pension-yes">✓ Amplia oferta de pensiones y B&amp;B</span>
       </div>
       <details class="hotels-toggle">
@@ -1492,6 +1514,7 @@
       <p class="zone-desc"><strong>Estaciones de metro:</strong> Moyúa (L1 y L2), Abando (L1 y L2).</p>
       <div class="badges-row">
         <span class="apt-badge yes">✓ Amplia oferta de apartamentos turísticos</span>
+        <a class="apt-badge airbnb" href="https://www.airbnb.es/" target="_blank" rel="noopener">🔗 Ver en Airbnb</a>
         <span class="apt-badge pension-yes">✓ Amplia oferta de pensiones y B&amp;B</span>
       </div>
       <details class="hotels-toggle">
@@ -1563,6 +1586,7 @@
       <p class="zone-desc"><strong>Estaciones de metro:</strong> Deustu (L1 y L2), Sarriko (L1 y L2), San Inazio (intercambiador L1 y L2).</p>
       <div class="badges-row">
         <span class="apt-badge limited">~ Oferta limitada de apartamentos turísticos</span>
+        <a class="apt-badge airbnb" href="https://www.airbnb.es/" target="_blank" rel="noopener">🔗 Ver en Airbnb</a>
         <span class="apt-badge pension-yes">✓ Hay pensiones económicas en la zona</span>
       </div>
       <details class="hotels-toggle">
@@ -1592,6 +1616,7 @@
       <p class="zone-desc"><strong>Estaciones cercanas:</strong> Ametzola (Cercanías Renfe C-3), Zabalburu (L3) a 5 minutos a pie.</p>
       <div class="badges-row">
         <span class="apt-badge limited">~ Oferta limitada de apartamentos turísticos</span>
+        <a class="apt-badge airbnb" href="https://www.airbnb.es/" target="_blank" rel="noopener">🔗 Ver en Airbnb</a>
         <span class="apt-badge pension-limited">~ Oferta limitada de pensiones y B&amp;B</span>
       </div>
       <details class="hotels-toggle">
@@ -1621,6 +1646,7 @@
       <p class="zone-desc"><strong>Estaciones cercanas:</strong> San Mamés (L1, L2 y Cercanías Renfe C-1 y C-2), Basurto-Hospital (Cercanías C-1 y C-2).</p>
       <div class="badges-row">
         <span class="apt-badge limited">~ Oferta limitada de apartamentos turísticos</span>
+        <a class="apt-badge airbnb" href="https://www.airbnb.es/" target="_blank" rel="noopener">🔗 Ver en Airbnb</a>
         <span class="apt-badge pension-yes">✓ Hay pensiones y B&amp;B en la zona</span>
       </div>
       <details class="hotels-toggle">
@@ -1643,6 +1669,14 @@
                 <a href="https://maps.google.com/?q=Abba+Euskalduna+Hotel+Bilbao" target="_blank" rel="noopener" class="map-link">📍 Ver en Maps</a>
               </div>
             </li>
+            <li>
+              <strong>Ibis Budget Bilbao City</strong>
+              <span>Hotel económico en Basurto, junto a San Mamés. Opción sencilla y de buen precio, bien comunicada con el centro.</span>
+              <div class="hotel-links">
+                
+                <a href="https://maps.google.com/?q=Ibis+Budget+Bilbao+City" target="_blank" rel="noopener" class="map-link">📍 Ver en Maps</a>
+              </div>
+            </li>
           </ul>
         </div>
       </details>
@@ -1659,6 +1693,7 @@
       <p class="zone-desc"><strong>Estaciones de metro:</strong> Santutxu (L1 y L2), Basarrate (L1 y L2).</p>
       <div class="badges-row">
         <span class="apt-badge yes">✓ Buena oferta de apartamentos turísticos</span>
+        <a class="apt-badge airbnb" href="https://www.airbnb.es/" target="_blank" rel="noopener">🔗 Ver en Airbnb</a>
         <span class="apt-badge pension-yes">✓ Buena oferta de pensiones y B&amp;B</span>
       </div>
       <details class="hotels-toggle">
@@ -1922,7 +1957,7 @@
 
     <div class="zone-block">
       <h3 class="zone-title">De postre · <em>pastelerías y heladerías</em></h3>
-      <p class="zone-desc">Bilbao tiene una gran tradición pastelera. No os vayáis sin probar alguno de sus postres típicos: el pastel de arroz, la pantxineta, el valenciano y el bollo de mantequilla.</p>
+      <p class="zone-desc">Bilbao tiene una gran tradición pastelera. No os vayáis sin probar alguno de sus postres típicos: el pastel de arroz, la pantxineta, el valenciano (que es una bebida y solo se puede pedir en restaurante) y el bollo de mantequilla.</p>
       <ul class="place-list place-list--3col"><li><strong>La Suiza</strong><span>Desde hace más de 60 años, famosa por sus lazos, brioches, croissants de almendra y tartas artesanas.</span><div class="hotel-links"><a href="https://maps.google.com/?q=Pasteleria+La+Suiza+Bilbao+Marques+del+Puerto" target="_blank" rel="noopener" class="map-link">📍 Ver en Maps</a></div></li>
 <li><strong>Arrese</strong><span>Desde 1852. Las trufas y palmeras de chocolate son una institución bilbaína.</span><div class="hotel-links"><a href="https://maps.google.com/?q=Pasteleria+Arrese+Bilbao+Gran+Via" target="_blank" rel="noopener" class="map-link">📍 Ver en Maps</a></div></li>
 <li><strong>Martina de Zuricalday</strong><span>La pastelería artesanal más antigua de Euskadi. Bollos de mantequilla, pasteles de arroz y carolinas imprescindibles.</span><div class="hotel-links"><a href="https://maps.google.com/?q=Martina+de+Zuricalday+Ercilla+Bilbao" target="_blank" rel="noopener" class="map-link">📍 Ver en Maps</a></div></li>
@@ -1993,7 +2028,7 @@
         <li>El <strong>dress code</strong> de las fiestas es informal y muy reconocible: <strong>camiseta blanca y pañuelo azul Bilbao</strong> al cuello. El pantalón o la falda también suelen ser azul Bilbao. Si os apetece integraros, esa es la pista.</li>
         <li>En la mayoría de txosnas se puede pagar con <strong>tarjeta</strong>, aunque puede haber alguna que solo acepte <strong>efectivo</strong>. No viene mal llevar algo de cash por si acaso.</li>
         <li>Los precios son populares: pintxos 2–3 €, kalimotxos 2–3 €.</li>
-        <li>Si queréis ver el <strong>chupinazo de inicio</strong> (sábado 21 a mediodía), llegad a la Plaza del Arriaga sobre las 11:00 para encontrar sitio. <strong>Aviso</strong>: cuanto más cerca estéis del pregón, más probable es que acabéis empapados de harina, huevos, kalimotxo, cava y todo tipo de líquidos. Ropa que no os importe arruinar.</li>
+        <li>Si queréis ver el <strong>chupinazo de inicio</strong> (sábado 21, suele ser a partir de las 18:00), llegad a la Plaza del Arriaga con bastante antelación para encontrar sitio. <strong>Aviso</strong>: cuanto más cerca estéis del pregón, más probable es que acabéis empapados de harina, huevos, kalimotxo, cava y todo tipo de líquidos. Ropa que no os importe arruinar.</li>
         <li>Para los <strong>fuegos artificiales</strong>: muy buenos puntos son las riberas junto al Arenal, el Campo Volantín, el Puente de Deusto o cualquier azotea con vistas a la ría.</li>
         <li>Programa completo: lo publica el Ayuntamiento de Bilbao en <a href="https://www.bilbao.eus" target="_blank" rel="noopener">bilbao.eus</a> a inicios de julio.</li>
       </ul>

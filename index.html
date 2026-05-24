@@ -373,9 +373,7 @@
       position: relative;
       color: rgba(243,237,226,0.9);
       font-size: 1rem;
-      border-bottom: 1px solid rgba(184,134,90,0.2);
     }
-    .rsvp-list li:last-child { border-bottom: none; }
     .rsvp-list li::before {
       content: "·";
       position: absolute;
@@ -391,7 +389,6 @@
     /* Versión para fondos claros (fuera del bloque .rsvp oscuro) */
     section:not(.rsvp) .rsvp-list li {
       color: var(--color-ink);
-      border-bottom: 1px solid var(--color-line);
     }
     section:not(.rsvp) .rsvp-list li::before {
       color: var(--color-accent);
@@ -519,6 +516,11 @@
       border-left: 2px solid var(--color-accent);
       font-size: 0.92rem;
       color: var(--color-ink);
+    }
+    /* Cards dentro de zone-block: fondo claro para contrastar con el fondo de sección */
+    .zone-block .place-list li {
+      background: var(--color-bg);
+      box-shadow: 0 1px 3px rgba(0,0,0,0.06);
     }
     .place-list li strong {
       display: block;
@@ -677,7 +679,6 @@
     }
     .hotels-toggle summary:hover { background: #e9ede0; }
     .hotels-toggle[open] summary {
-      border-bottom: 1px solid var(--color-line);
       background: #e9ede0;
     }
     .hotels-toggle .hotels-inner {
@@ -694,7 +695,6 @@
       border-top: none;
       background: transparent;
     }
-    .hotels-toggle .place-list li:last-child { border-bottom: none; }
 
     /* Badge de apartamentos */
     .apt-badge {
@@ -782,10 +782,8 @@
       .travel-mode {
         border-left: none;
         border-radius: 0;
-        border-bottom: 1px solid var(--color-line);
-        background: var(--color-bg-warm);
+          background: var(--color-bg-warm);
       }
-      .travel-mode:last-child { border-bottom: none; }
       /* En móvil el body lo gestiona el browser nativo según open/closed del details */
       .travel-mode-body h4 { display: none; }
       /* Mostrar el summary como barra clickable estilo hotels-toggle */
@@ -818,8 +816,7 @@
       .travel-mode[open] summary::after { transform: rotate(270deg); }
       .travel-mode summary:hover { background: #e9ede0; }
       .travel-mode[open] summary {
-        border-bottom: 1px solid var(--color-line);
-        background: #e9ede0;
+          background: #e9ede0;
       }
       .travel-mode-body {
         padding: 0.7rem 1.1rem 0.9rem;
@@ -828,8 +825,8 @@
 
     /* ---------- ALERT BLOCK (avisos importantes) ---------- */
     .alert-block {
-      background: rgba(184, 106, 82, 0.1);
-      border-left: 3px solid #7a9ab8;
+      background: rgba(160, 69, 48, 0.08);
+      border-left: 3px solid #a04530;
       padding: 1.1rem 1.4rem;
       margin: 1rem 0 1.5rem;
       border-radius: var(--radius);
@@ -838,7 +835,7 @@
       line-height: 1.55;
     }
     .alert-block strong {
-      color: #7a9ab8;
+      color: #a04530;
       font-weight: 600;
     }
 
@@ -893,15 +890,15 @@
 
     /* Bloque destacado de zonas de fiesta */
     .fiestas-block {
-      background: rgba(184, 106, 82, 0.08);
-      border-left: 3px solid #7a9ab8;
+      background: rgba(160, 69, 48, 0.07);
+      border-left: 3px solid #a04530;
       padding-left: 1.4rem;
       padding-right: 1.4rem;
       padding-bottom: 1.8rem;
       margin-top: 2rem;
     }
     .fiestas-block .zone-title em {
-      color: #7a9ab8;
+      color: #a04530;
     }
 
     /* ---------- VISITAS ---------- */
@@ -945,17 +942,16 @@
     footer {
       text-align: center;
       padding: 3rem 1.5rem 2rem;
-      border-top: 1px solid var(--color-line);
+      background: var(--color-dark-bg);
       margin-top: 3rem;
     }
     footer p {
       font-family: var(--font-display);
       font-style: italic;
       font-size: 1rem;
-      color: var(--color-ink-soft);
+      color: rgba(240,237,228,0.7);
       margin: 0;
     }
-    footer .heart { color: var(--color-accent); }
 
     /* ---------- DETALLES DECORATIVOS ---------- */
     .ornament {
@@ -1425,8 +1421,8 @@
         <li><strong>Parking Plaza Indautxu</strong><span>Plaza Indautxu · Indautxu<br>En coche: Acceso por Calle Rodríguez Arias o Calle Licenciado Poza. Dentro de la ZBE.</span><div class="hotel-links"><a href="https://maps.google.com/?q=Parking+Plaza+Indautxu+Bilbao" target="_blank" rel="noopener" class="map-link">📍 Ver en Maps</a></div></li>
         <li><strong>Parking Instituto Unamuno</strong><span>Calle Hurtado de Amézaga · Abando<br>En coche: Acceso por Calle Hurtado de Amézaga desde la estación de Abando. Dentro de la ZBE.</span><div class="hotel-links"><a href="https://maps.google.com/?q=Parking+Instituto+Unamuno+Bilbao" target="_blank" rel="noopener" class="map-link">📍 Ver en Maps</a></div></li>
         <li><strong>Parking Zubiarte</strong><span>Bajo el centro comercial Zubiarte · Abandoibarra<br>En coche: Acceso por Calle Lehendakari Aguirre o Avda. Abandoibarra. Dentro de la ZBE.</span><div class="hotel-links"><a href="https://maps.google.com/?q=Parking+Zubiarte+Bilbao" target="_blank" rel="noopener" class="map-link">📍 Ver en Maps</a></div></li>
-        <li><strong>Parking El Corte Inglés</strong><span>Gran Vía, 7-9 · acceso por Calle Canciller Ayala · Abando · <strong style="color: #7a9ab8;">No es 24 h: abre aprox. de 9:30 a 21:00 (lunes a sábado) y de 11:00 a 19:00 (domingos). Conviene confirmar el horario.</strong><br>En coche: Acceso por Calle Canciller Ayala. Dentro de la ZBE.</span><div class="hotel-links"><a href="https://maps.google.com/?q=Parking+El+Corte+Inglés+Bilbao" target="_blank" rel="noopener" class="map-link">📍 Ver en Maps</a></div></li>
-        <li><strong>Parking Palacio Euskalduna</strong><span>Avenida Abandoibarra, 4 · Abandoibarra · <strong style="color: #7a9ab8;">No apto para vehículos sin etiqueta o con etiqueta B</strong><br>En coche: Acceso por Avda. Abandoibarra dirección Guggenheim. Dentro de la ZBE.</span><div class="hotel-links"><a href="https://maps.google.com/?q=Parking+Palacio+Euskalduna+Bilbao" target="_blank" rel="noopener" class="map-link">📍 Ver en Maps</a></div></li>
+        <li><strong>Parking El Corte Inglés</strong><span>Gran Vía, 7-9 · acceso por Calle Canciller Ayala · Abando · <strong style="color: #a04530;">No es 24 h: abre aprox. de 9:30 a 21:00 (lunes a sábado) y de 11:00 a 19:00 (domingos). Conviene confirmar el horario.</strong><br>En coche: Acceso por Calle Canciller Ayala. Dentro de la ZBE.</span><div class="hotel-links"><a href="https://maps.google.com/?q=Parking+El+Corte+Inglés+Bilbao" target="_blank" rel="noopener" class="map-link">📍 Ver en Maps</a></div></li>
+        <li><strong>Parking Palacio Euskalduna</strong><span>Avenida Abandoibarra, 4 · Abandoibarra · <strong style="color: #a04530;">No apto para vehículos sin etiqueta o con etiqueta B</strong><br>En coche: Acceso por Avda. Abandoibarra dirección Guggenheim. Dentro de la ZBE.</span><div class="hotel-links"><a href="https://maps.google.com/?q=Parking+Palacio+Euskalduna+Bilbao" target="_blank" rel="noopener" class="map-link">📍 Ver en Maps</a></div></li>
       </ul>
       <p style="margin-top:1rem; font-size:0.92rem;">
         <strong>Con etiquetas 0, ECO o C</strong> podéis aparcar también en cualquier otro parking público dentro de la ZBE (hay más parkings disponibles en Abando, Indautxu y Abandoibarra). En cambio, sin distintivo ambiental no se puede aparcar en ningún parking dentro de la ZBE.
@@ -2147,13 +2143,16 @@
       <p class="zone-desc">
         Durante la <strong>Aste Nagusia</strong> se instalan baños químicos adicionales en El Arenal y zonas de fiesta.
       </p>
+      <p class="zone-desc" style="font-style: italic; color: var(--color-ink-soft);">
+        Recomendación personal del novio, que sabe de lo que habla: los de <strong style="font-style: normal; color: var(--color-ink);">El Corte Inglés</strong> de Gran Vía, el <strong style="font-style: normal; color: var(--color-ink);">Mercadona de la Calle Rodríguez Arias</strong> y los de <strong style="font-style: normal; color: var(--color-ink);">La Alhóndiga</strong> (ahora Azkuna Zentroa). Limpios, céntricos y sin necesidad de consumir.
+      </p>
     </div>
   </section>
 
 
   <!-- ============= CIERRE ============= -->
   <footer>
-    <p>Con muchas ganas de veros, <span class="heart">❦</span> <span aria-label="Iratxe">Ir<span aria-hidden="true"></span>at<span aria-hidden="true"></span>xe</span> y <span aria-label="Alberto">Al<span aria-hidden="true"></span>be<span aria-hidden="true"></span>rto</span></p>
+    <p>Con muchas ganas de veros, <span aria-label="Iratxe">Ir<span aria-hidden="true"></span>at<span aria-hidden="true"></span>xe</span> y <span aria-label="Alberto">Al<span aria-hidden="true"></span>be<span aria-hidden="true"></span>rto</span></p>
   </footer>
 
   <!-- Botón flotante para volver al menú -->

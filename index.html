@@ -10,7 +10,7 @@
   <meta name="description" content="Nos casamos. Convite el 28 de agosto de 2027 en el Asador Arraiz, Bilbao." />
 
   <!-- Favicon: dos anillos entrelazados (verde salvia y dorado trigo) -->
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%2064%2064%22%3E%3Crect%20width=%2264%22%20height=%2264%22%20rx=%2210%22%20fill=%22%23eef0e8%22/%3E%3Ccircle%20cx=%2224%22%20cy=%2232%22%20r=%2213%22%20fill=%22none%22%20stroke=%22%237a9070%22%20stroke-width=%223.5%22/%3E%3Ccircle%20cx=%2240%22%20cy=%2232%22%20r=%2213%22%20fill=%22none%22%20stroke=%22%23c9a878%22%20stroke-width=%223.5%22/%3E%3Cpath%20d=%22M%2035.5%2022%20A%2013%2013%200%200%201%2037%2032%22%20fill=%22none%22%20stroke=%22%237a9070%22%20stroke-width=%223.5%22/%3E%3C/svg%3E" />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%2064%2064%22%3E%3Crect%20width=%2264%22%20height=%2264%22%20rx=%2210%22%20fill=%22%23f0ede4%22/%3E%3Ccircle%20cx=%2224%22%20cy=%2232%22%20r=%2213%22%20fill=%22none%22%20stroke=%22%235a7a4a%22%20stroke-width=%223.5%22/%3E%3Ccircle%20cx=%2240%22%20cy=%2232%22%20r=%2213%22%20fill=%22none%22%20stroke=%22%23c8a050%22%20stroke-width=%223.5%22/%3E%3Cpath%20d=%22M%2035.5%2022%20A%2013%2013%200%200%201%2037%2032%22%20fill=%22none%22%20stroke=%22%235a7a4a%22%20stroke-width=%223.5%22/%3E%3C/svg%3E" />
 
   <!-- Tipografías: serif con carácter para titulares, sans humanista para texto -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -19,17 +19,17 @@
 
   <style>
     :root {
-      --color-bg: #eef0e8;          /* fondo claro principal */
-      --color-bg-warm: #e3e7da;     /* variante un poco más cálida */
-      --color-ink: #3a3a2e;         /* tinta oliva oscura para texto */
-      --color-ink-soft: #6a6a55;    /* tinta verdosa suave */
-      --color-dark-bg: #2a3029;     /* fondo oscuro (RSVP) */
-      --color-accent: #7a9070;      /* verde salvia (color principal) */
-      --color-accent-soft: #b5c4a8; /* verde pastel claro */
-      --color-accent-deep: #5a7355; /* verde más profundo, para hover/contraste */
-      --color-warm: #c9a878;        /* dorado trigo cálido */
-      --color-roof: #b86a52;        /* teja apagada, para mantener el caserío */
-      --color-line: #d4c8b0;        /* línea cálida clara */
+      --color-bg: #f0ede4;          /* fondo claro — piedra/arena cálida */
+      --color-bg-warm: #e8e0d0;     /* variante sección — pergamino cálido */
+      --color-ink: #2a1f0e;         /* tinta tierra oscura */
+      --color-ink-soft: #5c4f38;    /* tinta tierra suave */
+      --color-dark-bg: #1c2b1a;     /* fondo oscuro — verde profundo de bosque */
+      --color-accent: #5a7a4a;      /* verde bosque (color principal) */
+      --color-accent-soft: #8faf7e; /* musgo pastel */
+      --color-accent-deep: #3a5a2a; /* verde más profundo, para hover/contraste */
+      --color-warm: #c8a050;        /* dorado montaña */
+      --color-roof: #b87040;        /* terracota — acento potente */
+      --color-line: #c8b898;        /* línea/borde cálido */
 
       --font-display: 'Fraunces', Georgia, serif;
       --font-body: 'Inter', system-ui, sans-serif;
@@ -76,8 +76,7 @@
       align-items: center;
       text-align: center;
       padding: 4rem 1.5rem;
-      background:
-        linear-gradient(180deg, rgba(243,237,226,0) 0%, rgba(235,225,208,0.4) 100%);
+      background: var(--color-dark-bg);
       position: relative;
     }
 
@@ -87,7 +86,7 @@
       font-weight: 400;
       font-size: 0.95rem;
       letter-spacing: 0.18em;
-      color: var(--color-ink-soft);
+      color: var(--color-accent-soft);
       text-transform: lowercase;
       margin-bottom: 2rem;
     }
@@ -104,13 +103,13 @@
       font-size: clamp(3rem, 11vw, 7.5rem);
       line-height: 0.95;
       letter-spacing: -0.02em;
-      color: var(--color-ink);
+      color: var(--color-bg);
       margin-bottom: 1rem;
     }
 
     .hero h1 .amp {
       font-style: italic;
-      color: var(--color-accent);
+      color: var(--color-accent-soft);
       font-weight: 400;
       display: inline-block;
       transform: translateY(-0.05em);
@@ -121,7 +120,7 @@
       font-style: italic;
       font-weight: 400;
       font-size: clamp(1.1rem, 2.5vw, 1.4rem);
-      color: var(--color-ink-soft);
+      color: rgba(240,237,228,0.7);
       margin-top: 1.5rem;
       letter-spacing: 0.02em;
     }
@@ -131,7 +130,7 @@
       font-size: 0.85rem;
       letter-spacing: 0.3em;
       text-transform: uppercase;
-      color: var(--color-ink-soft);
+      color: var(--color-accent);
       margin-top: 0.8rem;
     }
 
@@ -151,8 +150,8 @@
       align-items: center;
       min-width: 88px;
       padding: 0.9rem 0.5rem;
-      background: rgba(255,255,255,0.4);
-      border: 1px solid var(--color-line);
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(255,255,255,0.12);
       border-radius: var(--radius);
       backdrop-filter: blur(2px);
       transition: transform 0.4s ease;
@@ -165,7 +164,7 @@
       font-weight: 300;
       font-size: clamp(2rem, 5vw, 2.8rem);
       line-height: 1;
-      color: var(--color-accent-deep);
+      color: var(--color-bg);
       letter-spacing: -0.02em;
       font-variant-numeric: tabular-nums;
     }
@@ -174,7 +173,7 @@
       font-size: 0.65rem;
       letter-spacing: 0.25em;
       text-transform: uppercase;
-      color: var(--color-ink-soft);
+      color: var(--color-accent-soft);
       margin-top: 0.5rem;
     }
     .countdown-message {
@@ -182,7 +181,7 @@
       font-family: var(--font-display);
       font-style: italic;
       font-size: 1.4rem;
-      color: var(--color-accent-deep);
+      color: var(--color-accent-soft);
       margin: 2.5rem auto 0;
       text-align: center;
     }
@@ -198,8 +197,9 @@
     .hero-divider {
       width: 60px;
       height: 1px;
-      background: var(--color-line);
+      background: var(--color-accent);
       margin: 2.5rem auto 1.5rem;
+      opacity: 0.5;
     }
 
     .hero-scroll {
@@ -210,7 +210,7 @@
       font-size: 0.7rem;
       letter-spacing: 0.3em;
       text-transform: uppercase;
-      color: var(--color-ink-soft);
+      color: var(--color-accent-soft);
       opacity: 0.6;
       animation: bounce 2.5s ease-in-out infinite;
     }
@@ -281,7 +281,6 @@
       padding-right: 1.5rem;
     }
     .convite-inner { max-width: 1100px; margin: 0 auto; }
-
     .convite-header {
       margin-bottom: 3rem;
     }
@@ -556,12 +555,12 @@
       color: var(--color-bg);
     }
     .hotel-links a.map-link {
-      background: rgba(201, 168, 120, 0.14);
-      color: #7a5a20;
-      border: 1px solid #d4b888;
+      background: rgba(90, 122, 74, 0.15);
+      color: var(--color-accent-deep);
+      border: 1px solid var(--color-accent-soft);
     }
     .hotel-links a.map-link:hover {
-      background: #d4b888;
+      background: var(--color-accent-soft);
       color: var(--color-bg);
     }
 
@@ -709,7 +708,7 @@
       margin-top: 0.9rem;
     }
     .apt-badge.yes {
-      background: rgba(122, 144, 112, 0.15);
+      background: rgba(90, 122, 74, 0.15);
       color: var(--color-accent-deep);
       border: 1px solid var(--color-accent-soft);
     }
@@ -719,25 +718,14 @@
       border: 1px solid #d4b888;
     }
     .apt-badge.pension-yes {
-      background: rgba(178, 160, 196, 0.18);
-      color: #5a406a;
-      border: 1px solid #b8a4cc;
+      background: rgba(122, 154, 184, 0.15);
+      color: #3a5a78;
+      border: 1px solid #7a9ab8;
     }
     .apt-badge.pension-limited {
       background: rgba(201, 168, 120, 0.12);
       color: #7a6030;
       border: 1px solid #d4b888;
-    }
-    a.apt-badge.airbnb {
-      background: rgba(122, 144, 112, 0.08);
-      color: var(--color-accent-deep);
-      border: 1px dashed var(--color-accent-soft);
-      text-decoration: none;
-      transition: background 0.15s ease, border-color 0.15s ease;
-    }
-    a.apt-badge.airbnb:hover {
-      background: rgba(122, 144, 112, 0.22);
-      border-style: solid;
     }
     .badges-row {
       display: flex;
@@ -841,7 +829,7 @@
     /* ---------- ALERT BLOCK (avisos importantes) ---------- */
     .alert-block {
       background: rgba(184, 106, 82, 0.1);
-      border-left: 3px solid var(--color-roof);
+      border-left: 3px solid #7a9ab8;
       padding: 1.1rem 1.4rem;
       margin: 1rem 0 1.5rem;
       border-radius: var(--radius);
@@ -850,7 +838,7 @@
       line-height: 1.55;
     }
     .alert-block strong {
-      color: var(--color-roof);
+      color: #7a9ab8;
       font-weight: 600;
     }
 
@@ -906,14 +894,14 @@
     /* Bloque destacado de zonas de fiesta */
     .fiestas-block {
       background: rgba(184, 106, 82, 0.08);
-      border-left: 3px solid var(--color-roof);
+      border-left: 3px solid #7a9ab8;
       padding-left: 1.4rem;
       padding-right: 1.4rem;
       padding-bottom: 1.8rem;
       margin-top: 2rem;
     }
     .fiestas-block .zone-title em {
-      color: var(--color-roof);
+      color: #7a9ab8;
     }
 
     /* ---------- VISITAS ---------- */
@@ -1437,8 +1425,8 @@
         <li><strong>Parking Plaza Indautxu</strong><span>Plaza Indautxu · Indautxu<br>En coche: Acceso por Calle Rodríguez Arias o Calle Licenciado Poza. Dentro de la ZBE.</span><div class="hotel-links"><a href="https://maps.google.com/?q=Parking+Plaza+Indautxu+Bilbao" target="_blank" rel="noopener" class="map-link">📍 Ver en Maps</a></div></li>
         <li><strong>Parking Instituto Unamuno</strong><span>Calle Hurtado de Amézaga · Abando<br>En coche: Acceso por Calle Hurtado de Amézaga desde la estación de Abando. Dentro de la ZBE.</span><div class="hotel-links"><a href="https://maps.google.com/?q=Parking+Instituto+Unamuno+Bilbao" target="_blank" rel="noopener" class="map-link">📍 Ver en Maps</a></div></li>
         <li><strong>Parking Zubiarte</strong><span>Bajo el centro comercial Zubiarte · Abandoibarra<br>En coche: Acceso por Calle Lehendakari Aguirre o Avda. Abandoibarra. Dentro de la ZBE.</span><div class="hotel-links"><a href="https://maps.google.com/?q=Parking+Zubiarte+Bilbao" target="_blank" rel="noopener" class="map-link">📍 Ver en Maps</a></div></li>
-        <li><strong>Parking El Corte Inglés</strong><span>Gran Vía, 7-9 · acceso por Calle Canciller Ayala · Abando · <strong style="color: var(--color-roof);">No es 24 h: abre aprox. de 9:30 a 21:00 (lunes a sábado) y de 11:00 a 19:00 (domingos). Conviene confirmar el horario.</strong><br>En coche: Acceso por Calle Canciller Ayala. Dentro de la ZBE.</span><div class="hotel-links"><a href="https://maps.google.com/?q=Parking+El+Corte+Inglés+Bilbao" target="_blank" rel="noopener" class="map-link">📍 Ver en Maps</a></div></li>
-        <li><strong>Parking Palacio Euskalduna</strong><span>Avenida Abandoibarra, 4 · Abandoibarra · <strong style="color: var(--color-roof);">No apto para vehículos sin etiqueta o con etiqueta B</strong><br>En coche: Acceso por Avda. Abandoibarra dirección Guggenheim. Dentro de la ZBE.</span><div class="hotel-links"><a href="https://maps.google.com/?q=Parking+Palacio+Euskalduna+Bilbao" target="_blank" rel="noopener" class="map-link">📍 Ver en Maps</a></div></li>
+        <li><strong>Parking El Corte Inglés</strong><span>Gran Vía, 7-9 · acceso por Calle Canciller Ayala · Abando · <strong style="color: #7a9ab8;">No es 24 h: abre aprox. de 9:30 a 21:00 (lunes a sábado) y de 11:00 a 19:00 (domingos). Conviene confirmar el horario.</strong><br>En coche: Acceso por Calle Canciller Ayala. Dentro de la ZBE.</span><div class="hotel-links"><a href="https://maps.google.com/?q=Parking+El+Corte+Inglés+Bilbao" target="_blank" rel="noopener" class="map-link">📍 Ver en Maps</a></div></li>
+        <li><strong>Parking Palacio Euskalduna</strong><span>Avenida Abandoibarra, 4 · Abandoibarra · <strong style="color: #7a9ab8;">No apto para vehículos sin etiqueta o con etiqueta B</strong><br>En coche: Acceso por Avda. Abandoibarra dirección Guggenheim. Dentro de la ZBE.</span><div class="hotel-links"><a href="https://maps.google.com/?q=Parking+Palacio+Euskalduna+Bilbao" target="_blank" rel="noopener" class="map-link">📍 Ver en Maps</a></div></li>
       </ul>
       <p style="margin-top:1rem; font-size:0.92rem;">
         <strong>Con etiquetas 0, ECO o C</strong> podéis aparcar también en cualquier otro parking público dentro de la ZBE (hay más parkings disponibles en Abando, Indautxu y Abandoibarra). En cambio, sin distintivo ambiental no se puede aparcar en ningún parking dentro de la ZBE.
@@ -1507,8 +1495,7 @@
       </p>
       <p class="zone-desc"><strong>Estaciones de metro:</strong> Indautxu (L1 y L2), San Mamés (L1 y L2).</p>
       <div class="badges-row">
-        <span class="apt-badge yes">✓ Amplia oferta de apartamentos turísticos</span>
-        <a class="apt-badge airbnb" href="https://www.airbnb.es/" target="_blank" rel="noopener">🔗 Ver en Airbnb</a>
+        <span class="apt-badge yes">✓ Amplia oferta de apartamentos en Booking y AirBNB</span>
         <span class="apt-badge pension-yes">✓ Amplia oferta de pensiones y B&amp;B</span>
       </div>
       <details class="hotels-toggle">
@@ -1579,8 +1566,7 @@
       </p>
       <p class="zone-desc"><strong>Estaciones de metro:</strong> Moyúa (L1 y L2), Abando (L1 y L2).</p>
       <div class="badges-row">
-        <span class="apt-badge yes">✓ Amplia oferta de apartamentos turísticos</span>
-        <a class="apt-badge airbnb" href="https://www.airbnb.es/" target="_blank" rel="noopener">🔗 Ver en Airbnb</a>
+        <span class="apt-badge yes">✓ Amplia oferta de apartamentos en Booking y AirBNB</span>
         <span class="apt-badge pension-yes">✓ Amplia oferta de pensiones y B&amp;B</span>
       </div>
       <details class="hotels-toggle">
@@ -1651,8 +1637,7 @@
       </p>
       <p class="zone-desc"><strong>Estaciones de metro:</strong> Deustu (L1 y L2), Sarriko (L1 y L2), San Inazio (intercambiador L1 y L2).</p>
       <div class="badges-row">
-        <span class="apt-badge limited">~ Oferta limitada de apartamentos turísticos</span>
-        <a class="apt-badge airbnb" href="https://www.airbnb.es/" target="_blank" rel="noopener">🔗 Ver en Airbnb</a>
+        <span class="apt-badge limited">~ Oferta limitada de apartamentos en Booking y AirBNB</span>
         <span class="apt-badge pension-yes">✓ Hay pensiones económicas en la zona</span>
       </div>
       <details class="hotels-toggle">
@@ -1681,8 +1666,7 @@
       </p>
       <p class="zone-desc"><strong>Estaciones cercanas:</strong> Ametzola (Cercanías Renfe C-3), Zabalburu (L3) a 5 minutos a pie.</p>
       <div class="badges-row">
-        <span class="apt-badge limited">~ Oferta limitada de apartamentos turísticos</span>
-        <a class="apt-badge airbnb" href="https://www.airbnb.es/" target="_blank" rel="noopener">🔗 Ver en Airbnb</a>
+        <span class="apt-badge limited">~ Oferta limitada de apartamentos en Booking y AirBNB</span>
         <span class="apt-badge pension-limited">~ Oferta limitada de pensiones y B&amp;B</span>
       </div>
       <details class="hotels-toggle">
@@ -1711,8 +1695,7 @@
       </p>
       <p class="zone-desc"><strong>Estaciones cercanas:</strong> San Mamés (L1, L2 y Cercanías Renfe C-1 y C-2), Basurto-Hospital (Cercanías C-1 y C-2).</p>
       <div class="badges-row">
-        <span class="apt-badge limited">~ Oferta limitada de apartamentos turísticos</span>
-        <a class="apt-badge airbnb" href="https://www.airbnb.es/" target="_blank" rel="noopener">🔗 Ver en Airbnb</a>
+        <span class="apt-badge limited">~ Oferta limitada de apartamentos en Booking y AirBNB</span>
         <span class="apt-badge pension-yes">✓ Hay pensiones y B&amp;B en la zona</span>
       </div>
       <details class="hotels-toggle">
@@ -1758,8 +1741,7 @@
       </p>
       <p class="zone-desc"><strong>Estaciones de metro:</strong> Santutxu (L1 y L2), Basarrate (L1 y L2).</p>
       <div class="badges-row">
-        <span class="apt-badge yes">✓ Buena oferta de apartamentos turísticos</span>
-        <a class="apt-badge airbnb" href="https://www.airbnb.es/" target="_blank" rel="noopener">🔗 Ver en Airbnb</a>
+        <span class="apt-badge yes">✓ Buena oferta de apartamentos en Booking y AirBNB</span>
         <span class="apt-badge pension-yes">✓ Buena oferta de pensiones y B&amp;B</span>
       </div>
       <details class="hotels-toggle">

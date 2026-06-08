@@ -134,6 +134,72 @@
       margin-top: 0.8rem;
     }
 
+
+
+    /* ---------- FAQ ---------- */
+    .faq-block {
+      margin-top: 3.5rem;
+      max-width: 680px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .faq-intro {
+      font-size: 0.95rem;
+      color: var(--color-ink-soft);
+      margin-bottom: 1.6rem;
+      text-align: center;
+      line-height: 1.65;
+    }
+    .faq-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+    }
+    .faq-item {
+      border: 1px solid var(--color-line);
+      border-radius: 8px;
+      overflow: hidden;
+      background: var(--color-bg);
+    }
+    .faq-item summary {
+      cursor: pointer;
+      padding: 1rem 1.2rem;
+      font-family: var(--font-display);
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--color-ink);
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      user-select: none;
+    }
+    .faq-item summary::-webkit-details-marker { display: none; }
+    .faq-item summary::after {
+      content: '+';
+      font-size: 1.3rem;
+      font-weight: 300;
+      color: var(--color-accent);
+      flex-shrink: 0;
+      transition: transform 0.25s ease;
+    }
+    .faq-item[open] summary::after {
+      transform: rotate(45deg);
+    }
+    .faq-item[open] summary {
+      border-bottom: 1px solid var(--color-line);
+    }
+    .faq-answer {
+      padding: 1rem 1.2rem;
+    }
+    .faq-answer p {
+      font-size: 0.95rem;
+      color: var(--color-ink-soft);
+      line-height: 1.7;
+      margin: 0;
+    }
+
     /* ---------- COUNTDOWN ---------- */
     .countdown {
       display: flex;
@@ -1156,6 +1222,35 @@
         </div>
 
       </div>
+
+      <div class="faq-block">
+        <p class="faq-intro">Hay una serie de dudas que nos habéis preguntado varios, o nos vais a preguntar. Aquí os las respondemos.</p>
+        <div class="faq-list">
+
+          <details class="faq-item">
+            <summary>¿La boda es por la iglesia u os casáis en el restaurante?</summary>
+            <div class="faq-answer">
+              <p>Ni una, ni la otra. Realmente, nuestra boda legal será por lo civil en San Sebastián de los Reyes, pero lo haremos solo con padres y hermanos. No tenemos fecha aún, pero será un par de meses antes.</p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary>¿Habrá ceremonia?</summary>
+            <div class="faq-answer">
+              <p>Sí, haremos una pequeña ceremonia en el Asador Arraiz porque queremos que seáis parte de la boda buena, la que importa realmente. A partir de enero empezaremos a prepararla y es posible que necesitemos voluntarios para dar algún discursillo. Os iremos informando.</p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary>¿Cómo de formal hay que ir a esto?</summary>
+            <div class="faq-answer">
+              <p>A los novios nos importa poco cómo vengáis vestidos. Nuestro consejo es que vengáis cómodos, que podáis disfrutar del día y no os dejéis un dineral en ropa y complementos. Preferimos que podáis hacer unos buenos pasos de baile a que os rompáis el tobillo con ese tacón largo y fino o que se os rompa el pantalón del traje porque era demasiado «slim».</p>
+            </div>
+          </details>
+
+        </div>
+      </div>
+
     </div>
   </section>
 
